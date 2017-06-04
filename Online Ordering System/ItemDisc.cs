@@ -1,7 +1,6 @@
-﻿
-public struct ItemDisc
+﻿public struct ItemDisc
 {
+    int ID;
     string name;
     float price;
-    int ID;
 };
