@@ -1,0 +1,8 @@
+D:\Projects\Online Ordering\Online Ordering System\bin\Debug\Online Ordering System.exe.config
+D:\Projects\Online Ordering\Online Ordering System\bin\Debug\Online Ordering System.exe
+D:\Projects\Online Ordering\Online Ordering System\bin\Debug\Online Ordering System.pdb
+D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.csprojResolveAssemblyReference.cache
+D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online_Ordering_System.Properties.Resources.resources
+D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.csproj.GenerateResource.Cache
+D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.exe
+D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.pdb

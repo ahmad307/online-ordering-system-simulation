@@ -1,0 +1,7 @@
+D:\Projects\Online Ordering\Online Ordering System\bin\Release\Online Ordering System.exe.config
+D:\Projects\Online Ordering\Online Ordering System\bin\Release\Online Ordering System.exe
+D:\Projects\Online Ordering\Online Ordering System\bin\Release\Online Ordering System.pdb
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Properties.Resources.resources
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.csproj.GenerateResource.Cache
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.exe
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.pdb
