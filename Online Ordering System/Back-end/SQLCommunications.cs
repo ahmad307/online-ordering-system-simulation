@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace SQLCommunications
 {
-    static class CommBase
+    public static class CommBase
     {
         public static bool IsIntialized = false;
         public static SqlConnection connection = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\\OOSDB.mdf;Integrated Security = True");
@@ -33,6 +33,16 @@ namespace SQLCommunications
                 command.CommandText = "INSERT INTO Product Values(" + i.ID + ", '" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "')";
                 command.ExecuteNonQuery();
             }
+        }
+        public static void ExecuteNoReturn(string Query)
+        {
+            if (!CommBase.IsIntialized)
+            {
+                CommBase.Intialize();
+            }
+            command.Connection = CommBase.connection;
+            command.CommandText = Query;
+            command.ExecuteNonQuery();
         }
     }
     public static class Reciever
