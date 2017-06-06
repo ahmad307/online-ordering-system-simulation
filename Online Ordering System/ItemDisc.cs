@@ -2,10 +2,12 @@
 
 public struct ItemDisc : IComparable
 {
-    static int ComparisonCo = 0;
-    int ID;
-    string name;
-    float price;
+    public static int ComparisonCo = 0;
+    public int ID;
+    public string name;
+    public float price;
+    public int Quantity;
+    public string Type;
     public int CompareTo(object o)
     {
         if (o.GetType() == GetType())
