@@ -45,7 +45,7 @@ namespace SQLCommunications
             command.ExecuteNonQuery();
         }
     }
-    public static class Reciever
+    public static class Receiver
     {
         static SqlCommand command = new SqlCommand();
         static SqlDataReader reader;
