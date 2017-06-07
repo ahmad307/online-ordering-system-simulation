@@ -23,15 +23,29 @@ namespace SQLCommunications
         static SqlCommand command = new SqlCommand();
         public static void InsertIntoTable(params ItemDisc[] id)
         {
-            if(!CommBase.IsIntialized)
+            if (!CommBase.IsIntialized)
             {
                 CommBase.Intialize();
             }
             command.Connection = CommBase.connection;
-            foreach(ItemDisc i in id)
+            ItemDisc[] Items = Receiver.ReadFromTable("SELECT * FROM Product");
+            foreach (ItemDisc i in id)
             {
-                command.CommandText = "INSERT INTO Product Values(" + i.ID + ", '" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "')";
-                command.ExecuteNonQuery();
+                bool FoundDublicate = false;
+                foreach (ItemDisc j in Items)
+                {
+                    if (i.ID == j.ID)
+                    {
+                        FoundDublicate = true;
+                        ExecuteNoReturn("UPDATE Product SET quantity = quantity + " + i.Quantity + " WHERE id = " + i.ID);
+                        break;
+                    }
+                }
+                if (!FoundDublicate)
+                {
+                    command.CommandText = "INSERT INTO Product Values(" + i.ID + ", '" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "')";
+                    command.ExecuteNonQuery();
+                }
             }
         }
         public static void ExecuteNoReturn(string Query)
@@ -51,7 +65,7 @@ namespace SQLCommunications
         static SqlDataReader reader;
         public static ItemDisc[] ReadFromTable(string Query)
         {
-            if(!CommBase.IsIntialized)
+            if (!CommBase.IsIntialized)
             {
                 CommBase.Intialize();
             }
@@ -59,7 +73,7 @@ namespace SQLCommunications
             command.CommandText = Query;
             reader = command.ExecuteReader();
             List<ItemDisc> IDlist = new List<ItemDisc>();
-            while(reader.Read())
+            while (reader.Read())
             {
                 ItemDisc i;
                 i.ID = (int)reader["id"];
