@@ -19,3 +19,10 @@ D:\ramy\online ordering\Online Ordering System\obj\Release\Online Ordering Syste
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form2.resources
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form4.resources
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form3.resources
+D:\Projects\Online Ordering\Online Ordering System\bin\Release\OOSDB.mdf
+D:\Projects\Online Ordering\Online Ordering System\bin\Release\OOSDB_log.ldf
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.csprojResolveAssemblyReference.cache
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form1.resources
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form4.resources
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form3.resources
+D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form2.resources
