@@ -20,9 +20,13 @@ public struct ItemDisc : IComparable
                     return name.CompareTo(((ItemDisc)o).name);
                 default:
                     return price.CompareTo(((ItemDisc)o).price);
-
             }
         }
         else return 0;
     }
 };
+
+public struct User
+{
+    public string Username, Password;
+}
