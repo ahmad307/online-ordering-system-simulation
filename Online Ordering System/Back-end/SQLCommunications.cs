@@ -144,6 +144,7 @@ namespace SQLCommunications
                 i.ID = (int)reader["id"];
                 i.Username = (string)reader["username"];
                 i.Password = (string)reader["password"];
+                i.process = new Marketing();
                 Userlist.Add(i);
             }
             return Userlist.ToArray();
