@@ -3,6 +3,9 @@ using System.Data.SqlClient;
 
 namespace SQLCommunications
 {
+    ///<summary>
+    ///This is the class that contains what other classes have in common
+    ///</summary>
     public static class CommBase
     {
         public static bool IsIntialized = false;
@@ -18,9 +21,15 @@ namespace SQLCommunications
             IsIntialized = false;
         }
     }
+    ///<summary>
+    ///Transmits data into database
+    ///</summary>
     public static class Transmitter
     {
         static SqlCommand command = new SqlCommand();
+        ///<summary>
+        ///Inserts items into Product table while checking for duplicates
+        ///</summary>
         public static void InsertIntoTable(params ItemDisc[] id)
         {
             if (!CommBase.IsIntialized)
@@ -48,6 +57,9 @@ namespace SQLCommunications
                 }
             }
         }
+        ///<summary>
+        ///registers a user , returns false if username already exists
+        ///</summary>
         public static bool RegisterUser(User user)
         {
             if (!CommBase.IsIntialized)
@@ -67,6 +79,9 @@ namespace SQLCommunications
             command.ExecuteNonQuery();
             return true;
         }
+        ///<summary>
+        ///Execute a query that doesn't return anything
+        ///</summary>
         public static void ExecuteNoReturn(string Query)
         {
             if (!CommBase.IsIntialized)
@@ -78,10 +93,16 @@ namespace SQLCommunications
             command.ExecuteNonQuery();
         }
     }
+    ///<summary>
+    ///Recieves data from database
+    ///</summary>
     public static class Receiver
     {
         static SqlCommand command = new SqlCommand();
         static SqlDataReader reader;
+        ///<summary>
+        ///returns products from Product table according to the query specified via the ItemDisc struct
+        ///</summary>
         public static ItemDisc[] ReadFromProduct(string Query)
         {
             if (!CommBase.IsIntialized)
@@ -104,6 +125,9 @@ namespace SQLCommunications
             }
             return IDlist.ToArray();
         }
+        ///<summary>
+        ///returns users from Accounts table according to the query specified via User struct
+        ///</summary>
         public static User[] ReadFromAccounts(string Query)
         {
             if (!CommBase.IsIntialized)
