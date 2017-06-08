@@ -46,7 +46,7 @@ namespace SQLCommunications
                     if (i.name == j.name)
                     {
                         FoundDublicate = true;
-                        ExecuteNoReturn("UPDATE Product SET quantity = quantity + " + i.Quantity + " WHERE id = " + i.ID);
+                        ExecuteNoReturn("UPDATE Product SET quantity = quantity + " + i.Quantity + " WHERE id = " + j.ID);
                         break;
                     }
                 }
