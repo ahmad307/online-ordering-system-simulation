@@ -63,7 +63,7 @@ namespace SQLCommunications
                     return false;
                 }
             }
-            command.CommandText = "INSERT INTO Accounts Values('" + user.Username + "','" + user.Password + "')";
+            command.CommandText = "INSERT INTO Accounts(username , password) Values('" + user.Username + "','" + user.Password + "')";
             command.ExecuteNonQuery();
             return true;
         }
