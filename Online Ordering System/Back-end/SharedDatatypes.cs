@@ -30,4 +30,5 @@ public struct User
 {
     public int ID;
     public string Username, Password;
+    public Marketing process;
 }
