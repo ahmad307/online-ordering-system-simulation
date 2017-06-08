@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,17 +64,50 @@
     <Compile Include="Back-end\Fetcher.cs" />
     <Compile Include="Back-end\Marketing.cs" />
     <Compile Include="Back-end\Registor.cs" />
-    <Compile Include="ItemDisc.cs" />
+    <Compile Include="Back-end\SQLCommunications.cs" />
+    <Compile Include="SignUp screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp screen.Designer.cs">
+      <DependentUpon>SignUp screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Screen.Designer.cs">
+      <DependentUpon>Login Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Screen.Designer.cs">
+      <DependentUpon>Home Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Back-end\SharedDatatypes.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="OOSDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OOSDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp screen.resx">
+      <DependentUpon>SignUp screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Screen.resx">
+      <DependentUpon>Login Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Screen.resx">
+      <DependentUpon>Home Screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,6 +119,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="OOSDBDataSet.xsc">
+      <DependentUpon>OOSDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OOSDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OOSDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OOSDBDataSet.xss">
+      <DependentUpon>OOSDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,6 +145,35 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Front-end\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OOSDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OOSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>OOSDB.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\pattern2.png" />
+    <None Include="Resources\pattern1.png" />
+    <None Include="Resources\lgo!-0١1.png" />
+    <None Include="Resources\pt.png" />
+    <None Include="Resources\pattern.png" />
+    <None Include="Resources\lgo!-0١.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\0nt8vw7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
