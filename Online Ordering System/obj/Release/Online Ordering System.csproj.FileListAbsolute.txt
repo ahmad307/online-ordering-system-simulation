@@ -23,3 +23,17 @@ D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_S
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form4.resources
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form3.resources
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form2.resources
+F:\online ordering\Online Ordering System\obj\Release\Online Ordering System.csprojResolveAssemblyReference.cache
+F:\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form1.resources
+F:\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form4.resources
+F:\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form3.resources
+F:\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form2.resources
+F:\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Properties.Resources.resources
+F:\online ordering\Online Ordering System\obj\Release\Online Ordering System.csproj.GenerateResource.Cache
+F:\online ordering\Online Ordering System\obj\Release\Online Ordering System.exe
+F:\online ordering\Online Ordering System\obj\Release\Online Ordering System.pdb
+F:\online ordering\Online Ordering System\bin\Release\OOSDB.mdf
+F:\online ordering\Online Ordering System\bin\Release\OOSDB_log.ldf
+F:\online ordering\Online Ordering System\bin\Release\Online Ordering System.exe.config
+F:\online ordering\Online Ordering System\bin\Release\Online Ordering System.exe
+F:\online ordering\Online Ordering System\bin\Release\Online Ordering System.pdb

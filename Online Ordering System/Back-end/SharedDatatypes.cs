@@ -8,6 +8,7 @@ public struct ItemDisc : IComparable
     public float price;
     public int Quantity;
     public string Type;
+    public bool delivered;
     public int CompareTo(object o)
     {
         if (o.GetType() == GetType())
@@ -30,4 +31,5 @@ public struct User
 {
     public int ID;
     public string Username, Password;
+    public Marketing process;
 }

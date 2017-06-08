@@ -121,6 +121,7 @@ namespace SQLCommunications
                 i.price = (float)reader["price"];
                 i.Quantity = (int)reader["quantity"];
                 i.Type = (string)reader["type"];
+                i.delivered = false;
                 IDlist.Add(i);
             }
             return IDlist.ToArray();
@@ -144,9 +145,33 @@ namespace SQLCommunications
                 i.ID = (int)reader["id"];
                 i.Username = (string)reader["username"];
                 i.Password = (string)reader["password"];
+                i.process = new Marketing();
                 Userlist.Add(i);
             }
             return Userlist.ToArray();
+        }
+        public static ItemDisc[] GetOrdersOf(string UserName)
+        {
+            if (!CommBase.IsIntialized)
+            {
+                CommBase.Intialize();
+            }
+            command.Connection = CommBase.connection;
+            command.CommandText = "SELECT * FROM Orders WHERE username = " + UserName;
+            reader = command.ExecuteReader();
+            List<ItemDisc> IDList = new List<ItemDisc>();
+            while (reader.Read())
+            {
+                    ItemDisc i;
+                    i.ID = (int)reader["ProductID"];
+                    i.name = (string)reader["name"];
+                    i.price = (float)reader["price"];
+                    i.Quantity = (int)reader["quantity"];
+                    i.Type = (string)reader["type"];
+                    i.delivered = (bool)reader["delivered"];
+                    IDList.Add(i);
+            }
+            return IDList.ToArray();
         }
     }
 }
