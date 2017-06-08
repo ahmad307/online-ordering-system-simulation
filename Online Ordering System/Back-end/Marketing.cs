@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 
-class Marketing
+public class Marketing
 {
-    static SortedDictionary<ItemDisc, int> Items;
-    static void Buy(ItemDisc ordered,int quantity)
+    SortedDictionary<ItemDisc, int> Items;
+    void Buy(ItemDisc ordered,int quantity)
     {
         Items[ordered] += quantity;
     }
-    static bool remove(ItemDisc ordered,int quantity)
+    bool remove(ItemDisc ordered,int quantity)
     {
         if(quantity < 0)
         {
@@ -28,16 +28,43 @@ class Marketing
             return true;
         }
     }
-    static SortedDictionary<ItemDisc,int> show()
+    SortedDictionary<ItemDisc,int> show()
     {
         return Items;
     }
+}
+
+static class functions
+{
     static void Sort_Prize(List<ItemDisc> C_items)
     {
-        
+        ItemDisc.ComparisonCo = 2;
+        C_items.Sort();
     }
     static void sort_name(List<ItemDisc> C_items)
     {
-
+        ItemDisc.ComparisonCo = 1;
+        C_items.Sort();
+    }
+    static List<ItemDisc> Search_All (string sub, List <ItemDisc> A_items)
+    {
+        List<ItemDisc> Send = new List<ItemDisc>();
+        foreach(ItemDisc c in A_items)
+        {
+            if (c.name.Contains(sub))
+                Send.Add(c);
+        }
+        return Send;
+    }
+    static List<ItemDisc> Search_category(string sub, List<ItemDisc> C_items)
+    {
+        List<ItemDisc> Send = new List<ItemDisc>();
+        foreach (ItemDisc c in C_items)
+        {
+            if (c.name.Contains(sub))
+                Send.Add(c);
+        }
+        return Send;
     }
 }
+
