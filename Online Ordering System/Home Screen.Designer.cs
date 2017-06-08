@@ -29,11 +29,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Categories = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -41,7 +40,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.Home_Panel = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,21 +48,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.Sign_Up = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Login = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Categories.SuspendLayout();
+            this.Home_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Sign_Up.SuspendLayout();
+            this.Login.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(-6, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1014, 515);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -107,21 +109,21 @@
             this.button3.Text = "Contact Us";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // Categories
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 70);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(221, 464);
-            this.panel1.TabIndex = 4;
+            this.Categories.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Categories.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
+            this.Categories.Controls.Add(this.button9);
+            this.Categories.Controls.Add(this.button8);
+            this.Categories.Controls.Add(this.button7);
+            this.Categories.Controls.Add(this.button6);
+            this.Categories.Controls.Add(this.button5);
+            this.Categories.Controls.Add(this.button4);
+            this.Categories.Controls.Add(this.label1);
+            this.Categories.Location = new System.Drawing.Point(2, 70);
+            this.Categories.Name = "Categories";
+            this.Categories.Size = new System.Drawing.Size(221, 464);
+            this.Categories.TabIndex = 4;
             // 
             // button9
             // 
@@ -216,16 +218,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Catergories";
             // 
-            // panel2
+            // Home_Panel
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(208, 70);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 464);
-            this.panel2.TabIndex = 7;
+            this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
+            this.Home_Panel.Controls.Add(this.comboBox2);
+            this.Home_Panel.Controls.Add(this.comboBox1);
+            this.Home_Panel.Controls.Add(this.label2);
+            this.Home_Panel.Location = new System.Drawing.Point(208, 70);
+            this.Home_Panel.Name = "Home_Panel";
+            this.Home_Panel.Size = new System.Drawing.Size(800, 464);
+            this.Home_Panel.TabIndex = 7;
+            this.Home_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Panel_Paint);
             // 
             // comboBox2
             // 
@@ -286,6 +289,7 @@
             this.label3.Size = new System.Drawing.Size(56, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "Log in";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // label4
             // 
@@ -299,6 +303,7 @@
             this.label4.Size = new System.Drawing.Size(66, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "Sign up";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -311,6 +316,131 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
+            // Sign_Up
+            // 
+            this.Sign_Up.BackColor = System.Drawing.Color.LightGray;
+            this.Sign_Up.Controls.Add(this.textBox2);
+            this.Sign_Up.Controls.Add(this.textBox5);
+            this.Sign_Up.Controls.Add(this.textBox3);
+            this.Sign_Up.Controls.Add(this.button10);
+            this.Sign_Up.Controls.Add(this.textBox1);
+            this.Sign_Up.Location = new System.Drawing.Point(208, 70);
+            this.Sign_Up.Name = "Sign_Up";
+            this.Sign_Up.Size = new System.Drawing.Size(800, 464);
+            this.Sign_Up.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(299, 262);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(176, 20);
+            this.textBox2.TabIndex = 18;
+            this.textBox2.Text = "Re-Enter password";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(299, 197);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(176, 20);
+            this.textBox5.TabIndex = 17;
+            this.textBox5.Text = "Enter password";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(299, 132);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(176, 20);
+            this.textBox3.TabIndex = 14;
+            this.textBox3.Text = "Enter Email";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(345, 329);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(84, 32);
+            this.button10.TabIndex = 12;
+            this.button10.Text = "Sign Up";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(299, 67);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(176, 20);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "Enter username";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Login
+            // 
+            this.Login.BackColor = System.Drawing.Color.LightGray;
+            this.Login.Controls.Add(this.button11);
+            this.Login.Controls.Add(this.textBox4);
+            this.Login.Controls.Add(this.textBox6);
+            this.Login.Controls.Add(this.label6);
+            this.Login.Controls.Add(this.label7);
+            this.Login.Location = new System.Drawing.Point(208, 70);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(800, 464);
+            this.Login.TabIndex = 19;
+            this.Login.Paint += new System.Windows.Forms.PaintEventHandler(this.Login_Paint);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(338, 238);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(84, 32);
+            this.button11.TabIndex = 12;
+            this.button11.Text = "Log in";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(295, 190);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '•';
+            this.textBox4.Size = new System.Drawing.Size(176, 20);
+            this.textBox4.TabIndex = 3;
+            this.textBox4.UseSystemPasswordChar = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(295, 155);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(176, 20);
+            this.textBox6.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(234, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Password";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(234, 158);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Username";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,34 +451,37 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Categories);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Home_Panel);
+            this.Controls.Add(this.Sign_Up);
+            this.Controls.Add(this.Login);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Categories.ResumeLayout(false);
+            this.Categories.PerformLayout();
+            this.Home_Panel.ResumeLayout(false);
+            this.Home_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Sign_Up.ResumeLayout(false);
+            this.Sign_Up.PerformLayout();
+            this.Login.ResumeLayout(false);
+            this.Login.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Categories;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
@@ -356,14 +489,26 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel Home_Panel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel Sign_Up;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel Login;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

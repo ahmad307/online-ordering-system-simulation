@@ -11,14 +11,11 @@ D:\ramy\online ordering\Online Ordering System\bin\Release\Online Ordering Syste
 D:\ramy\online ordering\Online Ordering System\bin\Release\Online Ordering System.exe
 D:\ramy\online ordering\Online Ordering System\bin\Release\Online Ordering System.pdb
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online Ordering System.csprojResolveAssemblyReference.cache
-D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form1.resources
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Properties.Resources.resources
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online Ordering System.csproj.GenerateResource.Cache
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online Ordering System.exe
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online Ordering System.pdb
 D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form2.resources
-D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form4.resources
-D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Form3.resources
 D:\Projects\Online Ordering\Online Ordering System\bin\Release\OOSDB.mdf
 D:\Projects\Online Ordering\Online Ordering System\bin\Release\OOSDB_log.ldf
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.csprojResolveAssemblyReference.cache
