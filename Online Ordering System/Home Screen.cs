@@ -13,6 +13,7 @@ namespace Online_Ordering_System
 {
     public partial class Form2 : Form
     {
+        Panel LastPanel;
         public Form2()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace Online_Ordering_System
         {
             Button btn = (Button)sender;
             btn.ForeColor = Color.Black;
-            btn.BackColor = panel1.BackColor;
+            btn.BackColor = Categories.BackColor;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +50,41 @@ namespace Online_Ordering_System
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            LastPanel.Visible = false;
+            Login.Visible = true;
+            LastPanel = Login;    
+        
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            LastPanel.Visible = false;
+            Sign_Up.Visible = true;
+            LastPanel = Sign_Up;
+        }
+
+        private void Home_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            LastPanel = Home_Panel;
         }
     }
 }
