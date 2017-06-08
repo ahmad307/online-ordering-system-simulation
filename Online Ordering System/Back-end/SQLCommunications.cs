@@ -28,13 +28,13 @@ namespace SQLCommunications
                 CommBase.Intialize();
             }
             command.Connection = CommBase.connection;
-            ItemDisc[] Items = Receiver.ReadFromTable("SELECT * FROM Product");
+            ItemDisc[] Items = Receiver.ReadFromProduct("SELECT * FROM Product");
             foreach (ItemDisc i in id)
             {
                 bool FoundDublicate = false;
                 foreach (ItemDisc j in Items)
                 {
-                    if (i.ID == j.ID)
+                    if (i.name == j.name)
                     {
                         FoundDublicate = true;
                         ExecuteNoReturn("UPDATE Product SET quantity = quantity + " + i.Quantity + " WHERE id = " + i.ID);
@@ -43,10 +43,29 @@ namespace SQLCommunications
                 }
                 if (!FoundDublicate)
                 {
-                    command.CommandText = "INSERT INTO Product Values(" + i.ID + ", '" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "')";
+                    command.CommandText = "INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "')";
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        public static bool RegisterUser(User user)
+        {
+            if (!CommBase.IsIntialized)
+            {
+                CommBase.Intialize();
+            }
+            command.Connection = CommBase.connection;
+            User[] AllUsers = Receiver.ReadFromAccounts("SELECT * FROM Accounts");
+            foreach (User i in AllUsers)
+            {
+                if (i.Username == user.Username)
+                {
+                    return false;
+                }
+            }
+            command.CommandText = "INSERT INTO Accounts Values('" + user.Username + "','" + user.Password + "')";
+            command.ExecuteNonQuery();
+            return true;
         }
         public static void ExecuteNoReturn(string Query)
         {
@@ -63,7 +82,7 @@ namespace SQLCommunications
     {
         static SqlCommand command = new SqlCommand();
         static SqlDataReader reader;
-        public static ItemDisc[] ReadFromTable(string Query)
+        public static ItemDisc[] ReadFromProduct(string Query)
         {
             if (!CommBase.IsIntialized)
             {
@@ -84,6 +103,26 @@ namespace SQLCommunications
                 IDlist.Add(i);
             }
             return IDlist.ToArray();
+        }
+        public static User[] ReadFromAccounts(string Query)
+        {
+            if (!CommBase.IsIntialized)
+            {
+                CommBase.Intialize();
+            }
+            command.Connection = CommBase.connection;
+            command.CommandText = Query;
+            reader = command.ExecuteReader();
+            List<User> Userlist = new List<User>();
+            while (reader.Read())
+            {
+                User i;
+                i.ID = (int)reader["id"];
+                i.Username = (string)reader["username"];
+                i.Password = (string)reader["password"];
+                Userlist.Add(i);
+            }
+            return Userlist.ToArray();
         }
     }
 }

@@ -28,5 +28,6 @@ public struct ItemDisc : IComparable
 
 public struct User
 {
+    public int ID;
     public string Username, Password;
 }

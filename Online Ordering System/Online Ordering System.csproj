@@ -83,7 +83,7 @@
     <Compile Include="Home Screen.Designer.cs">
       <DependentUpon>Home Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemDisc.cs" />
+    <Compile Include="Back-end\SharedDatatypes.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
