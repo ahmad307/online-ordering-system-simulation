@@ -46,25 +46,27 @@ static class functions
         ItemDisc.ComparisonCo = 1;
         C_items.Sort();
     }
-    static List<ItemDisc> Search_All (string sub, List <ItemDisc> A_items)
+    static List<ItemDisc> Search_items (string sub, List <ItemDisc> C_items)
     {
         List<ItemDisc> Send = new List<ItemDisc>();
-        foreach(ItemDisc c in A_items)
+        foreach(ItemDisc c in C_items)
         {
             if (c.name.Contains(sub))
                 Send.Add(c);
         }
         return Send;
     }
-    static List<ItemDisc> Search_category(string sub, List<ItemDisc> C_items)
+    static List<ItemDisc> Filter(List<string> Companies, List<ItemDisc> C_items, int low = 0, int high = int.MaxValue)
     {
-        List<ItemDisc> Send = new List<ItemDisc>();
-        foreach (ItemDisc c in C_items)
+        List<ItemDisc> send = new List<ItemDisc>();
+        foreach(ItemDisc c in C_items)
         {
-            if (c.name.Contains(sub))
-                Send.Add(c);
+            if (Companies.Contains(c.manfacture) && c.price >= low && c.price <= high)
+            { 
+                send.Add(c);
+           }
         }
-        return Send;
+        return send;
     }
 }
 

@@ -8,6 +8,7 @@ public struct ItemDisc : IComparable
     public float price;
     public int Quantity;
     public string Type;
+    //public string manfacture;
     public bool delivered;
     public int CompareTo(object o)
     {
