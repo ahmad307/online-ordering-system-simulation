@@ -356,6 +356,7 @@
             this.Sign_Up.Name = "Sign_Up";
             this.Sign_Up.Size = new System.Drawing.Size(800, 464);
             this.Sign_Up.TabIndex = 8;
+            this.Sign_Up.Visible = false;
             // 
             // label10
             // 
@@ -441,6 +442,7 @@
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(800, 464);
             this.Login.TabIndex = 19;
+            this.Login.Visible = false;
             this.Login.Paint += new System.Windows.Forms.PaintEventHandler(this.Login_Paint);
             // 
             // button11
@@ -547,8 +549,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Home_Panel);
-            this.Controls.Add(this.Login);
             this.Controls.Add(this.Sign_Up);
+            this.Controls.Add(this.Login);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
