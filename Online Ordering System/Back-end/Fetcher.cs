@@ -10,7 +10,7 @@ namespace SQLCommunications
         {
             return Receiver.ReadFromProduct("SELECT * from Product WHERE name =" + s)[0];
         }
-
+        
         public static string getProductDetail(string productName, string Detail)
         {
             float x;
