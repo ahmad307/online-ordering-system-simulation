@@ -43,14 +43,15 @@ namespace Online_Ordering_System
             {
                 i.Clear();
             }
-            ItemView.offset = 0;
+            ItemView.x_offset = 0;
+            ItemView.y_offset = 0;
             ViewedItems.Clear();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
         }
 
-        private void button4_MouseHover(object sender, EventArgs e) //making orange effect when hovering over category buttons
+        private void button4_MouseHover(object sender, EventArgs e) //making orange effect when hovering over button
         {
             Color clr = Color.FromArgb(0, 255, 188, 72);
             Button btn = (Button)sender;
@@ -59,7 +60,7 @@ namespace Online_Ordering_System
 
         }
 
-        private void button4_MouseLeave(object sender, EventArgs e)//making orange effect when hovering over category buttons
+        private void button4_MouseLeave(object sender, EventArgs e)//making orange effect when hovering over button
         {
             Button btn = (Button)sender;
             btn.ForeColor = Color.Black;
@@ -80,18 +81,15 @@ namespace Online_Ordering_System
         {
 
         }
-
-        private void label3_Click_1(object sender, EventArgs e) // showing login panel
+        private void show_login()  // showing login panel
         {
             if (LastPanel == Login)
                 return;
             Login.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Login;
-
         }
-
-        private void label4_Click(object sender, EventArgs e) // shwoing signup panel
+        private void show_signup()  // shwoing signup panel
         {
             if (LastPanel == Sign_Up)
                 return;
@@ -99,6 +97,27 @@ namespace Online_Ordering_System
             LastPanel.Visible = false;
             LastPanel = Sign_Up;
         }
+        private void show_home() //showing home panel
+        {
+            if (LastPanel == Home_Panel)
+                return;
+            Home_Panel.Visible = true;
+            LastPanel.Visible = false;
+            LastPanel = Home_Panel;
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e) 
+        {
+            show_login();
+
+        }
+
+        private void label4_Click(object sender, EventArgs e) 
+        {
+            show_signup();
+        }
+        
 
         private void Home_Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -117,20 +136,12 @@ namespace Online_Ordering_System
 
         private void button1_Click(object sender, EventArgs e) //shwoing home panel
         {
-            if (LastPanel == Home_Panel)
-                return;
-            Home_Panel.Visible = true;
-            LastPanel.Visible = false;
-            LastPanel = Home_Panel;
+            show_home();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e) //showing home panel
         {
-            if (LastPanel == Home_Panel)
-                return;
-            Home_Panel.Visible = true;
-            LastPanel.Visible = false;
-            LastPanel = Home_Panel;
+            show_home();
         }
 
         private void button11_Click(object sender, EventArgs e) //loging in
