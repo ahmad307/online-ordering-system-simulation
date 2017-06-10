@@ -60,7 +60,7 @@ namespace SQLCommunications
         ///<summary>
         ///registers a user , returns false if username already exists
         ///</summary>
-        public static bool RegisterUser(User user)
+        public static bool CheckUser(User user)
         {
             if (!CommBase.IsIntialized)
             {
@@ -75,9 +75,20 @@ namespace SQLCommunications
                     return false;
                 }
             }
-            command.CommandText = "INSERT INTO Accounts(username , password) Values('" + user.Username + "','" + user.Password + "');";
-            command.ExecuteNonQuery();
             return true;
+        }
+        public static bool RegisterUser(User user)
+        {
+            if (CheckUser(user))
+            {
+                command.CommandText = "INSERT INTO Accounts(username , password) Values('" + user.Username + "','" + user.Password + "');";
+                command.ExecuteNonQuery();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         ///<summary>
         ///Execute a query that doesn't return anything
