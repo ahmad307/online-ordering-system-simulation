@@ -108,7 +108,7 @@ namespace Online_Ordering_System
         {
             
             
-            if ( FetchData.checkPass ( Login_user_txt.ToString() , Login_pass_txt.ToString() ) )
+            if ( FetchData.CheckPass ( Login_user_txt.ToString() , Login_pass_txt.ToString() ) )
             {
                 Login_Label.ForeColor = Color.Green;
                 Login_Label.Text = "Welcome";
