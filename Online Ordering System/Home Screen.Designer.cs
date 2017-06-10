@@ -50,6 +50,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Sign_Up = new System.Windows.Forms.Panel();
+            this.SignUp_Label = new System.Windows.Forms.Label();
+            this.SignUp_Pass2_Label = new System.Windows.Forms.Label();
+            this.SignUp_Pass1_Label = new System.Windows.Forms.Label();
+            this.SignUp_User_Label = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,16 +62,12 @@
             this.button10 = new System.Windows.Forms.Button();
             this.SignUp_User_txt = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.Panel();
+            this.Login_Label = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.Login_pass_txt = new System.Windows.Forms.TextBox();
             this.Login_user_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.SignUp_User_Label = new System.Windows.Forms.Label();
-            this.SignUp_Pass1_Label = new System.Windows.Forms.Label();
-            this.SignUp_Pass2_Label = new System.Windows.Forms.Label();
-            this.Login_Label = new System.Windows.Forms.Label();
-            this.SignUp_Label = new System.Windows.Forms.Label();
             this.Categories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Home_Panel.SuspendLayout();
@@ -81,7 +81,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(383, 20);
             this.button1.Name = "button1";
@@ -96,7 +96,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 7.25F, System.Drawing.FontStyle.Bold);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(475, 20);
             this.button2.Name = "button2";
@@ -110,7 +110,7 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(567, 20);
             this.button3.Name = "button3";
@@ -283,7 +283,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(454, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sort By:";
             // 
@@ -334,7 +334,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(861, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 13);
+            this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
@@ -358,12 +358,44 @@
             this.Sign_Up.TabIndex = 8;
             this.Sign_Up.Visible = false;
             // 
+            // SignUp_Label
+            // 
+            this.SignUp_Label.AutoSize = true;
+            this.SignUp_Label.Location = new System.Drawing.Point(329, 365);
+            this.SignUp_Label.Name = "SignUp_Label";
+            this.SignUp_Label.Size = new System.Drawing.Size(0, 13);
+            this.SignUp_Label.TabIndex = 25;
+            // 
+            // SignUp_Pass2_Label
+            // 
+            this.SignUp_Pass2_Label.AutoSize = true;
+            this.SignUp_Pass2_Label.Location = new System.Drawing.Point(471, 245);
+            this.SignUp_Pass2_Label.Name = "SignUp_Pass2_Label";
+            this.SignUp_Pass2_Label.Size = new System.Drawing.Size(0, 13);
+            this.SignUp_Pass2_Label.TabIndex = 24;
+            // 
+            // SignUp_Pass1_Label
+            // 
+            this.SignUp_Pass1_Label.AutoSize = true;
+            this.SignUp_Pass1_Label.Location = new System.Drawing.Point(471, 157);
+            this.SignUp_Pass1_Label.Name = "SignUp_Pass1_Label";
+            this.SignUp_Pass1_Label.Size = new System.Drawing.Size(0, 13);
+            this.SignUp_Pass1_Label.TabIndex = 23;
+            // 
+            // SignUp_User_Label
+            // 
+            this.SignUp_User_Label.AutoSize = true;
+            this.SignUp_User_Label.Location = new System.Drawing.Point(471, 70);
+            this.SignUp_User_Label.Name = "SignUp_User_Label";
+            this.SignUp_User_Label.Size = new System.Drawing.Size(0, 13);
+            this.SignUp_User_Label.TabIndex = 22;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(169, 158);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 13);
+            this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Enter Password";
             // 
@@ -372,7 +404,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(169, 245);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 13);
+            this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Re-Enter Password";
             // 
@@ -381,7 +413,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(169, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Enter Username";
             // 
@@ -410,7 +442,7 @@
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Location = new System.Drawing.Point(320, 310);
             this.button10.Name = "button10";
@@ -445,12 +477,20 @@
             this.Login.Visible = false;
             this.Login.Paint += new System.Windows.Forms.PaintEventHandler(this.Login_Paint);
             // 
+            // Login_Label
+            // 
+            this.Login_Label.AutoSize = true;
+            this.Login_Label.Location = new System.Drawing.Point(382, 291);
+            this.Login_Label.Name = "Login_Label";
+            this.Login_Label.Size = new System.Drawing.Size(0, 13);
+            this.Login_Label.TabIndex = 13;
+            // 
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
             this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Al-Mujahed Al-Anbobi", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Location = new System.Drawing.Point(338, 238);
             this.button11.Name = "button11";
@@ -494,46 +534,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Username";
             // 
-            // SignUp_User_Label
-            // 
-            this.SignUp_User_Label.AutoSize = true;
-            this.SignUp_User_Label.Location = new System.Drawing.Point(471, 70);
-            this.SignUp_User_Label.Name = "SignUp_User_Label";
-            this.SignUp_User_Label.Size = new System.Drawing.Size(0, 13);
-            this.SignUp_User_Label.TabIndex = 22;
-            // 
-            // SignUp_Pass1_Label
-            // 
-            this.SignUp_Pass1_Label.AutoSize = true;
-            this.SignUp_Pass1_Label.Location = new System.Drawing.Point(471, 157);
-            this.SignUp_Pass1_Label.Name = "SignUp_Pass1_Label";
-            this.SignUp_Pass1_Label.Size = new System.Drawing.Size(0, 13);
-            this.SignUp_Pass1_Label.TabIndex = 23;
-            // 
-            // SignUp_Pass2_Label
-            // 
-            this.SignUp_Pass2_Label.AutoSize = true;
-            this.SignUp_Pass2_Label.Location = new System.Drawing.Point(471, 245);
-            this.SignUp_Pass2_Label.Name = "SignUp_Pass2_Label";
-            this.SignUp_Pass2_Label.Size = new System.Drawing.Size(0, 13);
-            this.SignUp_Pass2_Label.TabIndex = 24;
-            // 
-            // Login_Label
-            // 
-            this.Login_Label.AutoSize = true;
-            this.Login_Label.Location = new System.Drawing.Point(382, 291);
-            this.Login_Label.Name = "Login_Label";
-            this.Login_Label.Size = new System.Drawing.Size(0, 13);
-            this.Login_Label.TabIndex = 13;
-            // 
-            // SignUp_Label
-            // 
-            this.SignUp_Label.AutoSize = true;
-            this.SignUp_Label.Location = new System.Drawing.Point(329, 365);
-            this.SignUp_Label.Name = "SignUp_Label";
-            this.SignUp_Label.Size = new System.Drawing.Size(0, 13);
-            this.SignUp_Label.TabIndex = 25;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,9 +548,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Home_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
+            this.Controls.Add(this.Home_Panel);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -6,3 +6,6 @@ D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online_Ordering_Sys
 D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.csproj.GenerateResource.Cache
 D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.exe
 D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online Ordering System.pdb
+D:\Projects\Online Ordering\Online Ordering System\bin\Debug\OOSDB.mdf
+D:\Projects\Online Ordering\Online Ordering System\bin\Debug\OOSDB_log.ldf
+D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online_Ordering_System.Form2.resources
