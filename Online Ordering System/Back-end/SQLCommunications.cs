@@ -37,7 +37,7 @@ namespace SQLCommunications
                 CommBase.Intialize();
             }
             command.Connection = CommBase.connection;
-            ItemDisc[] Items = Receiver.ReadFromProduct("SELECT * FROM Product");
+            ItemDisc[] Items = Receiver.ReadFromProduct("SELECT * FROM Product;");
             foreach (ItemDisc i in id)
             {
                 bool FoundDublicate = false;
@@ -46,13 +46,13 @@ namespace SQLCommunications
                     if (i.name == j.name)
                     {
                         FoundDublicate = true;
-                        ExecuteNoReturn("UPDATE Product SET quantity = quantity + " + i.Quantity + " WHERE id = " + j.ID);
+                        ExecuteNoReturn("UPDATE Product SET quantity = quantity + " + i.Quantity + " WHERE id = " + j.ID + ";");
                         break;
                     }
                 }
                 if (!FoundDublicate)
                 {
-                    command.CommandText = "INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "')";
+                    command.CommandText = "INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "');";
                     command.ExecuteNonQuery();
                 }
             }
@@ -67,7 +67,7 @@ namespace SQLCommunications
                 CommBase.Intialize();
             }
             command.Connection = CommBase.connection;
-            User[] AllUsers = Receiver.ReadFromAccounts("SELECT * FROM Accounts");
+            User[] AllUsers = Receiver.ReadFromAccounts("SELECT * FROM Accounts;");
             foreach (User i in AllUsers)
             {
                 if (i.Username == user.Username)
@@ -75,7 +75,7 @@ namespace SQLCommunications
                     return false;
                 }
             }
-            command.CommandText = "INSERT INTO Accounts(username , password) Values('" + user.Username + "','" + user.Password + "')";
+            command.CommandText = "INSERT INTO Accounts(username , password) Values('" + user.Username + "','" + user.Password + "');";
             command.ExecuteNonQuery();
             return true;
         }
@@ -158,7 +158,7 @@ namespace SQLCommunications
                 CommBase.Intialize();
             }
             command.Connection = CommBase.connection;
-            command.CommandText = "SELECT * FROM Orders WHERE username = " + UserName;
+            command.CommandText = "SELECT * FROM Orders WHERE username = '" + UserName + "';";
             reader = command.ExecuteReader();
             List<ItemDisc> IDList = new List<ItemDisc>();
             while (reader.Read())
