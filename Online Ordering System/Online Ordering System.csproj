@@ -65,6 +65,7 @@
     <Compile Include="Back-end\Marketing.cs" />
     <Compile Include="Back-end\Registor.cs" />
     <Compile Include="Back-end\SQLCommunications.cs" />
+    <Compile Include="Front-end\ItemView.cs" />
     <Compile Include="Home Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,17 +117,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Front-end\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="OOSDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="OOSDB.mdf" />
     <Content Include="OOSDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>OOSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\all2-0١.png" />
+    <None Include="Resources\all-0١.png" />
+    <None Include="Resources\unexpensive-0١.png" />
+    <None Include="Resources\trusted-0١.png" />
+    <None Include="Resources\fast-0١.png" />
     <None Include="Resources\pattern2.png" />
     <None Include="Resources\pattern1.png" />
     <None Include="Resources\lgo!-0١1.png" />
