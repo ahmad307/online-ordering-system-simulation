@@ -62,16 +62,16 @@ namespace Online_Ordering_System
 
         private void label3_Click_1(object sender, EventArgs e)
         {
-            LastPanel.Visible = false;
             Login.Visible = true;
+            LastPanel.Visible = false;
             LastPanel = Login;    
         
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            LastPanel.Visible = false;
             Sign_Up.Visible = true;
+            LastPanel.Visible = false;
             LastPanel = Sign_Up;
         }
 
@@ -92,15 +92,15 @@ namespace Online_Ordering_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LastPanel.Visible = false;
             Home_Panel.Visible = true;
+            LastPanel.Visible = false;
             LastPanel = Home_Panel;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            LastPanel.Visible = false;
             Home_Panel.Visible = true;
+            LastPanel.Visible = false;
             LastPanel = Home_Panel;
         }
 

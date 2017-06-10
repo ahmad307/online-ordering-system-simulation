@@ -121,6 +121,7 @@ namespace SQLCommunications
                 i.price = (float)reader["price"];
                 i.Quantity = (int)reader["quantity"];
                 i.Type = (string)reader["type"];
+                i.manfacture = " ";
                 i.delivered = false;
                 IDlist.Add(i);
             }
@@ -162,14 +163,15 @@ namespace SQLCommunications
             List<ItemDisc> IDList = new List<ItemDisc>();
             while (reader.Read())
             {
-                    ItemDisc i;
-                    i.ID = (int)reader["ProductID"];
-                    i.name = (string)reader["name"];
-                    i.price = (float)reader["price"];
-                    i.Quantity = (int)reader["quantity"];
-                    i.Type = (string)reader["type"];
-                    i.delivered = (bool)reader["delivered"];
-                    IDList.Add(i);
+                ItemDisc i;
+                i.ID = (int)reader["ProductID"];
+                i.name = (string)reader["name"];
+                i.price = (float)reader["price"];
+                i.Quantity = (int)reader["quantity"];
+                i.Type = (string)reader["type"];
+                i.delivered = (bool)reader["delivered"];
+                i.manfacture = " ";
+                IDList.Add(i);
             }
             return IDList.ToArray();
         }
