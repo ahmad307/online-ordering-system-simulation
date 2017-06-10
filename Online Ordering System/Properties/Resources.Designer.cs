@@ -63,6 +63,36 @@ namespace Online_Ordering_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap all_0١ {
+            get {
+                object obj = ResourceManager.GetObject("all-0١", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap all2_0١ {
+            get {
+                object obj = ResourceManager.GetObject("all2-0١", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fast_0١ {
+            get {
+                object obj = ResourceManager.GetObject("fast-0١", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lgo__0١ {
             get {
                 object obj = ResourceManager.GetObject("lgo!-0١", resourceCulture);
@@ -86,6 +116,26 @@ namespace Online_Ordering_System.Properties {
         internal static System.Drawing.Bitmap pattern1 {
             get {
                 object obj = ResourceManager.GetObject("pattern1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trusted_0١ {
+            get {
+                object obj = ResourceManager.GetObject("trusted-0١", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unexpensive_0١ {
+            get {
+                object obj = ResourceManager.GetObject("unexpensive-0١", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
