@@ -1,4 +1,4 @@
 # online-ordering-system-simulation
-A simple Program that simulates online ordering systems (e.g., Amazon). Built using C#,SQL and Windows Forms.
+A windows forms application that simulates online ordering systems (e.g., Amazon).
 
-Currently we're not accepting public contributions..
+Built using C#, SQL and Windows Forms.
