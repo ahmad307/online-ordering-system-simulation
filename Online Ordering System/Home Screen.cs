@@ -29,7 +29,7 @@ namespace Online_Ordering_System
 
         }
 
-        private void button4_MouseHover(object sender, EventArgs e)
+        private void button4_MouseHover(object sender, EventArgs e) //making orange effect when hovering over category buttons
         {
             Color clr = Color.FromArgb(0, 255, 188, 72);
             Button btn = (Button)sender;
@@ -38,7 +38,7 @@ namespace Online_Ordering_System
 
         }
 
-        private void button4_MouseLeave(object sender, EventArgs e)
+        private void button4_MouseLeave(object sender, EventArgs e)//making orange effect when hovering over category buttons
         {
             Button btn = (Button)sender;
             btn.ForeColor = Color.Black;
@@ -60,16 +60,20 @@ namespace Online_Ordering_System
             
         }
 
-        private void label3_Click_1(object sender, EventArgs e)
+        private void label3_Click_1(object sender, EventArgs e) // showing login panel
         {
+            if (LastPanel == Login)
+                return;
             Login.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Login;    
         
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e) // shwoing signup panel
         {
+            if (LastPanel == Sign_Up)
+                return;
             Sign_Up.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Sign_Up;
@@ -90,25 +94,29 @@ namespace Online_Ordering_System
             LastPanel = Home_Panel;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //shwoing home panel
         {
+            if (LastPanel == Home_Panel)
+                return;
             Home_Panel.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Home_Panel;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e) //showing home panel
         {
+            if (LastPanel == Home_Panel)
+                return;
             Home_Panel.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Home_Panel;
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e) //loging in
         {
             
             
-            if ( FetchData.CheckPass ( Login_user_txt.ToString() , Login_pass_txt.ToString() ) )
+            if ( FetchData.CheckPass ( Login_user_txt.ToString() , Login_pass_txt.ToString() ) ) // checking user and pass match from data base
             {
                 Login_Label.ForeColor = Color.Green;
                 Login_Label.Text = "Welcome";
@@ -122,25 +130,30 @@ namespace Online_Ordering_System
               
         }
 
-        private void SignUp_User_change(object sender, EventArgs e)
+        private void SignUp_User_change(object sender, EventArgs e) //signing up
         {
-            if( /*user mwgod abl kda*/     true/*el true de ay klam*/)
-            {
-                SignUp_User_Label.ForeColor = Color.Red;
-                SignUp_User_Label.Text = "Username used before";
-                usercheck = false;
-            }
-            else
+            User user = new User();
+            user.Username = SignUp_User_txt.Text.ToString();
+
+            if(  Transmitter.CheckUser(user))//check if username  is Available
             {
                 SignUp_User_Label.ForeColor = Color.Green;
                 SignUp_User_Label.Text = "OK ✓";
                 usercheck = true;
+
+            }
+            else
+            {
+                
+                SignUp_User_Label.ForeColor = Color.Red;
+                SignUp_User_Label.Text = "Username used before";
+                usercheck = false;
             }
         }
 
-        private void SignUp_Pass1_txt_TextChanged(object sender, EventArgs e)
+        private void SignUp_Pass1_txt_TextChanged(object sender, EventArgs e) 
         {
-            if( SignUp_Pass1_txt.TextLength <8)
+            if( SignUp_Pass1_txt.TextLength <8) //checking if pass length is at least 8 or not
             {
                 SignUp_Pass1_Label.ForeColor = Color.Red;
                 SignUp_Pass1_Label.Text = "Password must be at least 8 characters";
@@ -157,7 +170,7 @@ namespace Online_Ordering_System
 
         private void SignUp_Pass2_txt_TextChanged(object sender, EventArgs e)
         {
-            if( SignUp_Pass2_txt.Text != SignUp_Pass1_txt.Text)
+            if( SignUp_Pass2_txt.Text != SignUp_Pass1_txt.Text) //check that the 2 passwords are identical or not
             {
                 SignUp_Pass2_Label.ForeColor = Color.Red;
                 SignUp_Pass2_Label.Text = "The Passwords don't match";
@@ -173,9 +186,14 @@ namespace Online_Ordering_System
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if(usercheck && pass1check && pass2check)
+            if(usercheck && pass1check && pass2check) //check that input is free of errors
             {
-                //signUp function
+                User user= new User(); ;
+                
+                user.Username = SignUp_User_txt.Text.ToString();
+                user.Password = SignUp_Pass2_txt.Text.ToString();
+                
+                Transmitter.RegisterUser(user); //sign up function 
             }
             else
             {
