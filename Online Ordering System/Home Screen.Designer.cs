@@ -241,13 +241,14 @@
             // 
             // Home_Panel
             // 
+            this.Home_Panel.AutoScroll = true;
             this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
             this.Home_Panel.Controls.Add(this.comboBox2);
             this.Home_Panel.Controls.Add(this.comboBox1);
             this.Home_Panel.Controls.Add(this.label2);
             this.Home_Panel.Location = new System.Drawing.Point(208, 70);
             this.Home_Panel.Name = "Home_Panel";
-            this.Home_Panel.Size = new System.Drawing.Size(800, 464);
+            this.Home_Panel.Size = new System.Drawing.Size(788, 464);
             this.Home_Panel.TabIndex = 7;
             this.Home_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Panel_Paint);
             // 
@@ -548,9 +549,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.Home_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
-            this.Controls.Add(this.Home_Panel);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

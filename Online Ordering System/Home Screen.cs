@@ -20,8 +20,13 @@ namespace Online_Ordering_System
         public Form2()
         {
             InitializeComponent();
-
-
+            ItemDisc[] items = Receiver.ReadFromProduct("SELECT * FROM Product;");
+            List<ItemView> ViewedItems = new List<ItemView>();
+            foreach (ItemDisc i in items)
+            {
+                ItemView x = new ItemView(i, Home_Panel);
+                ViewedItems.Add(x);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -81,7 +86,7 @@ namespace Online_Ordering_System
 
         private void Home_Panel_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void Login_Paint(object sender, PaintEventArgs e)
