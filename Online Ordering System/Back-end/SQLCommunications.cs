@@ -81,8 +81,8 @@ namespace SQLCommunications
         {
             if (CheckUser(user))
             {
-                command.CommandText = "INSERT INTO Accounts(username , password) Values('" + user.Username + "','" + user.Password + "');";
-                command.ExecuteNonQuery();
+                command.CommandText = "INSERT INTO Accounts (username , password) VALUES ('" + user.Username + "','" + user.Password + "');";
+                int n = command.ExecuteNonQuery();
                 return true;
             }
             else
@@ -136,6 +136,7 @@ namespace SQLCommunications
                 i.delivered = false;
                 IDlist.Add(i);
             }
+            reader.Close();
             return IDlist.ToArray();
         }
         ///<summary>
@@ -160,6 +161,7 @@ namespace SQLCommunications
                 i.process = new Marketing();
                 Userlist.Add(i);
             }
+            reader.Close();
             return Userlist.ToArray();
         }
         public static ItemDisc[] GetOrdersOf(string UserName)
@@ -184,6 +186,7 @@ namespace SQLCommunications
                 i.manfacture = " ";
                 IDList.Add(i);
             }
+            reader.Close();
             return IDList.ToArray();
         }
     }

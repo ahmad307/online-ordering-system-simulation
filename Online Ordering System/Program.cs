@@ -16,7 +16,9 @@ namespace Online_Ordering_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SQLCommunications.CommBase.Intialize();
             Application.Run(new Form2());
+            SQLCommunications.CommBase.ShutDown();
         }
     }
 }

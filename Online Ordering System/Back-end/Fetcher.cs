@@ -39,7 +39,7 @@ namespace SQLCommunications
 
         public static bool CheckPass(string user, string pass)
         {
-            User[] x = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + user + "';");
+            User[] x = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = N'" + user + "';");
             if (x.Length == 0) return false;
             else if (pass == x[0].Password)
             {

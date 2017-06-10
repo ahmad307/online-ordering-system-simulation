@@ -20,8 +20,8 @@ namespace Online_Ordering_System
         public Form2()
         {
             InitializeComponent();
-            
-          
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace Online_Ordering_System
 
         private void label3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label3_Click_1(object sender, EventArgs e) // showing login panel
@@ -66,8 +66,8 @@ namespace Online_Ordering_System
                 return;
             Login.Visible = true;
             LastPanel.Visible = false;
-            LastPanel = Login;    
-        
+            LastPanel = Login;
+
         }
 
         private void label4_Click(object sender, EventArgs e) // shwoing signup panel
@@ -114,9 +114,9 @@ namespace Online_Ordering_System
 
         private void button11_Click(object sender, EventArgs e) //loging in
         {
-            
-            
-            if ( FetchData.CheckPass ( Login_user_txt.ToString() , Login_pass_txt.ToString() ) ) // checking user and pass match from data base
+
+
+            if (FetchData.CheckPass(Login_user_txt.Text, Login_pass_txt.Text)) // checking user and pass match from data base
             {
                 Login_Label.ForeColor = Color.Green;
                 Login_Label.Text = "Welcome";
@@ -127,15 +127,15 @@ namespace Online_Ordering_System
                 Login_Label.Text = "Invalid Username or Password";
 
             }
-              
+
         }
 
         private void SignUp_User_change(object sender, EventArgs e) //signing up
         {
             User user = new User();
-            user.Username = SignUp_User_txt.Text.ToString();
+            user.Username = SignUp_User_txt.Text;
 
-            if(  Transmitter.CheckUser(user))//check if username  is Available
+            if (Transmitter.CheckUser(user))//check if username  is Available
             {
                 SignUp_User_Label.ForeColor = Color.Green;
                 SignUp_User_Label.Text = "OK ✓";
@@ -144,16 +144,16 @@ namespace Online_Ordering_System
             }
             else
             {
-                
+
                 SignUp_User_Label.ForeColor = Color.Red;
                 SignUp_User_Label.Text = "Username used before";
                 usercheck = false;
             }
         }
 
-        private void SignUp_Pass1_txt_TextChanged(object sender, EventArgs e) 
+        private void SignUp_Pass1_txt_TextChanged(object sender, EventArgs e)
         {
-            if( SignUp_Pass1_txt.TextLength <8) //checking if pass length is at least 8 or not
+            if (SignUp_Pass1_txt.TextLength < 8) //checking if pass length is at least 8 or not
             {
                 SignUp_Pass1_Label.ForeColor = Color.Red;
                 SignUp_Pass1_Label.Text = "Password must be at least 8 characters";
@@ -170,7 +170,7 @@ namespace Online_Ordering_System
 
         private void SignUp_Pass2_txt_TextChanged(object sender, EventArgs e)
         {
-            if( SignUp_Pass2_txt.Text != SignUp_Pass1_txt.Text) //check that the 2 passwords are identical or not
+            if (SignUp_Pass2_txt.Text != SignUp_Pass1_txt.Text) //check that the 2 passwords are identical or not
             {
                 SignUp_Pass2_Label.ForeColor = Color.Red;
                 SignUp_Pass2_Label.Text = "The Passwords don't match";
@@ -186,13 +186,13 @@ namespace Online_Ordering_System
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if(usercheck && pass1check && pass2check) //check that input is free of errors
+            if (usercheck && pass1check && pass2check) //check that input is free of errors
             {
-                User user= new User(); ;
-                
-                user.Username = SignUp_User_txt.Text.ToString();
-                user.Password = SignUp_Pass2_txt.Text.ToString();
-                
+                User user = new User();
+
+                user.Username = SignUp_User_txt.Text;
+                user.Password = SignUp_Pass2_txt.Text;
+
                 Transmitter.RegisterUser(user); //sign up function 
             }
             else
