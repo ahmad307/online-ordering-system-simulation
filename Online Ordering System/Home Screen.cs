@@ -16,22 +16,38 @@ namespace Online_Ordering_System
         private bool usercheck = false;
         private bool pass1check = false;
         private bool pass2check = false;
+        ItemDisc[] items;
+        List<ItemView> ViewedItems;
         Panel LastPanel;
         public Form2()
         {
             InitializeComponent();
-            ItemDisc[] items = Receiver.ReadFromProduct("SELECT * FROM Product;");
-            List<ItemView> ViewedItems = new List<ItemView>();
+            ListItems(Receiver.ReadFromProduct("SELECT * FROM Product;"));
+        }
+        void ListItems(ItemDisc[] Items)
+        {
+            items = Items;
+            ViewedItems = new List<ItemView>();
             foreach (ItemDisc i in items)
             {
-                ItemView x = new ItemView(i, Home_Panel);
-                ViewedItems.Add(x);
+                if (i.Quantity > 0)
+                {
+                    ItemView x = new ItemView(i, Home_Panel);
+                    ViewedItems.Add(x);
+                }
             }
         }
-
+        void CleanUp()
+        {
+            foreach (ItemView i in ViewedItems)
+            {
+                i.Clear();
+            }
+            ItemView.offset = 0;
+            ViewedItems.Clear();
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button4_MouseHover(object sender, EventArgs e) //making orange effect when hovering over category buttons
@@ -86,7 +102,7 @@ namespace Online_Ordering_System
 
         private void Home_Panel_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void Login_Paint(object sender, PaintEventArgs e)
@@ -205,6 +221,14 @@ namespace Online_Ordering_System
                 SignUp_Label.ForeColor = Color.Red;
                 SignUp_Label.Text = "Pleas Fix Above Errors!";
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            CleanUp();
+            List<ItemDisc> temp = new List<ItemDisc>(items);
+            temp.RemoveAt(2);
+            ListItems(temp.ToArray());
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Drawing;
 
 public class ItemView
 {
-    static int offset = 0;
+    public static int offset = 0;
     Button buybutton = new Button();
     Label name = new Label();
     Label price = new Label();
@@ -21,10 +21,16 @@ public class ItemView
         price.Text = i.price.ToString() + "$";
         name.Location = new Point(203, 114 + offset);
         name.Text = i.name;
-        offset += 37;
+        offset += 100;
         p.Controls.Add(buybutton);
         p.Controls.Add(name);
         p.Controls.Add(price);
+    }
+    public void Clear()
+    {
+        ParentPanel.Controls.Remove(buybutton);
+        ParentPanel.Controls.Remove(name);
+        ParentPanel.Controls.Remove(price);
     }
     void BuyClick (object sender , EventArgs e)
     {

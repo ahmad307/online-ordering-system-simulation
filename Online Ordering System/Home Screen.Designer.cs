@@ -68,6 +68,7 @@
             this.Login_user_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
             this.Categories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Home_Panel.SuspendLayout();
@@ -243,6 +244,7 @@
             // 
             this.Home_Panel.AutoScroll = true;
             this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
+            this.Home_Panel.Controls.Add(this.button12);
             this.Home_Panel.Controls.Add(this.comboBox2);
             this.Home_Panel.Controls.Add(this.comboBox1);
             this.Home_Panel.Controls.Add(this.label2);
@@ -284,7 +286,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(454, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sort By:";
             // 
@@ -335,7 +337,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(861, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.Size = new System.Drawing.Size(22, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
@@ -396,7 +398,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(169, 158);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Enter Password";
             // 
@@ -405,7 +407,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(169, 245);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 13);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Re-Enter Password";
             // 
@@ -414,7 +416,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(169, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Enter Username";
             // 
@@ -535,6 +537,16 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Username";
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(159, 19);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,6 +624,7 @@
         private System.Windows.Forms.Label SignUp_User_Label;
         private System.Windows.Forms.Label Login_Label;
         private System.Windows.Forms.Label SignUp_Label;
+        private System.Windows.Forms.Button button12;
     }
 }
 
