@@ -2,33 +2,49 @@
 
 public class Marketing
 {
-    SortedDictionary<ItemDisc, int> Items;
-    void Buy(ItemDisc ordered,int quantity)
+    private List<ItemDisc> Items = new List<ItemDisc>();
+    
+    public void Buy(ItemDisc ordered)
     {
-        Items[ordered] += quantity;
-    }
-    bool remove(ItemDisc ordered,int quantity)
-    {
-        if(quantity < 0)
+        bool found = false;
+        for(int i = 0; i < Items.Count; i++)
         {
-            return false;
+            if(Items[i].name == ordered.name)
+            {
+                ItemDisc C = Items[i];
+                C.Quantity += ordered.Quantity;
+                Items.RemoveAt(i);
+                Items.Add(C);
+                found = true;
+                break;
+            }
         }
-        else if(Items[ordered] < quantity)
+        if(!found)
         {
-            return false;
-        }
-        else if(Items[ordered] == quantity)
-        {
-            Items.Remove(ordered);
-            return true;
-        }
-        else
-        {
-            Items[ordered] -= quantity;
-            return true;
+            Items.Add(ordered);
         }
     }
-    SortedDictionary<ItemDisc,int> show()
+    public bool Remove(ItemDisc ordered,int quantity)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].name == ordered.name)
+            {
+                if (Items[i].Quantity >= ordered.Quantity)
+                {
+                    ItemDisc C = Items[i];
+                    C.Quantity -= ordered.Quantity;
+                    Items.RemoveAt(i);
+                    if(C.Quantity != 0)
+                        Items.Add(C);
+                    return true;
+                }
+                break;
+            }
+        }
+        return false;
+    }
+    public List<ItemDisc> show()
     {
         return Items;
     }
@@ -36,17 +52,17 @@ public class Marketing
 
 static class functions
 {
-    static void Sort_Prize(List<ItemDisc> C_items)
+    public static void Sort_Prize(List<ItemDisc> C_items)
     {
         ItemDisc.ComparisonCo = 2;
         C_items.Sort();
     }
-    static void sort_name(List<ItemDisc> C_items)
+    public static void sort_name(List<ItemDisc> C_items)
     {
         ItemDisc.ComparisonCo = 1;
         C_items.Sort();
     }
-    static List<ItemDisc> Search_items (string sub, List <ItemDisc> C_items)
+    public static List<ItemDisc> Search_items (string sub, List <ItemDisc> C_items)
     {
         List<ItemDisc> Send = new List<ItemDisc>();
         foreach(ItemDisc c in C_items)
@@ -56,7 +72,7 @@ static class functions
         }
         return Send;
     }
-    static List<ItemDisc> Filter(List<string> Companies, List<ItemDisc> C_items, int low = 0, int high = int.MaxValue)
+    public static List<ItemDisc> Filter(List<string> Companies, List<ItemDisc> C_items, int low = 0, int high = int.MaxValue)
     {
         List<ItemDisc> send = new List<ItemDisc>();
         foreach(ItemDisc c in C_items)
@@ -69,4 +85,3 @@ static class functions
         return send;
     }
 }
-
