@@ -6,12 +6,12 @@ namespace SQLCommunications
 {
     public class FetchData
     {
-        public static ItemDisc GetItemInfo(string s)
+        public static ItemDisc GetItemInfo(string s)    //returns ItemDisc struct with product's information
         {
             return Receiver.ReadFromProduct("SELECT * from Product WHERE name = '" + s + "';")[0];
         }
 
-        public static string GetProductDetail(string productName, string Detail)
+        public static string GetProductDetail(string productName, string Detail)    //returns a string with a certain porperty of the product
         {
             float x;
             if (Detail == "type")
@@ -32,12 +32,12 @@ namespace SQLCommunications
 
         }
 
-        public static List<ItemDisc> Category(string s)
+        public static List<ItemDisc> Category(string s) //return a struct list of products in a certain category
         {
             return new List<ItemDisc>(Receiver.ReadFromProduct("SELECT * FROM Product WHERE category = '" + s + "';"));
         }
 
-        public static bool CheckPass(string user, string pass)
+        public static bool CheckPass(string user, string pass)  //checks if entered password matches the user name
         {
             User[] x = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = N'" + user + "';");
             if (x.Length == 0) return false;
