@@ -1,7 +1,10 @@
 ﻿using System;
 
+public enum DeliveryState { Pending, InProgress, Delieverd };
+
 public struct ItemDisc : IComparable
 {
+    DeliveryState state;
     public static int ComparisonCo = 0;
     public int ID;
     public string name;
@@ -9,7 +12,6 @@ public struct ItemDisc : IComparable
     public int Quantity;
     public string Type;
     public string manfacture;
-    public bool delivered;
     public int CompareTo(object o)
     {
         if (o.GetType() == GetType())
