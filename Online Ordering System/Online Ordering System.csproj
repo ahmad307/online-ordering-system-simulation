@@ -123,6 +123,10 @@
     <Content Include="OOSDB_log.ldf">
       <DependentUpon>OOSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\cocaa1.jpg" />
+    <None Include="Resources\cooccaa.jpg" />
+    <None Include="Resources\coca - Copy.jpg" />
+    <Content Include="Resources\coca.jpg" />
     <None Include="Resources\all2-0١.png" />
     <None Include="Resources\all-0١.png" />
     <None Include="Resources\unexpensive-0١.png" />
