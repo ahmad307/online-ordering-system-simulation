@@ -53,7 +53,11 @@ namespace SQLCommunications
             SortedDictionary<string, int> D = new SortedDictionary<string, int>();
             List<string> temp = new List<string>();
 
-            ItemDisc[] x = Receiver.ReadFromProduct("SELECT type FROM Product;");
+            ItemDisc[] x = Receiver.ReadFromProduct("SELECT * FROM Product;");
+            for(int i = 0; i < x.Length; i++)
+            {
+                D[x[i].Type] = 0;
+            }
             for (int i=0;i<x.Length;i++)
             {
                 if (D[x[i].Type] == 0)

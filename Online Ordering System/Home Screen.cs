@@ -18,12 +18,22 @@ namespace Online_Ordering_System
         private bool pass2check = false;
         ItemDisc[] items;
         List<ItemView> ViewedItems;
-        List<>
+        List<CategoriesView> ViewedCategories;
+
         Panel LastPanel;
         public Form2()
         {
             InitializeComponent();
             ListItems(Receiver.ReadFromProduct("SELECT * FROM Product;"));
+            List<string> CL = FetchData.AllCategories();
+            ViewedCategories = new List<CategoriesView>();
+            foreach(string s in CL)
+            {
+                CategoriesView C = new CategoriesView(s,Categories);
+                ViewedCategories.Add(C);
+
+
+            }
         }
         void ListItems(ItemDisc[] Items)
         {
