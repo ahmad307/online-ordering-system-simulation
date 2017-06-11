@@ -18,6 +18,7 @@ namespace Online_Ordering_System
         private bool pass2check = false;
         ItemDisc[] items;
         List<ItemView> ViewedItems;
+        List<>
         Panel LastPanel;
         public Form2()
         {
@@ -37,6 +38,7 @@ namespace Online_Ordering_System
                 }
             }
         }
+        
         void CleanUp()
         {
             foreach (ItemView i in ViewedItems)
