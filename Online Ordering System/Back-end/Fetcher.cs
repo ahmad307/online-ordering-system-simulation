@@ -34,7 +34,7 @@ namespace SQLCommunications
 
         public static List<ItemDisc> Category(string s) //return a struct list of products in a certain category
         {
-            return new List<ItemDisc>(Receiver.ReadFromProduct("SELECT * FROM Product WHERE category = '" + s + "';"));
+            return new List<ItemDisc>(Receiver.ReadFromProduct("SELECT * FROM Product WHERE type = '" + s + "';"));
         }
 
         public static bool CheckPass(string user, string pass)  //checks if entered password matches the user name
