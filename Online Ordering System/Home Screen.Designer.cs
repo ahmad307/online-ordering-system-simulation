@@ -42,7 +42,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Home_Panel = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -244,7 +243,6 @@
             // 
             this.Home_Panel.AutoScroll = true;
             this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
-            this.Home_Panel.Controls.Add(this.button12);
             this.Home_Panel.Controls.Add(this.comboBox2);
             this.Home_Panel.Controls.Add(this.comboBox1);
             this.Home_Panel.Controls.Add(this.label2);
@@ -253,17 +251,6 @@
             this.Home_Panel.Size = new System.Drawing.Size(788, 464);
             this.Home_Panel.TabIndex = 7;
             this.Home_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Panel_Paint);
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.Transparent;
-            this.button12.Location = new System.Drawing.Point(184, 13);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // comboBox2
             // 
@@ -625,7 +612,6 @@
         private System.Windows.Forms.Label SignUp_User_Label;
         private System.Windows.Forms.Label Login_Label;
         private System.Windows.Forms.Label SignUp_Label;
-        private System.Windows.Forms.Button button12;
     }
 }
 
