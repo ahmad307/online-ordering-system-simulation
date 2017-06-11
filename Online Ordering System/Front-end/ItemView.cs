@@ -32,11 +32,11 @@ public class ItemView
             pic.Size = new Size(100, 100);
 
             //product name label proprties
-            name.Location = new Point(38 + x_offset, 160 + y_offset);
+            name.Location = new Point(38 + x_offset, 158 + y_offset);
             name.Text = i.name;
             name.Font = new Font("Britannic Bold", 12);
             name.ForeColor = Color.RoyalBlue;
-
+            name.BackColor = Color.Transparent;
             //product price label proprties
             price.Location = new Point(38 + x_offset, 180 + y_offset);
             price.Text = i.price.ToString() + "$";
