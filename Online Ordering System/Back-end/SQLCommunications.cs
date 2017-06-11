@@ -1,42 +1,107 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using System;
 
 namespace SQLCommunications
 {
     ///<summary>
     ///This is the class that contains what other classes have in common
     ///</summary>
-    public static class CommBase
+    public class CommBase
     {
+        public enum TableType { Product, Accounts, Orders };
         public static bool IsIntialized = false;
+        public static SqlCommand command = new SqlCommand();
         public static SqlConnection connection = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\\OOSDB.mdf;Integrated Security = True");
+        public static SqlDataReader reader;
+        ///<summary>
+        ///Connects to the SQL database
+        ///</summary>
         public static void Intialize()
         {
-            connection.Open();
-            IsIntialized = true;
+            if (!IsIntialized)
+            {
+                connection.Open();
+                command.Connection = connection;
+                IsIntialized = true;
+            }
         }
+        ///<summary>
+        ///Disconnects database
+        ///</summary>
         public static void ShutDown()
         {
             connection.Close();
             IsIntialized = false;
         }
+        ///<summary>
+        ///Execute a query that doesn't return anything
+        ///</summary>
+        public static void ExecuteNoReturn(string Query)
+        {
+            command.CommandText = Query;
+            command.ExecuteNonQuery();
+        }
+        ///<summary>
+        ///A unified functions that reads from any table
+        ///</summary>
+        public static object ReadFromTable(string Query, TableType t)
+        {
+            Intialize();
+            command.CommandText = Query;
+            reader = command.ExecuteReader();
+            List<object> list = new List<object>();
+            while (reader.Read())
+            {
+                if (t == TableType.Product)
+                {
+                    ItemDisc i;
+                    i.ID = (int)reader["id"];
+                    i.name = (string)reader["name"];
+                    i.price = (float)reader["price"];
+                    i.Quantity = (int)reader["quantity"];
+                    i.Type = (string)reader["type"];
+                    i.manfacture = " ";
+                    i.delivered = false;
+                    list.Add(i);
+                }
+                else if (t == TableType.Accounts)
+                {
+                    User i;
+                    i.ID = (int)reader["id"];
+                    i.Username = (string)reader["username"];
+                    i.Password = (string)reader["password"];
+                    i.process = new Marketing();
+                    list.Add(i);
+                }
+                else if (t == TableType.Orders)
+                {
+                    ItemDisc i;
+                    i.ID = (int)reader["ProductID"];
+                    i.name = (string)reader["name"];
+                    i.price = (float)reader["price"];
+                    i.Quantity = (int)reader["quantity"];
+                    i.Type = (string)reader["type"];
+                    i.delivered = (bool)reader["delivered"];
+                    i.manfacture = " ";
+                    list.Add(i);
+                }
+            }
+            reader.Close();
+            return list.ToArray();
+        }
     }
     ///<summary>
     ///Transmits data into database
     ///</summary>
-    public static class Transmitter
+    public class Transmitter : CommBase
     {
-        static SqlCommand command = new SqlCommand();
         ///<summary>
         ///Inserts items into Product table while checking for duplicates
         ///</summary>
         public static void InsertIntoTable(params ItemDisc[] id)
         {
-            if (!CommBase.IsIntialized)
-            {
-                CommBase.Intialize();
-            }
-            command.Connection = CommBase.connection;
+            Intialize();
             ItemDisc[] Items = Receiver.ReadFromProduct("SELECT * FROM Product;");
             foreach (ItemDisc i in id)
             {
@@ -52,21 +117,16 @@ namespace SQLCommunications
                 }
                 if (!FoundDublicate)
                 {
-                    command.CommandText = "INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "');";
-                    command.ExecuteNonQuery();
+                    ExecuteNoReturn("INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "');");
                 }
             }
         }
         ///<summary>
-        ///registers a user , returns false if username already exists
+        ///Checks if a user exists
         ///</summary>
         public static bool CheckUser(User user)
         {
-            if (!CommBase.IsIntialized)
-            {
-                CommBase.Intialize();
-            }
-            command.Connection = CommBase.connection;
+            Intialize();
             User[] AllUsers = Receiver.ReadFromAccounts("SELECT * FROM Accounts;");
             foreach (User i in AllUsers)
             {
@@ -77,12 +137,14 @@ namespace SQLCommunications
             }
             return true;
         }
+        ///<summary>
+        ///Registers a user , returns false if username already exists
+        ///</summary>
         public static bool RegisterUser(User user)
         {
             if (CheckUser(user))
             {
-                command.CommandText = "INSERT INTO Accounts (username , password) VALUES ('" + user.Username + "','" + user.Password + "');";
-                int n = command.ExecuteNonQuery();
+                ExecuteNoReturn("INSERT INTO Accounts (username , password) VALUES ('" + user.Username + "','" + user.Password + "');");
                 return true;
             }
             else
@@ -90,104 +152,51 @@ namespace SQLCommunications
                 return false;
             }
         }
-        ///<summary>
-        ///Execute a query that doesn't return anything
-        ///</summary>
-        public static void ExecuteNoReturn(string Query)
-        {
-            if (!CommBase.IsIntialized)
-            {
-                CommBase.Intialize();
-            }
-            command.Connection = CommBase.connection;
-            command.CommandText = Query;
-            command.ExecuteNonQuery();
-        }
+
     }
     ///<summary>
     ///Recieves data from database
     ///</summary>
-    public static class Receiver
+    public class Receiver : CommBase
     {
-        static SqlCommand command = new SqlCommand();
-        static SqlDataReader reader;
         ///<summary>
         ///returns products from Product table according to the query specified via the ItemDisc struct
         ///</summary>
         public static ItemDisc[] ReadFromProduct(string Query)
         {
-            if (!CommBase.IsIntialized)
+            object[] obj = ReadFromTable(Query, TableType.Product) as object[];
+            List<ItemDisc> list = new List<ItemDisc>();
+            foreach(object o in obj)
             {
-                CommBase.Intialize();
+                list.Add((ItemDisc)o);
             }
-            command.Connection = CommBase.connection;
-            command.CommandText = Query;
-            reader = command.ExecuteReader();
-            List<ItemDisc> IDlist = new List<ItemDisc>();
-            while (reader.Read())
-            {
-                ItemDisc i;
-                i.ID = (int)reader["id"];
-                i.name = (string)reader["name"];
-                i.price = (float)reader["price"];
-                i.Quantity = (int)reader["quantity"];
-                i.Type = (string)reader["type"];
-                i.manfacture = " ";
-                i.delivered = false;
-                IDlist.Add(i);
-            }
-            reader.Close();
-            return IDlist.ToArray();
+            return list.ToArray();
         }
         ///<summary>
         ///returns users from Accounts table according to the query specified via User struct
         ///</summary>
         public static User[] ReadFromAccounts(string Query)
         {
-            if (!CommBase.IsIntialized)
+            object[] obj = ReadFromTable(Query, TableType.Accounts) as object[];
+            List<User> list = new List<User>();
+            foreach(object o in obj)
             {
-                CommBase.Intialize();
+                list.Add((User)o);
             }
-            command.Connection = CommBase.connection;
-            command.CommandText = Query;
-            reader = command.ExecuteReader();
-            List<User> Userlist = new List<User>();
-            while (reader.Read())
-            {
-                User i;
-                i.ID = (int)reader["id"];
-                i.Username = (string)reader["username"];
-                i.Password = (string)reader["password"];
-                i.process = new Marketing();
-                Userlist.Add(i);
-            }
-            reader.Close();
-            return Userlist.ToArray();
+            return list.ToArray();
         }
+        ///<summary>
+        ///returns items ordered by the given username
+        ///</summary>
         public static ItemDisc[] GetOrdersOf(string UserName)
         {
-            if (!CommBase.IsIntialized)
+            object[] obj = ReadFromTable("SELECT * FROM Orders WHERE username = '" + UserName + "';", TableType.Orders) as object[];
+            List<ItemDisc> list = new List<ItemDisc>();
+            foreach(object o in obj)
             {
-                CommBase.Intialize();
+                list.Add((ItemDisc)o);
             }
-            command.Connection = CommBase.connection;
-            command.CommandText = "SELECT * FROM Orders WHERE username = '" + UserName + "';";
-            reader = command.ExecuteReader();
-            List<ItemDisc> IDList = new List<ItemDisc>();
-            while (reader.Read())
-            {
-                ItemDisc i;
-                i.ID = (int)reader["ProductID"];
-                i.name = (string)reader["name"];
-                i.price = (float)reader["price"];
-                i.Quantity = (int)reader["quantity"];
-                i.Type = (string)reader["type"];
-                i.delivered = (bool)reader["delivered"];
-                i.manfacture = " ";
-                IDList.Add(i);
-            }
-            reader.Close();
-            return IDList.ToArray();
+            return list.ToArray();
         }
     }
 }
