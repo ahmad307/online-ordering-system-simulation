@@ -10,13 +10,29 @@ namespace Online_Ordering_System.Front_end
     public partial class Admin : Form
     {
         List<AdminView> ViewList = new List<AdminView>();
+        List<OrderView> OrderList = new List<OrderView>();
         bool ShowFinishingLabel = false;
         Timer time = new Timer();
+        Timer OrderTime = new Timer();
         public Admin()
         {
             InitializeComponent();
             time.Tick += FinishingLabelController;
             time.Interval = 3000;
+            OrderTime.Tick += OrderTime_Tick;
+            OrderTime.Start();
+            OrderTime.Interval = 1000;
+        }
+
+        private void OrderTime_Tick(object sender, EventArgs e)
+        {
+            if (OrderPanel.Visible == true)
+            {
+                SuspendLayout();
+                CleanUpOrders();
+                ListOrder();
+                ResumeLayout();
+            }
         }
 
         private void FinishingLabelController(object sender, EventArgs e)
@@ -60,6 +76,23 @@ namespace Online_Ordering_System.Front_end
                 ViewList.Add(x);
             }
         }
+        public void ListOrder()
+        {
+            object[] arr = CommBase.ReadFromTable("SELECT * FROM Orders", CommBase.TableType.Orders) as object[];
+            foreach (object o in arr)
+            {
+                OrderView x = new OrderView((ItemDisc)o, OrderPanel);
+                OrderList.Add(x);
+            }
+        }
+        public void CleanUpOrders()
+        {
+            foreach (OrderView o in OrderList)
+            {
+                o.CleanUp();
+            }
+            OrderList.Clear();
+        }
         public void CleanUp()
         {
             foreach (AdminView i in ViewList)
@@ -69,7 +102,6 @@ namespace Online_Ordering_System.Front_end
             AdminView.offset = 0;
             ViewList.Clear();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             SuspendLayout();
@@ -106,6 +138,18 @@ namespace Online_Ordering_System.Front_end
         private void NameLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Admin_Home.Visible = true;
+            OrderPanel.Visible = false;
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            OrderPanel.Visible = true;
+            Admin_Home.Visible = false;
         }
     }
 }
