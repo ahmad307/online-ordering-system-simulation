@@ -65,9 +65,11 @@ static class functions
     public static List<ItemDisc> Search_items (string sub, List <ItemDisc> C_items)
     {
         List<ItemDisc> Send = new List<ItemDisc>();
+        sub = sub.ToLower();
         foreach(ItemDisc c in C_items)
         {
-            if (c.name.Contains(sub))
+            string z = c.name.ToLower();
+            if (z.Contains(sub))
                 Send.Add(c);
         }
         return Send;
