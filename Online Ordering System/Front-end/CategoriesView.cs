@@ -28,7 +28,6 @@ public class CategoriesView
     }
     private void button_MouseEnter(object sender, EventArgs e) //making orange effect when hovering over button
     {
-        Color clr = Color.FromArgb(0, 255, 188, 72);
         Button btn = (Button)sender;
         btn.BackColor = Color.Orange;
         btn.ForeColor = Color.White;
