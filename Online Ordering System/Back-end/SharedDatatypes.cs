@@ -4,7 +4,7 @@ public enum DeliveryState { Pending, InProgress, Delieverd };
 
 public struct ItemDisc : IComparable
 {
-    DeliveryState state;
+    public DeliveryState state;
     public static int ComparisonCo = 0;
     public int ID;
     public string name;
@@ -32,7 +32,9 @@ public struct ItemDisc : IComparable
 
 public struct User
 {
+    public static User ActiveUser;
+    public static bool IsLoggedIn = false;
     public int ID;
-    public string Username, Password;
+    public string Username, Password , address;
     public Marketing process;
 }

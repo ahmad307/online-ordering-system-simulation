@@ -12,7 +12,7 @@ public class FetchData
     
     public static List<ItemDisc> Category(string s) //return a struct list of products in a certain category
     {
-        return new List<ItemDisc>(Receiver.ReadFromProduct("SELECT * FROM Product WHERE category = '" + s + "';"));
+        return new List<ItemDisc>(Receiver.ReadFromProduct("SELECT * FROM Product WHERE type = '" + s + "';"));
     }
 
     public static bool CheckPass(string user, string pass)  //checks if entered password matches the user name
@@ -31,7 +31,11 @@ public class FetchData
         SortedDictionary<string, int> D = new SortedDictionary<string, int>();
         List<string> temp = new List<string>();
 
-        ItemDisc[] x = Receiver.ReadFromProduct("SELECT type FROM Product;");
+        ItemDisc[] x = Receiver.ReadFromProduct("SELECT * FROM Product;");
+        for(int i = 0; i < x.Length; i++)
+        {
+            D[x[i].Type] = 0;
+        }
         for (int i = 0; i < x.Length; i++)
         {
             if (D[x[i].Type] == 0)

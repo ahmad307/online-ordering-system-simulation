@@ -65,6 +65,7 @@ public class ItemView
         ParentPanel.Controls.Remove(buybutton);
         ParentPanel.Controls.Remove(name);
         ParentPanel.Controls.Remove(price);
+        ParentPanel.Controls.Remove(pic);
     }
     void BuyClick (object sender , EventArgs e)
     {

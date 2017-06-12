@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System;
 
 namespace SQLCommunications
 {
@@ -62,7 +61,7 @@ namespace SQLCommunications
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
                     i.manfacture = " ";
-                    i.delivered = false;
+                    i.state = DeliveryState.Pending;
                     list.Add(i);
                 }
                 else if (t == TableType.Accounts)
@@ -71,18 +70,19 @@ namespace SQLCommunications
                     i.ID = (int)reader["id"];
                     i.Username = (string)reader["username"];
                     i.Password = (string)reader["password"];
+                    i.address = (string)reader["address"];
                     i.process = new Marketing();
                     list.Add(i);
                 }
                 else if (t == TableType.Orders)
                 {
                     ItemDisc i;
-                    i.ID = (int)reader["ProductID"];
+                    i.ID = (int)reader["id"];
                     i.name = (string)reader["name"];
                     i.price = (float)reader["price"];
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
-                    i.delivered = (bool)reader["delivered"];
+                    i.state = (DeliveryState)((int)reader["delievered"]);
                     i.manfacture = " ";
                     list.Add(i);
                 }
@@ -122,6 +122,24 @@ namespace SQLCommunications
             }
         }
         ///<summary>
+        ///Places orders in database
+        ///</summary>
+        public static void PlaceOrders(User user, params ItemDisc[] id)
+        {
+            Intialize();
+            foreach (ItemDisc i in id)
+            {
+                ExecuteNoReturn("INSERT INTO Orders (userid , name , price , quantity , type) Values(" + user.ID + ", '" + i.name + "' , " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , 0);");
+            }
+        }
+        ///<summary>
+        ///changes order state
+        ///</summary>
+        public static void UpdateOrders(int OrderID, DeliveryState d)
+        {
+            ExecuteNoReturn("UPDATE Orders SET delievered = " + (int)d + " WHERE id = " + OrderID + ";");
+        }
+        ///<summary>
         ///Checks if a user exists
         ///</summary>
         public static bool CheckUser(User user)
@@ -152,7 +170,6 @@ namespace SQLCommunications
                 return false;
             }
         }
-
     }
     ///<summary>
     ///Recieves data from database
@@ -166,11 +183,15 @@ namespace SQLCommunications
         {
             object[] obj = ReadFromTable(Query, TableType.Product) as object[];
             List<ItemDisc> list = new List<ItemDisc>();
-            foreach(object o in obj)
+            foreach (object o in obj)
             {
                 list.Add((ItemDisc)o);
             }
             return list.ToArray();
+        }
+        public static ItemDisc[] GetAllProducts()
+        {
+            return ReadFromProduct("SELECT * FROM Product;");
         }
         ///<summary>
         ///returns users from Accounts table according to the query specified via User struct
@@ -179,7 +200,7 @@ namespace SQLCommunications
         {
             object[] obj = ReadFromTable(Query, TableType.Accounts) as object[];
             List<User> list = new List<User>();
-            foreach(object o in obj)
+            foreach (object o in obj)
             {
                 list.Add((User)o);
             }
@@ -188,11 +209,11 @@ namespace SQLCommunications
         ///<summary>
         ///returns items ordered by the given username
         ///</summary>
-        public static ItemDisc[] GetOrdersOf(string UserName)
+        public static ItemDisc[] GetOrdersOf(User user)
         {
-            object[] obj = ReadFromTable("SELECT * FROM Orders WHERE username = '" + UserName + "';", TableType.Orders) as object[];
+            object[] obj = ReadFromTable("SELECT * FROM Orders WHERE userid = '" + user.ID + "';", TableType.Orders) as object[];
             List<ItemDisc> list = new List<ItemDisc>();
-            foreach(object o in obj)
+            foreach (object o in obj)
             {
                 list.Add((ItemDisc)o);
             }
