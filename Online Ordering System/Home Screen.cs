@@ -166,6 +166,7 @@ namespace Online_Ordering_System
             {
                 Login_Label.ForeColor = Color.Green;
                 Login_Label.Text = "Welcome";
+
             }
             else
             {
@@ -289,6 +290,17 @@ namespace Online_Ordering_System
 
                 ListItems(ItemsViewed2.ToArray());
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ItemDisc[] Myitems = Receiver.GetAllProducts();
+            List<ItemDisc> Mylist = new List<ItemDisc>();
+            foreach (ItemDisc c in Myitems)
+                Mylist.Add(c);
+            Mylist = functions.Search_items(SearchBox.Text,Mylist);
+            CleanUp();
+            ListItems(Mylist.ToArray());
         }
     }
 }
