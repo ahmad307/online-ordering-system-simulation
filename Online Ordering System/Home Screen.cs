@@ -265,7 +265,10 @@ namespace Online_Ordering_System
         private void button2_Click(object sender, EventArgs e)
         {
             if (!isLogedin)
-                show_login();
+            {
+                MessageBox.Show("Please Login First", "Error!",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 //show user orders 
@@ -315,6 +318,11 @@ namespace Online_Ordering_System
             CleanUp();
             ListItems(Mylist.ToArray());
             ResumeLayout();
+        }
+
+        private void SearchBox_Click(object sender, EventArgs e)
+        {
+            SearchBox.Text = "";
         }
     }
 }

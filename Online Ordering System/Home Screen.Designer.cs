@@ -34,6 +34,7 @@
             this.Orders_Button = new System.Windows.Forms.Button();
             this.ContactUs_Button = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Home_Panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.SortOrder = new System.Windows.Forms.ComboBox();
@@ -66,10 +67,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Categories.SuspendLayout();
             this.Home_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Sign_Up.SuspendLayout();
             this.Login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Home_Button
@@ -119,10 +123,26 @@
             // Categories
             // 
             this.Categories.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Categories.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern_s;
+            this.Categories.Controls.Add(this.pictureBox1);
+            this.Categories.Controls.Add(this.label1);
             this.Categories.Location = new System.Drawing.Point(2, 70);
             this.Categories.Name = "Categories";
             this.Categories.Size = new System.Drawing.Size(221, 464);
             this.Categories.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 20F);
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(31, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 30);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Categories";
             // 
             // Home_Panel
             // 
@@ -179,7 +199,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(382, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sort By:";
             // 
@@ -230,7 +250,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(861, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.Size = new System.Drawing.Size(22, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
@@ -261,7 +281,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(173, 296);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 13);
+            this.label11.Size = new System.Drawing.Size(94, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Enter Your Adress";
             // 
@@ -272,7 +292,6 @@
             this.SignUp_Adress_txt.Size = new System.Drawing.Size(176, 20);
             this.SignUp_Adress_txt.TabIndex = 26;
             this.SignUp_Adress_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SignUp_Adress_txt.UseSystemPasswordChar = true;
             // 
             // SignUp_Label
             // 
@@ -311,7 +330,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(169, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Enter Password";
             // 
@@ -320,7 +339,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(169, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 13);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Re-Enter Password";
             // 
@@ -329,7 +348,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(169, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Enter Username";
             // 
@@ -456,9 +475,12 @@
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(225, 20);
             this.SearchBox.TabIndex = 20;
+            this.SearchBox.Text = "Search..";
+            this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Tahoma", 6F);
             this.button2.Location = new System.Drawing.Point(759, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(29, 29);
@@ -467,10 +489,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Online_Ordering_System.Properties.Resources.iconsss;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
             this.ClientSize = new System.Drawing.Size(999, 535);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchBox);
@@ -482,9 +516,9 @@
             this.Controls.Add(this.ContactUs_Button);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
+            this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.Home_Panel);
-            this.Controls.Add(this.Sign_Up);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -493,6 +527,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Categories.ResumeLayout(false);
+            this.Categories.PerformLayout();
             this.Home_Panel.ResumeLayout(false);
             this.Home_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -500,6 +536,7 @@
             this.Sign_Up.PerformLayout();
             this.Login.ResumeLayout(false);
             this.Login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,6 +579,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
