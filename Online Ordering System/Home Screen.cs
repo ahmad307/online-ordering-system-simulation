@@ -1,30 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQLCommunications;
 
 namespace Online_Ordering_System
+
 {
     public partial class Form2 : Form
     {
+        public static bool isLogedin = false;
         private bool usercheck = false;
         private bool pass1check = false;
         private bool pass2check = false;
         ItemDisc[] items;
         List<ItemView> ViewedItems;
+        List<CategoriesView> ViewedCategories;
+
         Panel LastPanel;
         public Form2()
         {
             InitializeComponent();
             ListItems(Receiver.ReadFromProduct("SELECT * FROM Product;"));
+            List<string> CL = FetchData.AllCategories();
+            ViewedCategories = new List<CategoriesView>();
+            foreach(string s in CL)
+            {
+                CategoriesView C = new CategoriesView(s,Categories , this);
+                ViewedCategories.Add(C);
+            }
         }
-        void ListItems(ItemDisc[] Items)
+        public void ListItems(ItemDisc[] Items)
         {
             items = Items;
             ViewedItems = new List<ItemView>();
@@ -37,7 +43,8 @@ namespace Online_Ordering_System
                 }
             }
         }
-        void CleanUp()
+        
+        public void CleanUp()
         {
             foreach (ItemView i in ViewedItems)
             {
@@ -45,6 +52,7 @@ namespace Online_Ordering_System
             }
             ItemView.x_offset = 0;
             ItemView.y_offset = 0;
+            ItemView.itemNum = 0;
             ViewedItems.Clear();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -81,7 +89,7 @@ namespace Online_Ordering_System
         {
 
         }
-        private void show_login()  // showing login panel
+        public void show_login()  // showing login panel
         {
             if (LastPanel == Login)
                 return;
@@ -89,7 +97,7 @@ namespace Online_Ordering_System
             LastPanel.Visible = false;
             LastPanel = Login;
         }
-        private void show_signup()  // shwoing signup panel
+        public void show_signup()  // shwoing signup panel
         {
             if (LastPanel == Sign_Up)
                 return;
@@ -97,7 +105,7 @@ namespace Online_Ordering_System
             LastPanel.Visible = false;
             LastPanel = Sign_Up;
         }
-        private void show_home() //showing home panel
+        public void show_home() //showing home panel
         {
             if (LastPanel == Home_Panel)
                 return;
@@ -240,6 +248,16 @@ namespace Online_Ordering_System
             List<ItemDisc> temp = new List<ItemDisc>(items);
             temp.RemoveAt(2);
             ListItems(temp.ToArray());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if( ! isLogedin)
+            show_login();
+            else
+            {
+                //show user orders 
+            }
         }
     }
 }

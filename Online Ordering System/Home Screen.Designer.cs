@@ -29,17 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            this.Home_Button = new System.Windows.Forms.Button();
+            this.Orders_Button = new System.Windows.Forms.Button();
+            this.ContactUs_Button = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Home_Panel = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -76,91 +71,60 @@
             this.Login.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // Home_Button
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(383, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Home";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Home_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
+            this.Home_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Home_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Home_Button.ForeColor = System.Drawing.Color.White;
+            this.Home_Button.Location = new System.Drawing.Point(383, 20);
+            this.Home_Button.Name = "Home_Button";
+            this.Home_Button.Size = new System.Drawing.Size(84, 32);
+            this.Home_Button.TabIndex = 1;
+            this.Home_Button.Text = "Home";
+            this.Home_Button.UseVisualStyleBackColor = false;
+            this.Home_Button.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Orders_Button
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(475, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 32);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Make Order";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Orders_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
+            this.Orders_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Orders_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Orders_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Bold);
+            this.Orders_Button.ForeColor = System.Drawing.Color.White;
+            this.Orders_Button.Location = new System.Drawing.Point(475, 20);
+            this.Orders_Button.Name = "Orders_Button";
+            this.Orders_Button.Size = new System.Drawing.Size(84, 32);
+            this.Orders_Button.TabIndex = 2;
+            this.Orders_Button.Text = "Your Ordes";
+            this.Orders_Button.UseVisualStyleBackColor = false;
+            this.Orders_Button.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // ContactUs_Button
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(567, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 32);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Contact Us";
-            this.button3.UseVisualStyleBackColor = false;
+            this.ContactUs_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
+            this.ContactUs_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ContactUs_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ContactUs_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ContactUs_Button.ForeColor = System.Drawing.Color.White;
+            this.ContactUs_Button.Location = new System.Drawing.Point(567, 20);
+            this.ContactUs_Button.Name = "ContactUs_Button";
+            this.ContactUs_Button.Size = new System.Drawing.Size(88, 32);
+            this.ContactUs_Button.TabIndex = 3;
+            this.ContactUs_Button.Text = "Contact Us";
+            this.ContactUs_Button.UseVisualStyleBackColor = false;
             // 
             // Categories
             // 
             this.Categories.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Categories.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
-            this.Categories.Controls.Add(this.button9);
-            this.Categories.Controls.Add(this.button8);
             this.Categories.Controls.Add(this.pictureBox1);
-            this.Categories.Controls.Add(this.button7);
-            this.Categories.Controls.Add(this.button6);
-            this.Categories.Controls.Add(this.button5);
-            this.Categories.Controls.Add(this.button4);
             this.Categories.Controls.Add(this.label1);
             this.Categories.Location = new System.Drawing.Point(2, 70);
             this.Categories.Name = "Categories";
             this.Categories.Size = new System.Drawing.Size(221, 464);
             this.Categories.TabIndex = 4;
-            // 
-            // button9
-            // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(3, 399);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(200, 33);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Category 6";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.MouseEnter += new System.EventHandler(this.button4_MouseHover);
-            this.button9.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            // 
-            // button8
-            // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(3, 342);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(200, 33);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Category 5";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.MouseEnter += new System.EventHandler(this.button4_MouseHover);
-            this.button8.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -171,59 +135,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(170, 61);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(3, 285);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(200, 33);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Category 4";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.MouseEnter += new System.EventHandler(this.button4_MouseHover);
-            this.button7.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(3, 228);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 33);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Category 3";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.MouseEnter += new System.EventHandler(this.button4_MouseHover);
-            this.button6.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(3, 171);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 33);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Category 2";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.MouseEnter += new System.EventHandler(this.button4_MouseHover);
-            this.button5.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(3, 114);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 33);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Category 1";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseHover);
-            this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
             // 
             // label1
             // 
@@ -540,22 +451,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern;
-            this.ClientSize = new System.Drawing.Size(999, 526);
+            this.ClientSize = new System.Drawing.Size(999, 535);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Categories);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ContactUs_Button);
+            this.Controls.Add(this.Orders_Button);
+            this.Controls.Add(this.Home_Button);
             this.Controls.Add(this.Home_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Categories.ResumeLayout(false);
             this.Categories.PerformLayout();
@@ -573,16 +487,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Home_Button;
+        private System.Windows.Forms.Button Orders_Button;
+        private System.Windows.Forms.Button ContactUs_Button;
         private System.Windows.Forms.Panel Categories;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel Home_Panel;
         private System.Windows.Forms.PictureBox pictureBox2;

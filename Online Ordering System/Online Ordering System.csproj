@@ -65,6 +65,8 @@
     <Compile Include="Back-end\Marketing.cs" />
     <Compile Include="Back-end\Registor.cs" />
     <Compile Include="Back-end\SQLCommunications.cs" />
+    <Compile Include="Front-end\CategoriesView.cs" />
+    <Compile Include="Front-end\Functions.cs" />
     <Compile Include="Front-end\ItemView.cs" />
     <Compile Include="Home Screen.cs">
       <SubType>Form</SubType>
