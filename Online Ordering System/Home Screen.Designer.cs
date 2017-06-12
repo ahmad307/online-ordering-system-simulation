@@ -68,12 +68,22 @@
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Product_Panel = new System.Windows.Forms.Panel();
+            this.Product_Image = new System.Windows.Forms.PictureBox();
+            this.Product_Name = new System.Windows.Forms.Label();
+            this.Product_Price = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.Categories.SuspendLayout();
             this.Home_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Sign_Up.SuspendLayout();
             this.Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Product_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Product_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // Home_Button
@@ -500,12 +510,91 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // Product_Panel
+            // 
+            this.Product_Panel.AutoScroll = true;
+            this.Product_Panel.BackColor = System.Drawing.Color.LightGray;
+            this.Product_Panel.Controls.Add(this.button3);
+            this.Product_Panel.Controls.Add(this.label13);
+            this.Product_Panel.Controls.Add(this.textBox1);
+            this.Product_Panel.Controls.Add(this.label12);
+            this.Product_Panel.Controls.Add(this.Product_Price);
+            this.Product_Panel.Controls.Add(this.Product_Name);
+            this.Product_Panel.Controls.Add(this.Product_Image);
+            this.Product_Panel.Location = new System.Drawing.Point(223, 70);
+            this.Product_Panel.Name = "Product_Panel";
+            this.Product_Panel.Size = new System.Drawing.Size(780, 463);
+            this.Product_Panel.TabIndex = 8;
+            this.Product_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Product_Panel_Paint);
+            // 
+            // Product_Image
+            // 
+            this.Product_Image.Location = new System.Drawing.Point(30, 39);
+            this.Product_Image.Name = "Product_Image";
+            this.Product_Image.Size = new System.Drawing.Size(149, 145);
+            this.Product_Image.TabIndex = 0;
+            this.Product_Image.TabStop = false;
+            // 
+            // Product_Name
+            // 
+            this.Product_Name.AutoSize = true;
+            this.Product_Name.Location = new System.Drawing.Point(197, 58);
+            this.Product_Name.Name = "Product_Name";
+            this.Product_Name.Size = new System.Drawing.Size(0, 13);
+            this.Product_Name.TabIndex = 1;
+            // 
+            // Product_Price
+            // 
+            this.Product_Price.AutoSize = true;
+            this.Product_Price.Location = new System.Drawing.Point(197, 109);
+            this.Product_Price.Name = "Product_Price";
+            this.Product_Price.Size = new System.Drawing.Size(0, 13);
+            this.Product_Price.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(197, 159);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 13);
+            this.label12.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textBox1.Location = new System.Drawing.Point(317, 109);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(50, 27);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "1";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(318, 90);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Quantity";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(473, 100);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(72, 30);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Order";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
             this.ClientSize = new System.Drawing.Size(999, 535);
+            this.Controls.Add(this.Product_Panel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.label5);
@@ -537,6 +626,9 @@
             this.Login.ResumeLayout(false);
             this.Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Product_Panel.ResumeLayout(false);
+            this.Product_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Product_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,6 +673,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Product_Panel;
+        private System.Windows.Forms.Label Product_Price;
+        private System.Windows.Forms.Label Product_Name;
+        private System.Windows.Forms.PictureBox Product_Image;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
     }
 }
 

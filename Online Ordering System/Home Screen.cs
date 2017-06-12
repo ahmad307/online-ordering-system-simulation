@@ -43,7 +43,7 @@ namespace Online_Ordering_System
             {
                 if (i.Quantity > 0)
                 {
-                    ItemView x = new ItemView(i, Home_Panel);
+                    ItemView x = new ItemView(i, Home_Panel,Product_Panel);
                     ViewedItems.Add(x);
                     ItemsViewed.Add(i);
                 }
@@ -120,6 +120,21 @@ namespace Online_Ordering_System
             Home_Panel.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Home_Panel;
+
+        }
+        public void show_Product(ItemDisc item) //showing home panel
+        {
+            if (LastPanel ==Product_Panel)
+                return;
+            Product_Panel.Visible = true;
+            LastPanel.Visible = false;
+            LastPanel = Product_Panel;
+
+            Product_Name.Text = item.name;
+            Product_Price.Text = item.price.ToString();
+            Product_Image.Image = item.GetImage();
+
+
 
         }
 
@@ -323,6 +338,11 @@ namespace Online_Ordering_System
         private void SearchBox_Click(object sender, EventArgs e)
         {
             SearchBox.Text = "";
+        }
+
+        private void Product_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
