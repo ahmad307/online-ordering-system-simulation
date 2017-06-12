@@ -78,12 +78,12 @@ namespace SQLCommunications
                 else if (t == TableType.Orders)
                 {
                     ItemDisc i;
-                    i.ID = (int)reader["ProductID"];
+                    i.ID = (int)reader["id"];
                     i.name = (string)reader["name"];
                     i.price = (float)reader["price"];
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
-                    i.state = DeliveryState.Pending;
+                    i.state = (DeliveryState)((int)reader["delievered"]);
                     i.manfacture = " ";
                     list.Add(i);
                 }
@@ -121,6 +121,24 @@ namespace SQLCommunications
                     ExecuteNoReturn("INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "');");
                 }
             }
+        }
+        ///<summary>
+        ///Places orders in database
+        ///</summary>
+        public static void PlaceOrders(User user, params ItemDisc[] id)
+        {
+            Intialize();
+            foreach (ItemDisc i in id)
+            {
+                ExecuteNoReturn("INSERT INTO Orders (userid , name , price , quantity , type) Values(" + user.ID + ", '" + i.name + "' , " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , 0);");
+            }
+        }
+        ///<summary>
+        ///changes order state
+        ///</summary>
+        public static void UpdateOrders(int OrderID, DeliveryState d)
+        {
+            ExecuteNoReturn("UPDATE Orders SET delievered = " + (int)d + " WHERE id = " + OrderID + ";");
         }
         ///<summary>
         ///Checks if a user exists
@@ -167,11 +185,15 @@ namespace SQLCommunications
         {
             object[] obj = ReadFromTable(Query, TableType.Product) as object[];
             List<ItemDisc> list = new List<ItemDisc>();
-            foreach(object o in obj)
+            foreach (object o in obj)
             {
                 list.Add((ItemDisc)o);
             }
             return list.ToArray();
+        }
+        public static ItemDisc[] GetAllProducts()
+        {
+            return ReadFromProduct("SELECT * FROM Product;");
         }
         ///<summary>
         ///returns users from Accounts table according to the query specified via User struct
@@ -180,7 +202,7 @@ namespace SQLCommunications
         {
             object[] obj = ReadFromTable(Query, TableType.Accounts) as object[];
             List<User> list = new List<User>();
-            foreach(object o in obj)
+            foreach (object o in obj)
             {
                 list.Add((User)o);
             }
@@ -189,11 +211,11 @@ namespace SQLCommunications
         ///<summary>
         ///returns items ordered by the given username
         ///</summary>
-        public static ItemDisc[] GetOrdersOf(string UserName)
+        public static ItemDisc[] GetOrdersOf(User user)
         {
-            object[] obj = ReadFromTable("SELECT * FROM Orders WHERE username = '" + UserName + "';", TableType.Orders) as object[];
+            object[] obj = ReadFromTable("SELECT * FROM Orders WHERE userid = '" + user.ID + "';", TableType.Orders) as object[];
             List<ItemDisc> list = new List<ItemDisc>();
-            foreach(object o in obj)
+            foreach (object o in obj)
             {
                 list.Add((ItemDisc)o);
             }
