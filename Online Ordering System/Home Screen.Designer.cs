@@ -76,6 +76,7 @@
             this.Product_Price = new System.Windows.Forms.Label();
             this.Product_Name = new System.Windows.Forms.Label();
             this.Product_Image = new System.Windows.Forms.PictureBox();
+            this.User_Orders_Panel = new System.Windows.Forms.Panel();
             this.Categories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Home_Panel.SuspendLayout();
@@ -590,12 +591,23 @@
             this.Product_Image.TabIndex = 0;
             this.Product_Image.TabStop = false;
             // 
+            // User_Orders_Panel
+            // 
+            this.User_Orders_Panel.AutoScroll = true;
+            this.User_Orders_Panel.BackColor = System.Drawing.Color.LightGray;
+            this.User_Orders_Panel.Location = new System.Drawing.Point(223, 70);
+            this.User_Orders_Panel.Name = "User_Orders_Panel";
+            this.User_Orders_Panel.Size = new System.Drawing.Size(780, 463);
+            this.User_Orders_Panel.TabIndex = 9;
+            this.User_Orders_Panel.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
             this.ClientSize = new System.Drawing.Size(999, 535);
+            this.Controls.Add(this.User_Orders_Panel);
             this.Controls.Add(this.Product_Panel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchBox);
@@ -683,6 +695,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox Product_Quantity;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel User_Orders_Panel;
     }
 }
 

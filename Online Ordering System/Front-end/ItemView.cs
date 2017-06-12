@@ -8,6 +8,7 @@ public class ItemView
     public static int x_offset = 0;
     public static int y_offset = 0;
     public static int itemNum = 0;
+    public static bool IsOrder = false;
     Button buybutton = new Button();
     PictureBox pic = new PictureBox();
     Label name = new Label();
@@ -56,6 +57,7 @@ public class ItemView
             x_offset += 200;//horizontal distance between products
 
             //adding products to home panel
+            if(!IsOrder)
             p.Controls.Add(buybutton);
             p.Controls.Add(name);
             p.Controls.Add(price);

@@ -282,14 +282,20 @@ namespace Online_Ordering_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!isLogedin)
+            if (!User.IsLoggedIn)
             {
                 MessageBox.Show("Please Login First", "Error!",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //show user orders 
+                ItemDisc[] Orders = Receiver.GetOrdersOf(User.ActiveUser);
+                ItemView.IsOrder = true;
+                SuspendLayout();
+                CleanUp();
+                ListItems(Orders);
+                ResumeLayout();
+                ItemView.IsOrder = false;
             }
         }
 
