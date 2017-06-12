@@ -12,29 +12,34 @@ public class AdminView
     Label Price = new Label();
     Label Quantity = new Label();
     Label Type = new Label();
+    PictureBox pic = new PictureBox();
     Button RemoveButton = new Button();
     public AdminView(ItemDisc i, Panel p , Admin f)
     {
         item = i;
         ParentPanel = p;
         ParentForm = f;
+        pic.Size = new Size(100, 100);
+        pic.Location = new Point(0, 137 + offset);
+        pic.Image = i.GetImage();
         name.Text = i.name;
-        name.Location = new Point(13, 117 + offset);
+        name.Location = new Point(103, 180 + offset);
         Price.Text = i.price.ToString() + "$";
-        Price.Location = new Point(74, 117 + offset);
+        Price.Location = new Point(195, 180 + offset);
         Quantity.Text = i.Quantity.ToString();
-        Quantity.Location = new Point(115, 117 + offset);
+        Quantity.Location = new Point(278, 180 + offset);
         Type.Text = i.Type;
-        Type.Location = new Point(160, 117 + offset);
+        Type.Location = new Point(367, 180 + offset);
         RemoveButton.Text = "Edit";
-        RemoveButton.Location = new Point(224, 113 + offset);
+        RemoveButton.Location = new Point(469, 175 + offset);
         RemoveButton.Click += RemoveButton_Click;
-        offset += 27;
+        offset += 107;
         ParentPanel.Controls.Add(RemoveButton);
         ParentPanel.Controls.Add(Type);
         ParentPanel.Controls.Add(Quantity);
         ParentPanel.Controls.Add(Price);
         ParentPanel.Controls.Add(name);
+        ParentPanel.Controls.Add(pic);
     }
     public void CleanUp()
     {
@@ -43,6 +48,7 @@ public class AdminView
         ParentPanel.Controls.Remove(Quantity);
         ParentPanel.Controls.Remove(Type);
         ParentPanel.Controls.Remove(RemoveButton);
+        ParentPanel.Controls.Remove(pic);
     }
     private void RemoveButton_Click(object sender, System.EventArgs e)
     {

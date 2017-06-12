@@ -39,32 +39,33 @@
             this.label4 = new System.Windows.Forms.Label();
             this.EditButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameTxT
             // 
-            this.NameTxT.Location = new System.Drawing.Point(26, 39);
+            this.NameTxT.Location = new System.Drawing.Point(30, 57);
             this.NameTxT.Name = "NameTxT";
             this.NameTxT.Size = new System.Drawing.Size(100, 20);
             this.NameTxT.TabIndex = 0;
             // 
             // PriceTxT
             // 
-            this.PriceTxT.Location = new System.Drawing.Point(141, 39);
+            this.PriceTxT.Location = new System.Drawing.Point(145, 57);
             this.PriceTxT.Name = "PriceTxT";
             this.PriceTxT.Size = new System.Drawing.Size(100, 20);
             this.PriceTxT.TabIndex = 1;
             // 
             // QuantityTxT
             // 
-            this.QuantityTxT.Location = new System.Drawing.Point(260, 39);
+            this.QuantityTxT.Location = new System.Drawing.Point(264, 57);
             this.QuantityTxT.Name = "QuantityTxT";
             this.QuantityTxT.Size = new System.Drawing.Size(100, 20);
             this.QuantityTxT.TabIndex = 2;
             // 
             // TypeTxT
             // 
-            this.TypeTxT.Location = new System.Drawing.Point(380, 39);
+            this.TypeTxT.Location = new System.Drawing.Point(384, 57);
             this.TypeTxT.Name = "TypeTxT";
             this.TypeTxT.Size = new System.Drawing.Size(100, 20);
             this.TypeTxT.TabIndex = 3;
@@ -82,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 9);
+            this.label1.Location = new System.Drawing.Point(63, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 5;
@@ -91,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 9);
+            this.label2.Location = new System.Drawing.Point(178, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 6;
@@ -100,7 +101,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 9);
+            this.label3.Location = new System.Drawing.Point(293, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 7;
@@ -109,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(410, 9);
+            this.label4.Location = new System.Drawing.Point(414, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 8;
@@ -135,11 +136,22 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(524, 99);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 26);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Edit Image";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ItemPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 97);
+            this.ClientSize = new System.Drawing.Size(656, 131);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.label4);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button button1;
     }
 }
