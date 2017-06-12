@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Online_Ordering_System;
-
+using SQLCommunications;
 public class CategoriesView
 {
     public static int categories_offset = 0;
@@ -70,7 +70,8 @@ public class CategoriesView
 
     void AllClick(object sender, EventArgs e)
     {
-        //see what you wanna do when someone *clicks*
-        
+        f.CleanUp();
+        f.ListItems(Receiver.GetAllProducts());
+
     }
 }
