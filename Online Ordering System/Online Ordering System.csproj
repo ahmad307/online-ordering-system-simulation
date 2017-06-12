@@ -71,6 +71,7 @@
     <Compile Include="Front-end\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Front-end\AdminOrder.cs" />
     <Compile Include="Front-end\CategoriesView.cs" />
     <Compile Include="Front-end\Functions.cs" />
     <Compile Include="Front-end\ItemPopUp.cs">

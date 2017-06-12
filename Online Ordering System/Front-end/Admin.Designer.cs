@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.AddItem_Panel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.EndingLabel = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.Category_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,19 +47,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Admin_Home = new System.Windows.Forms.Panel();
             this.EditItem_Panel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.EndingLabel = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.OrderButton = new System.Windows.Forms.Button();
+            this.OrderPanel = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.AddItem_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Admin_Home.SuspendLayout();
             this.EditItem_Panel.SuspendLayout();
+            this.OrderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddItem_Panel
@@ -81,6 +86,36 @@
             this.AddItem_Panel.TabIndex = 0;
             this.AddItem_Panel.Visible = false;
             this.AddItem_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddItem_Panel_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(256, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "No Path";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(153, 248);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Browse Image";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // EndingLabel
+            // 
+            this.EndingLabel.AutoSize = true;
+            this.EndingLabel.ForeColor = System.Drawing.Color.Blue;
+            this.EndingLabel.Location = new System.Drawing.Point(205, 350);
+            this.EndingLabel.Name = "EndingLabel";
+            this.EndingLabel.Size = new System.Drawing.Size(140, 13);
+            this.EndingLabel.TabIndex = 14;
+            this.EndingLabel.Text = "Succesfully Added The Item";
+            this.EndingLabel.Visible = false;
             // 
             // button6
             // 
@@ -189,7 +224,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(187, 257);
+            this.button2.Location = new System.Drawing.Point(187, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(181, 35);
             this.button2.TabIndex = 2;
@@ -200,6 +235,7 @@
             // Admin_Home
             // 
             this.Admin_Home.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Admin_Home.Controls.Add(this.OrderButton);
             this.Admin_Home.Controls.Add(this.button2);
             this.Admin_Home.Controls.Add(this.button1);
             this.Admin_Home.Location = new System.Drawing.Point(0, 0);
@@ -222,6 +258,46 @@
             this.EditItem_Panel.TabIndex = 1;
             this.EditItem_Panel.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Image";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(367, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Type";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(278, 116);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Quantity";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(195, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Price";
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(247, 80);
@@ -231,36 +307,6 @@
             this.button4.Text = "Back";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // EndingLabel
-            // 
-            this.EndingLabel.AutoSize = true;
-            this.EndingLabel.ForeColor = System.Drawing.Color.Blue;
-            this.EndingLabel.Location = new System.Drawing.Point(205, 350);
-            this.EndingLabel.Name = "EndingLabel";
-            this.EndingLabel.Size = new System.Drawing.Size(140, 13);
-            this.EndingLabel.TabIndex = 14;
-            this.EndingLabel.Text = "Succesfully Added The Item";
-            this.EndingLabel.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(153, 248);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Browse Image";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(256, 253);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "No Path";
             // 
             // NameLabel
             // 
@@ -273,45 +319,43 @@
             this.NameLabel.Text = "Name";
             this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
-            // label7
+            // OrderButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(195, 116);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Price";
+            this.OrderButton.Location = new System.Drawing.Point(187, 259);
+            this.OrderButton.Name = "OrderButton";
+            this.OrderButton.Size = new System.Drawing.Size(181, 35);
+            this.OrderButton.TabIndex = 3;
+            this.OrderButton.Text = "Orders";
+            this.OrderButton.UseVisualStyleBackColor = true;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
-            // label8
+            // OrderPanel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(278, 116);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Quantity";
+            this.OrderPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.OrderPanel.Controls.Add(this.button7);
+            this.OrderPanel.Controls.Add(this.panel1);
+            this.OrderPanel.Location = new System.Drawing.Point(0, 0);
+            this.OrderPanel.Name = "OrderPanel";
+            this.OrderPanel.Size = new System.Drawing.Size(544, 446);
+            this.OrderPanel.TabIndex = 4;
+            this.OrderPanel.Visible = false;
             // 
-            // label9
+            // button7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(367, 116);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Type";
+            this.button7.Location = new System.Drawing.Point(237, 80);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Back";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label5
+            // panel1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Image";
+            this.panel1.Location = new System.Drawing.Point(3, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(535, 331);
+            this.panel1.TabIndex = 17;
             // 
             // Admin
             // 
@@ -320,9 +364,10 @@
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
             this.ClientSize = new System.Drawing.Size(542, 437);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.AddItem_Panel);
+            this.Controls.Add(this.OrderPanel);
             this.Controls.Add(this.Admin_Home);
             this.Controls.Add(this.EditItem_Panel);
+            this.Controls.Add(this.AddItem_Panel);
             this.Name = "Admin";
             this.Text = "Admin";
             this.AddItem_Panel.ResumeLayout(false);
@@ -331,6 +376,7 @@
             this.Admin_Home.ResumeLayout(false);
             this.EditItem_Panel.ResumeLayout(false);
             this.EditItem_Panel.PerformLayout();
+            this.OrderPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +409,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Button OrderButton;
+        private System.Windows.Forms.Panel OrderPanel;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel1;
     }
 }
