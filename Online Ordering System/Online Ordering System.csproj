@@ -93,6 +93,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="OOSDBDataSet.xsc">
       <DependentUpon>OOSDBDataSet.xsd</DependentUpon>
     </None>
