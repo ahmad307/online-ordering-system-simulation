@@ -41,6 +41,7 @@ namespace Online_Ordering_System.Front_end
             ShowFinishingLabel = true;
             time.Start();
             EndingLabel.Visible = true;
+            label4.Text = "No Path";
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -100,6 +101,11 @@ namespace Online_Ordering_System.Front_end
             OpenFileDialog d = new OpenFileDialog();
             d.ShowDialog();
             label4.Text = d.FileName;
+        }
+
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

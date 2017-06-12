@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SQLCommunications;
+using System.IO;
 
 namespace Online_Ordering_System.Front_end
 {
@@ -50,6 +51,20 @@ namespace Online_Ordering_System.Front_end
 
         private void BackButton_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog d = new OpenFileDialog();
+            d.ShowDialog();
+            CommBase.command.CommandText = "UPDATE Product SET image = @Image WHERE name = '" + item.name + "';";
+            CommBase.command.Parameters.AddWithValue("@Image", File.ReadAllBytes(d.FileName));
+            CommBase.command.ExecuteNonQuery();
+            SuspendLayout();
+            ParentForm.CleanUp();
+            ParentForm.ListItems();
+            ResumeLayout();
             Close();
         }
     }
