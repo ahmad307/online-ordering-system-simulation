@@ -15,6 +15,7 @@ namespace Online_Ordering_System
         private bool pass2check = false;
         ItemDisc[] items;
         List<ItemView> ViewedItems;
+        List<ItemDisc> ItemsViewed;
         List<CategoriesView> ViewedCategories;
 
         Panel LastPanel;
@@ -34,12 +35,15 @@ namespace Online_Ordering_System
         {
             items = Items;
             ViewedItems = new List<ItemView>();
+            ItemsViewed = new List<ItemDisc>();
+
             foreach (ItemDisc i in items)
             {
                 if (i.Quantity > 0)
                 {
                     ItemView x = new ItemView(i, Home_Panel);
                     ViewedItems.Add(x);
+                    ItemsViewed.Add(i);
                 }
             }
         }
@@ -50,10 +54,12 @@ namespace Online_Ordering_System
             {
                 i.Clear();
             }
+
             ItemView.x_offset = 0;
             ItemView.y_offset = 0;
             ItemView.itemNum = 0;
             ViewedItems.Clear();
+            ItemsViewed.Clear();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -258,6 +264,30 @@ namespace Online_Ordering_System
             else
             {
                 //show user orders 
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if(SortType.Text=="Name")
+            {
+                CleanUp();
+                List<ItemDisc> ItemsViewed2 = new List<ItemDisc>(items);
+                functions.sort_name(ItemsViewed2);
+                if (SortOrder.Text=="Descending")
+                    ItemsViewed2.Reverse();
+
+                ListItems(ItemsViewed2.ToArray());
+            }
+            else if(SortType.Text=="Price")
+            {
+                CleanUp();
+                List<ItemDisc> ItemsViewed2 = new List<ItemDisc>(items);
+                functions.Sort_Prize(ItemsViewed2);
+                if (SortOrder.Text == "Descending")
+                    ItemsViewed2.Reverse();
+
+                ListItems(ItemsViewed2.ToArray());
             }
         }
     }
