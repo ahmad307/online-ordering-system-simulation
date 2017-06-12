@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Online_Ordering_System.Front_end;
+using System;
 using System.Windows.Forms;
 
 namespace Online_Ordering_System
@@ -14,7 +15,7 @@ namespace Online_Ordering_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SQLCommunications.CommBase.Intialize();
-            Application.Run(new Form2());
+            Application.Run(new Admin());
             SQLCommunications.CommBase.ShutDown();
         }
     }

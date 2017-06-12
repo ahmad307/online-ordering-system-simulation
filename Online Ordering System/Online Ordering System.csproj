@@ -73,7 +73,14 @@
     </Compile>
     <Compile Include="Front-end\CategoriesView.cs" />
     <Compile Include="Front-end\Functions.cs" />
+    <Compile Include="Front-end\ItemPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-end\ItemPopUp.Designer.cs">
+      <DependentUpon>ItemPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Front-end\ItemView.cs" />
+    <Compile Include="Front-end\AdminView.cs" />
     <Compile Include="Home Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Front-end\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-end\ItemPopUp.resx">
+      <DependentUpon>ItemPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home Screen.resx">
       <DependentUpon>Home Screen.cs</DependentUpon>
