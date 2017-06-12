@@ -45,7 +45,7 @@ public class CategoriesView
         //see what you wanna do when someone *clicks*
         Button btn = (Button)sender;
         List<ItemDisc> catItems = new List<ItemDisc>();
-        catItems = SQLCommunications.FetchData.Category(btn.Text);
+        catItems = FetchData.Category(btn.Text);
         f.CleanUp();
         f.ListItems(catItems.ToArray());
     }
