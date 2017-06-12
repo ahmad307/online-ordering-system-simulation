@@ -299,7 +299,14 @@ namespace Online_Ordering_System
             foreach (ItemDisc c in Myitems)
                 Mylist.Add(c);
             Mylist = functions.Search_items(SearchBox.Text,Mylist);
-            CleanUp();
+            if (Mylist.Count ==0)
+            {
+                MessageBox.Show("Nothing Found ", "Error!",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+                CleanUp();
             ListItems(Mylist.ToArray());
         }
     }
