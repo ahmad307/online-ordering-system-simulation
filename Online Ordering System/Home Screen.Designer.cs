@@ -34,8 +34,6 @@
             this.Orders_Button = new System.Windows.Forms.Button();
             this.ContactUs_Button = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Home_Panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.SortOrder = new System.Windows.Forms.ComboBox();
@@ -68,8 +66,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.Categories.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Home_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Sign_Up.SuspendLayout();
@@ -122,38 +118,11 @@
             // 
             // Categories
             // 
-            this.Categories.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Categories.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
-            this.Categories.Controls.Add(this.pictureBox1);
-            this.Categories.Controls.Add(this.label1);
+            this.Categories.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Categories.Location = new System.Drawing.Point(2, 70);
             this.Categories.Name = "Categories";
             this.Categories.Size = new System.Drawing.Size(221, 464);
             this.Categories.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Online_Ordering_System.Properties.Resources.all2_0١;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 61);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 20F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
-            this.label1.Location = new System.Drawing.Point(29, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Catergories";
             // 
             // Home_Panel
             // 
@@ -167,7 +136,6 @@
             this.Home_Panel.Name = "Home_Panel";
             this.Home_Panel.Size = new System.Drawing.Size(788, 464);
             this.Home_Panel.TabIndex = 7;
-            this.Home_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Panel_Paint);
             // 
             // button1
             // 
@@ -211,7 +179,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(382, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sort By:";
             // 
@@ -262,7 +230,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(861, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 13);
+            this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
@@ -293,7 +261,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(173, 296);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 13);
+            this.label11.Size = new System.Drawing.Size(92, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Enter Your Adress";
             // 
@@ -343,7 +311,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(169, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 13);
+            this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Enter Password";
             // 
@@ -352,7 +320,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(169, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 13);
+            this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Re-Enter Password";
             // 
@@ -361,7 +329,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(169, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Enter Username";
             // 
@@ -503,7 +471,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern;
             this.ClientSize = new System.Drawing.Size(999, 535);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchBox);
@@ -515,9 +482,9 @@
             this.Controls.Add(this.ContactUs_Button);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.Home_Panel);
             this.Controls.Add(this.Sign_Up);
-            this.Controls.Add(this.Login);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -526,9 +493,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.Categories.ResumeLayout(false);
-            this.Categories.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Home_Panel.ResumeLayout(false);
             this.Home_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -546,7 +510,6 @@
         private System.Windows.Forms.Button Orders_Button;
         private System.Windows.Forms.Button ContactUs_Button;
         private System.Windows.Forms.Panel Categories;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel Home_Panel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
@@ -569,7 +532,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label SignUp_Pass2_Label;
         private System.Windows.Forms.Label SignUp_Pass1_Label;
         private System.Windows.Forms.Label SignUp_User_Label;

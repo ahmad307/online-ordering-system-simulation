@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.AddItem_Panel = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.Category_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.Admin_Home = new System.Windows.Forms.Panel();
             this.EditItem_Panel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.EndingLabel = new System.Windows.Forms.Label();
             this.AddItem_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Admin_Home.SuspendLayout();
@@ -54,6 +55,7 @@
             // AddItem_Panel
             // 
             this.AddItem_Panel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.AddItem_Panel.Controls.Add(this.EndingLabel);
             this.AddItem_Panel.Controls.Add(this.button6);
             this.AddItem_Panel.Controls.Add(this.Category_txt);
             this.AddItem_Panel.Controls.Add(this.label6);
@@ -69,6 +71,17 @@
             this.AddItem_Panel.Size = new System.Drawing.Size(302, 443);
             this.AddItem_Panel.TabIndex = 0;
             this.AddItem_Panel.Visible = false;
+            this.AddItem_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddItem_Panel_Paint);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(177, 292);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(98, 28);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Back";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Category_txt
             // 
@@ -205,15 +218,16 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button6
+            // EndingLabel
             // 
-            this.button6.Location = new System.Drawing.Point(177, 292);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 28);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Back";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.EndingLabel.AutoSize = true;
+            this.EndingLabel.ForeColor = System.Drawing.Color.Blue;
+            this.EndingLabel.Location = new System.Drawing.Point(77, 354);
+            this.EndingLabel.Name = "EndingLabel";
+            this.EndingLabel.Size = new System.Drawing.Size(140, 13);
+            this.EndingLabel.TabIndex = 14;
+            this.EndingLabel.Text = "Succesfully Added The Item";
+            this.EndingLabel.Visible = false;
             // 
             // Admin
             // 
@@ -256,5 +270,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label EndingLabel;
     }
 }

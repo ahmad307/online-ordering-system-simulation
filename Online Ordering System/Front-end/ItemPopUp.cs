@@ -31,16 +31,20 @@ namespace Online_Ordering_System.Front_end
         private void EditButton_Click(object sender, EventArgs e)
         {
             CommBase.ExecuteNoReturn("UPDATE Product SET name = '" + NameTxT.Text + "' , price = " + PriceTxT.Text + " , quantity = " + QuantityTxT.Text + " , type = '" + TypeTxT.Text + "' WHERE id = " + item.ID + ";");
+            SuspendLayout();
             ParentForm.CleanUp();
             ParentForm.ListItems();
+            ResumeLayout();
             Close();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             CommBase.ExecuteNoReturn("DELETE FROM Product WHERE name = '" + item.name + "';");
+            SuspendLayout();
             ParentForm.CleanUp();
             ParentForm.ListItems();
+            ResumeLayout();
             Close();
         }
 
