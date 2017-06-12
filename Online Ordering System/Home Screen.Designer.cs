@@ -45,6 +45,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Sign_Up = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.SignUp_Adress_txt = new System.Windows.Forms.TextBox();
             this.SignUp_Label = new System.Windows.Forms.Label();
             this.SignUp_Pass2_Label = new System.Windows.Forms.Label();
             this.SignUp_Pass1_Label = new System.Windows.Forms.Label();
@@ -195,7 +197,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(454, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sort By:";
             // 
@@ -246,13 +248,15 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(861, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.Size = new System.Drawing.Size(22, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
             // Sign_Up
             // 
             this.Sign_Up.BackColor = System.Drawing.Color.LightGray;
+            this.Sign_Up.Controls.Add(this.label11);
+            this.Sign_Up.Controls.Add(this.SignUp_Adress_txt);
             this.Sign_Up.Controls.Add(this.SignUp_Label);
             this.Sign_Up.Controls.Add(this.SignUp_Pass2_Label);
             this.Sign_Up.Controls.Add(this.SignUp_Pass1_Label);
@@ -269,6 +273,24 @@
             this.Sign_Up.Size = new System.Drawing.Size(800, 464);
             this.Sign_Up.TabIndex = 8;
             this.Sign_Up.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(173, 296);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Enter Your Adress";
+            // 
+            // SignUp_Adress_txt
+            // 
+            this.SignUp_Adress_txt.Location = new System.Drawing.Point(274, 292);
+            this.SignUp_Adress_txt.Name = "SignUp_Adress_txt";
+            this.SignUp_Adress_txt.Size = new System.Drawing.Size(176, 20);
+            this.SignUp_Adress_txt.TabIndex = 26;
+            this.SignUp_Adress_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SignUp_Adress_txt.UseSystemPasswordChar = true;
             // 
             // SignUp_Label
             // 
@@ -305,18 +327,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(169, 158);
+            this.label10.Location = new System.Drawing.Point(169, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Enter Password";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(169, 245);
+            this.label9.Location = new System.Drawing.Point(169, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 13);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Re-Enter Password";
             // 
@@ -325,13 +347,13 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(169, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Enter Username";
             // 
             // SignUp_Pass2_txt
             // 
-            this.SignUp_Pass2_txt.Location = new System.Drawing.Point(274, 241);
+            this.SignUp_Pass2_txt.Location = new System.Drawing.Point(274, 217);
             this.SignUp_Pass2_txt.Name = "SignUp_Pass2_txt";
             this.SignUp_Pass2_txt.Size = new System.Drawing.Size(176, 20);
             this.SignUp_Pass2_txt.TabIndex = 18;
@@ -341,7 +363,7 @@
             // 
             // SignUp_Pass1_txt
             // 
-            this.SignUp_Pass1_txt.Location = new System.Drawing.Point(274, 154);
+            this.SignUp_Pass1_txt.Location = new System.Drawing.Point(274, 142);
             this.SignUp_Pass1_txt.Name = "SignUp_Pass1_txt";
             this.SignUp_Pass1_txt.Size = new System.Drawing.Size(176, 20);
             this.SignUp_Pass1_txt.TabIndex = 17;
@@ -356,7 +378,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(320, 310);
+            this.button10.Location = new System.Drawing.Point(320, 367);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(84, 32);
             this.button10.TabIndex = 12;
@@ -460,9 +482,9 @@
             this.Controls.Add(this.ContactUs_Button);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
-            this.Controls.Add(this.Home_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
+            this.Controls.Add(this.Home_Panel);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -520,6 +542,8 @@
         private System.Windows.Forms.Label SignUp_User_Label;
         private System.Windows.Forms.Label Login_Label;
         private System.Windows.Forms.Label SignUp_Label;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox SignUp_Adress_txt;
     }
 }
 

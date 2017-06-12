@@ -232,6 +232,7 @@ namespace Online_Ordering_System
 
                 user.Username = SignUp_User_txt.Text;
                 user.Password = SignUp_Pass2_txt.Text;
+                user.address = SignUp_Adress_txt.Text;
 
                 Transmitter.RegisterUser(user); //sign up function 
             }
