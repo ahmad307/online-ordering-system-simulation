@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System;
 
 namespace SQLCommunications
 {
@@ -171,7 +170,6 @@ namespace SQLCommunications
                 return false;
             }
         }
-
     }
     ///<summary>
     ///Recieves data from database
