@@ -14,8 +14,11 @@ public class ItemView
     Label price = new Label();
     public Panel ParentPanel;
     public ItemDisc Item;
-    public ItemView(ItemDisc i , Panel p)
+    Form2 form;
+    Panel productsPanel;
+    public ItemView(ItemDisc i , Panel p , Panel p2, Form2 f)
     {
+        form = f;
         if (i.Quantity > 0)
         {
             if (itemNum % 4 == 0 && itemNum != 0)
@@ -25,6 +28,7 @@ public class ItemView
             }
             Item = i;
             ParentPanel = p;
+            productsPanel = p2;
 
             //Product picture proprties
             pic.BackgroundImage = i.GetImage();
@@ -69,7 +73,9 @@ public class ItemView
     }
     void BuyClick (object sender , EventArgs e)
     {
+        form.show_Product(Item);
         
+                
     }
     private void button_MouseEnter(object sender, EventArgs e) //making orange effect when hovering over button
     {

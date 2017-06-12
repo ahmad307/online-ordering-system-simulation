@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cooccaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cooccaa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fast-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fast-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pattern1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pattern2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,20 +127,8 @@
   <data name="all2-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\all2-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lgo!-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lgo!-0١1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fast-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fast-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coca - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coca - Copy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="all-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unexpensive-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unexpensive-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cocaa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cocaa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pattern" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pattern1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,7 +136,28 @@
   <data name="trusted-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trusted-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cocaa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cocaa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lgo!-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lgo!-0١1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unexpensive-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unexpensive-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pattern small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pattern small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coca - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coca - Copy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cooccaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cooccaa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pattern s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pattern s.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="all-0١" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all-0١.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconsss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconsss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

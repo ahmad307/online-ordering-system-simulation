@@ -24,7 +24,8 @@ public class CategoriesView
         AllButton.Click += AllClick;
 
 
-        //button proprties
+        //buttons proprties
+        AllButton.BackColor = Color.LightGray;
         AllButton.Size= new Size(200, 33);
         AllButton.Location = new Point(3, 114);
         AllButton.Text = "All";
@@ -33,6 +34,7 @@ public class CategoriesView
         AllButton.Cursor = Cursors.Hand;
 
 
+        catButton.BackColor = Color.LightGray;
         catButton.Size = new Size(200, 33);
         catButton.Location = new Point(3, categories_offset + 166);
         catButton.Text = S;

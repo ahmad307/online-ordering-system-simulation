@@ -17,6 +17,7 @@ namespace Online_Ordering_System
         List<ItemView> ViewedItems;
         List<ItemDisc> ItemsViewed;
         List<CategoriesView> ViewedCategories;
+        public ItemDisc ActiveItem;
 
         Panel LastPanel;
         public Form2()
@@ -43,7 +44,7 @@ namespace Online_Ordering_System
             {
                 if (i.Quantity > 0)
                 {
-                    ItemView x = new ItemView(i, Home_Panel);
+                    ItemView x = new ItemView(i, Home_Panel,Product_Panel,this);
                     ViewedItems.Add(x);
                     ItemsViewed.Add(i);
                 }
@@ -122,6 +123,22 @@ namespace Online_Ordering_System
             LastPanel = Home_Panel;
 
         }
+        public void show_Product(ItemDisc item) //showing product panel
+        {
+            if (LastPanel ==Product_Panel)
+                return;
+            Product_Panel.Visible = true;
+            LastPanel.Visible = false;
+            LastPanel = Product_Panel;
+
+            Product_Name.Text = item.name;
+            Product_Price.Text = item.price.ToString();
+            Product_Image.Image = item.GetImage();
+            ActiveItem = item;
+            ActiveItem.Quantity = int.Parse( Product_Quantity.Text);
+
+
+        }
 
         private void label3_Click_1(object sender, EventArgs e)
         {
@@ -168,7 +185,8 @@ namespace Online_Ordering_System
             {
                 Login_Label.ForeColor = Color.Green;
                 Login_Label.Text = "Welcome";
-
+                User.ActiveUser = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + Login_user_txt.Text + "';")[0];
+                User.IsLoggedIn = true;
             }
             else
             {
@@ -265,7 +283,10 @@ namespace Online_Ordering_System
         private void button2_Click(object sender, EventArgs e)
         {
             if (!isLogedin)
-                show_login();
+            {
+                MessageBox.Show("Please Login First", "Error!",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 //show user orders 
@@ -315,6 +336,21 @@ namespace Online_Ordering_System
             CleanUp();
             ListItems(Mylist.ToArray());
             ResumeLayout();
+        }
+
+        private void SearchBox_Click(object sender, EventArgs e)
+        {
+            SearchBox.Text = "";
+        }
+
+        private void Product_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Transmitter.PlaceOrders(User.ActiveUser,ActiveItem);
         }
     }
 }

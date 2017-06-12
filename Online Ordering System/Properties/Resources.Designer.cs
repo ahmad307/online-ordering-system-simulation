@@ -123,6 +123,16 @@ namespace Online_Ordering_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconsss {
+            get {
+                object obj = ResourceManager.GetObject("iconsss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lgo__0١ {
             get {
                 object obj = ResourceManager.GetObject("lgo!-0١", resourceCulture);
@@ -136,6 +146,26 @@ namespace Online_Ordering_System.Properties {
         internal static System.Drawing.Bitmap pattern {
             get {
                 object obj = ResourceManager.GetObject("pattern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pattern_s {
+            get {
+                object obj = ResourceManager.GetObject("pattern s", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pattern_small {
+            get {
+                object obj = ResourceManager.GetObject("pattern small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

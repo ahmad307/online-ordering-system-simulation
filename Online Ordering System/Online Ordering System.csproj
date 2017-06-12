@@ -146,6 +146,9 @@
     <Content Include="OOSDB_log.ldf">
       <DependentUpon>OOSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\iconsss.png" />
+    <None Include="Resources\pattern s.jpg" />
+    <None Include="Resources\pattern small.jpg" />
     <None Include="Resources\cocaa1.jpg" />
     <None Include="Resources\cooccaa.jpg" />
     <None Include="Resources\coca - Copy.jpg" />
