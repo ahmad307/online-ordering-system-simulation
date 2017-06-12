@@ -162,7 +162,7 @@ namespace SQLCommunications
         {
             if (CheckUser(user))
             {
-                ExecuteNoReturn("INSERT INTO Accounts (username , password) VALUES ('" + user.Username + "','" + user.Password + "');");
+                ExecuteNoReturn("INSERT INTO Accounts (username , password , address) VALUES ('" + user.Username + "','" + user.Password + "' , '" + user.address + "');");
                 return true;
             }
             else
