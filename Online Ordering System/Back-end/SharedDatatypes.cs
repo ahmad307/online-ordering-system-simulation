@@ -32,6 +32,8 @@ public struct ItemDisc : IComparable
 
 public struct User
 {
+    public static User ActiveUser;
+    public static bool IsLoggedIn = false;
     public int ID;
     public string Username, Password , address;
     public Marketing process;
