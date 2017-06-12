@@ -169,6 +169,8 @@ namespace Online_Ordering_System
 
         private void button1_Click(object sender, EventArgs e) //shwoing home panel
         {
+            CleanUp();
+            ListItems(Receiver.GetAllProducts());
             show_home();
         }
 
@@ -289,6 +291,7 @@ namespace Online_Ordering_System
             }
             else
             {
+                show_home();
                 ItemDisc[] Orders = Receiver.GetOrdersOf(User.ActiveUser);
                 ItemView.IsOrder = true;
                 SuspendLayout();

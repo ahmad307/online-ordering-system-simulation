@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.Home_Button = new System.Windows.Forms.Button();
             this.Orders_Button = new System.Windows.Forms.Button();
-            this.ContactUs_Button = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,20 +115,6 @@
             this.Orders_Button.Text = "Your Ordes";
             this.Orders_Button.UseVisualStyleBackColor = false;
             this.Orders_Button.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // ContactUs_Button
-            // 
-            this.ContactUs_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(173)))), ((int)(((byte)(52)))));
-            this.ContactUs_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ContactUs_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ContactUs_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ContactUs_Button.ForeColor = System.Drawing.Color.White;
-            this.ContactUs_Button.Location = new System.Drawing.Point(422, 21);
-            this.ContactUs_Button.Name = "ContactUs_Button";
-            this.ContactUs_Button.Size = new System.Drawing.Size(88, 32);
-            this.ContactUs_Button.TabIndex = 3;
-            this.ContactUs_Button.Text = "Contact Us";
-            this.ContactUs_Button.UseVisualStyleBackColor = false;
             // 
             // Categories
             // 
@@ -493,21 +478,21 @@
             // 
             // SearchBox
             // 
-            this.SearchBox.Location = new System.Drawing.Point(528, 27);
+            this.SearchBox.Location = new System.Drawing.Point(423, 27);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(225, 20);
+            this.SearchBox.Size = new System.Drawing.Size(268, 20);
             this.SearchBox.TabIndex = 20;
             this.SearchBox.Text = "Search..";
             this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 6F);
-            this.button2.Location = new System.Drawing.Point(759, 21);
+            this.button2.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.button2.Location = new System.Drawing.Point(703, 21);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 29);
+            this.button2.Size = new System.Drawing.Size(80, 29);
             this.button2.TabIndex = 5;
-            this.button2.Text = "OK";
+            this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -616,7 +601,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Categories);
-            this.Controls.Add(this.ContactUs_Button);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
             this.Controls.Add(this.Sign_Up);
@@ -651,7 +635,6 @@
         #endregion
         private System.Windows.Forms.Button Home_Button;
         private System.Windows.Forms.Button Orders_Button;
-        private System.Windows.Forms.Button ContactUs_Button;
         private System.Windows.Forms.Panel Categories;
         private System.Windows.Forms.Panel Home_Panel;
         private System.Windows.Forms.PictureBox pictureBox2;
