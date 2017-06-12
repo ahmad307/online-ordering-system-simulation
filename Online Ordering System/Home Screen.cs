@@ -17,6 +17,7 @@ namespace Online_Ordering_System
         List<ItemView> ViewedItems;
         List<ItemDisc> ItemsViewed;
         List<CategoriesView> ViewedCategories;
+        public ItemDisc ActiveItem;
 
         Panel LastPanel;
         public Form2()
@@ -43,7 +44,7 @@ namespace Online_Ordering_System
             {
                 if (i.Quantity > 0)
                 {
-                    ItemView x = new ItemView(i, Home_Panel,Product_Panel);
+                    ItemView x = new ItemView(i, Home_Panel,Product_Panel,this);
                     ViewedItems.Add(x);
                     ItemsViewed.Add(i);
                 }
@@ -122,7 +123,7 @@ namespace Online_Ordering_System
             LastPanel = Home_Panel;
 
         }
-        public void show_Product(ItemDisc item) //showing home panel
+        public void show_Product(ItemDisc item) //showing product panel
         {
             if (LastPanel ==Product_Panel)
                 return;
@@ -133,7 +134,8 @@ namespace Online_Ordering_System
             Product_Name.Text = item.name;
             Product_Price.Text = item.price.ToString();
             Product_Image.Image = item.GetImage();
-
+            ActiveItem = item;
+            ActiveItem.Quantity = int.Parse( Product_Quantity.Text);
 
 
         }
@@ -183,7 +185,8 @@ namespace Online_Ordering_System
             {
                 Login_Label.ForeColor = Color.Green;
                 Login_Label.Text = "Welcome";
-
+                User.ActiveUser = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + Login_user_txt.Text + "';")[0];
+                User.IsLoggedIn = true;
             }
             else
             {
@@ -343,6 +346,11 @@ namespace Online_Ordering_System
         private void Product_Panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Transmitter.PlaceOrders(User.ActiveUser,ActiveItem);
         }
     }
 }

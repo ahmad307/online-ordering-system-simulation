@@ -14,10 +14,11 @@ public class ItemView
     Label price = new Label();
     public Panel ParentPanel;
     public ItemDisc Item;
-    Form2 form = new Form2();
+    Form2 form;
     Panel productsPanel;
-    public ItemView(ItemDisc i , Panel p , Panel p2)
+    public ItemView(ItemDisc i , Panel p , Panel p2, Form2 f)
     {
+        form = f;
         if (i.Quantity > 0)
         {
             if (itemNum % 4 == 0 && itemNum != 0)

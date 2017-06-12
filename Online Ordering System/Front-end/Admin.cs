@@ -81,7 +81,7 @@ namespace Online_Ordering_System.Front_end
             object[] arr = CommBase.ReadFromTable("SELECT * FROM Orders", CommBase.TableType.Orders) as object[];
             foreach (object o in arr)
             {
-                OrderView x = new OrderView((ItemDisc)o, OrderPanel);
+                OrderView x = new OrderView((ItemDisc)o, panel1);
                 OrderList.Add(x);
             }
         }
@@ -92,6 +92,7 @@ namespace Online_Ordering_System.Front_end
                 o.CleanUp();
             }
             OrderList.Clear();
+            OrderView.offset = 0;
         }
         public void CleanUp()
         {

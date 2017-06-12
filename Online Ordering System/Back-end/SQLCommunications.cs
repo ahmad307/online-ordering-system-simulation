@@ -86,7 +86,7 @@ namespace SQLCommunications
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
                     i.state = (DeliveryState)((int)reader["delievered"]);
-                    i.image = (byte[])reader["image"];
+                    i.image = null;
                     i.manfacture = " ";
                     list.Add(i);
                 }
@@ -135,7 +135,7 @@ namespace SQLCommunications
             Intialize();
             foreach (ItemDisc i in id)
             {
-                ExecuteNoReturn("INSERT INTO Orders (userid , name , price , quantity , type) Values(" + user.ID + ", '" + i.name + "' , " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , 0);");
+                ExecuteNoReturn("INSERT INTO Orders (userid , name , price , quantity , type , delievered) Values(" + user.ID + ", '" + i.name + "' , " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , 0);");
             }
         }
         ///<summary>

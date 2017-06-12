@@ -5,11 +5,11 @@ using SQLCommunications;
 public class OrderView
 {
     public static int offset = 0;
-    public Button Promote;
-    public Label OrderID;
-    public Label Name;
-    public Label Quantity;
-    public Label OrderState;
+    public Button Promote = new Button();
+    public Label OrderID = new Label();
+    public Label Name = new Label();
+    public Label Quantity = new Label();
+    public Label OrderState = new Label();
     public ItemDisc item;
     public Panel ParentPanel;
     public OrderView(ItemDisc i, Panel p)
