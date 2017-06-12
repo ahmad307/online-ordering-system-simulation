@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 
 namespace SQLCommunications
 {
@@ -60,6 +62,7 @@ namespace SQLCommunications
                     i.price = (float)reader["price"];
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
+                    i.image = (byte[])reader["image"];
                     i.manfacture = " ";
                     i.state = DeliveryState.Pending;
                     list.Add(i);
@@ -83,6 +86,7 @@ namespace SQLCommunications
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
                     i.state = (DeliveryState)((int)reader["delievered"]);
+                    i.image = (byte[])reader["image"];
                     i.manfacture = " ";
                     list.Add(i);
                 }
@@ -117,7 +121,9 @@ namespace SQLCommunications
                 }
                 if (!FoundDublicate)
                 {
-                    ExecuteNoReturn("INSERT INTO Product (name , price , quantity , type) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "');");
+                    command.CommandText = "INSERT INTO Product (name , price , quantity , type , image) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , @Image );";
+                    command.Parameters.AddWithValue("@Image", i.image);
+                    command.ExecuteNonQuery();
                 }
             }
         }
