@@ -69,7 +69,7 @@ public class ItemView
     }
     void BuyClick (object sender , EventArgs e)
     {
-        //see what you wanna do when someone *clicks*
+        
     }
     private void button_MouseEnter(object sender, EventArgs e) //making orange effect when hovering over button
     {

@@ -24,7 +24,7 @@ public class Marketing
             Items.Add(ordered);
         }
     }
-    public bool Remove(ItemDisc ordered,int quantity)
+    public bool Remove(ItemDisc ordered)
     {
         for (int i = 0; i < Items.Count; i++)
         {
@@ -44,7 +44,7 @@ public class Marketing
         }
         return false;
     }
-    public List<ItemDisc> show()
+    public List<ItemDisc> UserList()
     {
         return Items;
     }

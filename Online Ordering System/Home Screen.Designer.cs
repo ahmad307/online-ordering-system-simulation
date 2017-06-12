@@ -37,8 +37,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Home_Panel = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SortOrder = new System.Windows.Forms.ComboBox();
+            this.SortType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,6 +66,8 @@
             this.Login_user_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.Categories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Home_Panel.SuspendLayout();
@@ -80,7 +83,7 @@
             this.Home_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Home_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.Home_Button.ForeColor = System.Drawing.Color.White;
-            this.Home_Button.Location = new System.Drawing.Point(383, 20);
+            this.Home_Button.Location = new System.Drawing.Point(238, 21);
             this.Home_Button.Name = "Home_Button";
             this.Home_Button.Size = new System.Drawing.Size(84, 32);
             this.Home_Button.TabIndex = 1;
@@ -95,7 +98,7 @@
             this.Orders_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Orders_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Bold);
             this.Orders_Button.ForeColor = System.Drawing.Color.White;
-            this.Orders_Button.Location = new System.Drawing.Point(475, 20);
+            this.Orders_Button.Location = new System.Drawing.Point(330, 21);
             this.Orders_Button.Name = "Orders_Button";
             this.Orders_Button.Size = new System.Drawing.Size(84, 32);
             this.Orders_Button.TabIndex = 2;
@@ -110,7 +113,7 @@
             this.ContactUs_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContactUs_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ContactUs_Button.ForeColor = System.Drawing.Color.White;
-            this.ContactUs_Button.Location = new System.Drawing.Point(567, 20);
+            this.ContactUs_Button.Location = new System.Drawing.Point(422, 21);
             this.ContactUs_Button.Name = "ContactUs_Button";
             this.ContactUs_Button.Size = new System.Drawing.Size(88, 32);
             this.ContactUs_Button.TabIndex = 3;
@@ -156,8 +159,9 @@
             // 
             this.Home_Panel.AutoScroll = true;
             this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
-            this.Home_Panel.Controls.Add(this.comboBox2);
-            this.Home_Panel.Controls.Add(this.comboBox1);
+            this.Home_Panel.Controls.Add(this.button1);
+            this.Home_Panel.Controls.Add(this.SortOrder);
+            this.Home_Panel.Controls.Add(this.SortType);
             this.Home_Panel.Controls.Add(this.label2);
             this.Home_Panel.Location = new System.Drawing.Point(208, 70);
             this.Home_Panel.Name = "Home_Panel";
@@ -165,37 +169,47 @@
             this.Home_Panel.TabIndex = 7;
             this.Home_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Panel_Paint);
             // 
-            // comboBox2
+            // button1
             // 
-            this.comboBox2.AllowDrop = true;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.button1.Location = new System.Drawing.Point(710, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 29);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Sort";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // SortOrder
+            // 
+            this.SortOrder.AllowDrop = true;
+            this.SortOrder.FormattingEnabled = true;
+            this.SortOrder.Items.AddRange(new object[] {
             "Ascending",
             "Descending"});
-            this.comboBox2.Location = new System.Drawing.Point(649, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(126, 21);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.Text = "Ascending";
+            this.SortOrder.Location = new System.Drawing.Point(570, 18);
+            this.SortOrder.Name = "SortOrder";
+            this.SortOrder.Size = new System.Drawing.Size(126, 21);
+            this.SortOrder.TabIndex = 3;
+            this.SortOrder.Text = "Ascending";
             // 
-            // comboBox1
+            // SortType
             // 
-            this.comboBox1.AllowDrop = true;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.SortType.AllowDrop = true;
+            this.SortType.FormattingEnabled = true;
+            this.SortType.Items.AddRange(new object[] {
             "Name",
             "Price"});
-            this.comboBox1.Location = new System.Drawing.Point(506, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "Name";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.SortType.Location = new System.Drawing.Point(434, 18);
+            this.SortType.Name = "SortType";
+            this.SortType.Size = new System.Drawing.Size(126, 21);
+            this.SortType.TabIndex = 2;
+            this.SortType.Text = "Name";
+            this.SortType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(454, 25);
+            this.label2.Location = new System.Drawing.Point(382, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 0;
@@ -468,12 +482,31 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Username";
             // 
+            // SearchBox
+            // 
+            this.SearchBox.Location = new System.Drawing.Point(528, 27);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(225, 20);
+            this.SearchBox.TabIndex = 20;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(759, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(29, 29);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "OK";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern;
             this.ClientSize = new System.Drawing.Size(999, 535);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -482,9 +515,9 @@
             this.Controls.Add(this.ContactUs_Button);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
+            this.Controls.Add(this.Home_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
-            this.Controls.Add(this.Home_Panel);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -519,8 +552,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SortOrder;
+        private System.Windows.Forms.ComboBox SortType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Sign_Up;
         private System.Windows.Forms.TextBox SignUp_Pass2_txt;
@@ -544,6 +577,9 @@
         private System.Windows.Forms.Label SignUp_Label;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox SignUp_Adress_txt;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.Button button2;
     }
 }
 
