@@ -62,7 +62,7 @@ namespace SQLCommunications
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
                     i.manfacture = " ";
-                    i.delivered = false;
+                    i.state = DeliveryState.Pending;
                     list.Add(i);
                 }
                 else if (t == TableType.Accounts)
@@ -82,7 +82,7 @@ namespace SQLCommunications
                     i.price = (float)reader["price"];
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
-                    i.delivered = (bool)reader["delivered"];
+                    i.state = DeliveryState.Pending;
                     i.manfacture = " ";
                     list.Add(i);
                 }

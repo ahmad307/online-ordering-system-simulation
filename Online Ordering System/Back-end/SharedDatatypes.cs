@@ -4,7 +4,7 @@ public enum DeliveryState { Pending, InProgress, Delieverd };
 
 public struct ItemDisc : IComparable
 {
-    DeliveryState state;
+    public DeliveryState state;
     public static int ComparisonCo = 0;
     public int ID;
     public string name;
