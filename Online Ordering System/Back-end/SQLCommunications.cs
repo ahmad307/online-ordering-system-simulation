@@ -71,6 +71,7 @@ namespace SQLCommunications
                     i.ID = (int)reader["id"];
                     i.Username = (string)reader["username"];
                     i.Password = (string)reader["password"];
+                    i.address = (string)reader["address"];
                     i.process = new Marketing();
                     list.Add(i);
                 }

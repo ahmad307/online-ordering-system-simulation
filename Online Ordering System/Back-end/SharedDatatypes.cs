@@ -33,6 +33,6 @@ public struct ItemDisc : IComparable
 public struct User
 {
     public int ID;
-    public string Username, Password;
+    public string Username, Password , address;
     public Marketing process;
 }
