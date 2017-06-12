@@ -22,14 +22,16 @@ namespace Online_Ordering_System
         public Form2()
         {
             InitializeComponent();
+            SuspendLayout();
             ListItems(Receiver.ReadFromProduct("SELECT * FROM Product;"));
             List<string> CL = FetchData.AllCategories();
             ViewedCategories = new List<CategoriesView>();
-            foreach(string s in CL)
+            foreach (string s in CL)
             {
-                CategoriesView C = new CategoriesView(s,Categories , this);
+                CategoriesView C = new CategoriesView(s, Categories, this);
                 ViewedCategories.Add(C);
             }
+            ResumeLayout();
         }
         public void ListItems(ItemDisc[] Items)
         {
@@ -47,7 +49,7 @@ namespace Online_Ordering_System
                 }
             }
         }
-        
+
         public void CleanUp()
         {
             foreach (ItemView i in ViewedItems)
@@ -121,17 +123,17 @@ namespace Online_Ordering_System
 
         }
 
-        private void label3_Click_1(object sender, EventArgs e) 
+        private void label3_Click_1(object sender, EventArgs e)
         {
             show_login();
 
         }
 
-        private void label4_Click(object sender, EventArgs e) 
+        private void label4_Click(object sender, EventArgs e)
         {
             show_signup();
         }
-        
+
 
         private void Home_Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -252,16 +254,18 @@ namespace Online_Ordering_System
 
         private void button12_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
             CleanUp();
             List<ItemDisc> temp = new List<ItemDisc>(items);
             temp.RemoveAt(2);
             ListItems(temp.ToArray());
+            ResumeLayout();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if( ! isLogedin)
-            show_login();
+            if (!isLogedin)
+                show_login();
             else
             {
                 //show user orders 
@@ -270,17 +274,18 @@ namespace Online_Ordering_System
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if(SortType.Text=="Name")
+            SuspendLayout();
+            if (SortType.Text == "Name")
             {
                 CleanUp();
                 List<ItemDisc> ItemsViewed2 = new List<ItemDisc>(items);
                 functions.sort_name(ItemsViewed2);
-                if (SortOrder.Text=="Descending")
+                if (SortOrder.Text == "Descending")
                     ItemsViewed2.Reverse();
 
                 ListItems(ItemsViewed2.ToArray());
             }
-            else if(SortType.Text=="Price")
+            else if (SortType.Text == "Price")
             {
                 CleanUp();
                 List<ItemDisc> ItemsViewed2 = new List<ItemDisc>(items);
@@ -290,6 +295,7 @@ namespace Online_Ordering_System
 
                 ListItems(ItemsViewed2.ToArray());
             }
+            ResumeLayout();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -298,16 +304,17 @@ namespace Online_Ordering_System
             List<ItemDisc> Mylist = new List<ItemDisc>();
             foreach (ItemDisc c in Myitems)
                 Mylist.Add(c);
-            Mylist = functions.Search_items(SearchBox.Text,Mylist);
-            if (Mylist.Count ==0)
+            Mylist = functions.Search_items(SearchBox.Text, Mylist);
+            if (Mylist.Count == 0)
             {
                 MessageBox.Show("Nothing Found ", "Error!",
-    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-                CleanUp();
+            SuspendLayout();
+            CleanUp();
             ListItems(Mylist.ToArray());
+            ResumeLayout();
         }
     }
 }

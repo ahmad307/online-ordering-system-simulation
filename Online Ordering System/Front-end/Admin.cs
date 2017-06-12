@@ -8,10 +8,21 @@ namespace Online_Ordering_System.Front_end
     public partial class Admin : Form
     {
         List<AdminView> ViewList = new List<AdminView>();
+        bool ShowFinishingLabel = false;
+        Timer time = new Timer();
         public Admin()
         {
             InitializeComponent();
+            time.Tick += FinishingLabelController;
+            time.Interval = 3000;
         }
+
+        private void FinishingLabelController(object sender, EventArgs e)
+        {
+            EndingLabel.Visible = false;
+            time.Stop();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             ItemDisc Item = new ItemDisc();
@@ -20,12 +31,21 @@ namespace Online_Ordering_System.Front_end
             Item.Quantity = int.Parse(Quantity_txt.Text);
             Item.Type = Category_txt.Text;
             Transmitter.InsertIntoTable(Item);
+            Name_txt.Text = null;
+            Price_txt.Text = null;
+            Quantity_txt.Text = null;
+            Category_txt.Text = null;
+            ShowFinishingLabel = true;
+            time.Start();
+            EndingLabel.Visible = true;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             EditItem_Panel.Show();
             Admin_Home.Hide();
+            SuspendLayout();
             ListItems();
+            ResumeLayout();
         }
         public void ListItems()
         {
@@ -48,9 +68,11 @@ namespace Online_Ordering_System.Front_end
 
         private void button4_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
             Admin_Home.Show();
             EditItem_Panel.Hide();
             CleanUp();
+            ResumeLayout();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +85,11 @@ namespace Online_Ordering_System.Front_end
         {
             Admin_Home.Show();
             AddItem_Panel.Hide();
+        }
+
+        private void AddItem_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
