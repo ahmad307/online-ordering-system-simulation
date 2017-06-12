@@ -27,7 +27,7 @@ public class ItemView
             ParentPanel = p;
 
             //Product picture proprties
-            pic.BackgroundImage = Online_Ordering_System.Properties.Resources.cocaa1;
+            pic.BackgroundImage = i.GetImage();
             pic.Location = new Point(38 + x_offset, 70 + y_offset);
             pic.Size = new Size(100, 100);
 

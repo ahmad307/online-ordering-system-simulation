@@ -46,6 +46,8 @@
             this.EditItem_Panel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.EndingLabel = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.AddItem_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Admin_Home.SuspendLayout();
@@ -55,6 +57,8 @@
             // AddItem_Panel
             // 
             this.AddItem_Panel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.AddItem_Panel.Controls.Add(this.label4);
+            this.AddItem_Panel.Controls.Add(this.button5);
             this.AddItem_Panel.Controls.Add(this.EndingLabel);
             this.AddItem_Panel.Controls.Add(this.button6);
             this.AddItem_Panel.Controls.Add(this.Category_txt);
@@ -159,7 +163,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pictureBox1.Image = global::Online_Ordering_System.Properties.Resources.lgo__0١;
             this.pictureBox1.Location = new System.Drawing.Point(35, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -229,6 +233,25 @@
             this.EndingLabel.Text = "Succesfully Added The Item";
             this.EndingLabel.Visible = false;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(25, 252);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Browse Image";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(128, 257);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "No Path";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +294,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label EndingLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
     }
 }

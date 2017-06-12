@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using SQLCommunications;
+using System.IO;
+using System.Drawing;
 
 namespace Online_Ordering_System.Front_end
 {
@@ -30,6 +32,7 @@ namespace Online_Ordering_System.Front_end
             Item.price = float.Parse(Price_txt.Text);
             Item.Quantity = int.Parse(Quantity_txt.Text);
             Item.Type = Category_txt.Text;
+            Item.image = File.ReadAllBytes(label4.Text);
             Transmitter.InsertIntoTable(Item);
             Name_txt.Text = null;
             Price_txt.Text = null;
@@ -90,6 +93,13 @@ namespace Online_Ordering_System.Front_end
         private void AddItem_Panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog d = new OpenFileDialog();
+            d.ShowDialog();
+            label4.Text = d.FileName;
         }
     }
 }
