@@ -65,6 +65,12 @@
     <Compile Include="Back-end\Marketing.cs" />
     <Compile Include="Back-end\Registor.cs" />
     <Compile Include="Back-end\SQLCommunications.cs" />
+    <Compile Include="Front-end\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-end\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Front-end\CategoriesView.cs" />
     <Compile Include="Front-end\Functions.cs" />
     <Compile Include="Front-end\ItemView.cs" />
@@ -82,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Front-end\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home Screen.resx">
       <DependentUpon>Home Screen.cs</DependentUpon>
     </EmbeddedResource>
