@@ -76,6 +76,7 @@
             this.Product_Name = new System.Windows.Forms.Label();
             this.Product_Image = new System.Windows.Forms.PictureBox();
             this.User_Orders_Panel = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.Categories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Home_Panel.SuspendLayout();
@@ -155,6 +156,7 @@
             // 
             this.Home_Panel.AutoScroll = true;
             this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
+            this.Home_Panel.Controls.Add(this.label14);
             this.Home_Panel.Controls.Add(this.button1);
             this.Home_Panel.Controls.Add(this.SortOrder);
             this.Home_Panel.Controls.Add(this.SortType);
@@ -586,14 +588,23 @@
             this.User_Orders_Panel.TabIndex = 9;
             this.User_Orders_Panel.Visible = false;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Location = new System.Drawing.Point(672, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 13);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Advanced Filter";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
             this.ClientSize = new System.Drawing.Size(999, 535);
-            this.Controls.Add(this.User_Orders_Panel);
-            this.Controls.Add(this.Product_Panel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.label5);
@@ -603,9 +614,11 @@
             this.Controls.Add(this.Categories);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
+            this.Controls.Add(this.Home_Panel);
+            this.Controls.Add(this.User_Orders_Panel);
+            this.Controls.Add(this.Product_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
-            this.Controls.Add(this.Home_Panel);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -679,6 +692,7 @@
         private System.Windows.Forms.TextBox Product_Quantity;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel User_Orders_Panel;
+        private System.Windows.Forms.Label label14;
     }
 }
 

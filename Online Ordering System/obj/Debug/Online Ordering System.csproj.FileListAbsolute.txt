@@ -20,3 +20,4 @@ D:\ramy\online ordering\Online Ordering System\obj\Debug\Online_Ordering_System.
 D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online_Ordering_System.Front_end.Admin.resources
 D:\Projects\Online Ordering\Online Ordering System\obj\Debug\Online_Ordering_System.Front_end.ItemPopUp.resources
 D:\ramy\online ordering\Online Ordering System\obj\Debug\Online_Ordering_System.Front_end.ItemPopUp.resources
+D:\ramy\online ordering\Online Ordering System\obj\Debug\Online_Ordering_System.Front_end.Advanced_Filter.resources

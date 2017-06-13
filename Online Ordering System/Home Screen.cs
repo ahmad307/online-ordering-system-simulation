@@ -368,5 +368,12 @@ namespace Online_Ordering_System
         {
             Transmitter.PlaceOrders(User.ActiveUser,ActiveItem);
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            Front_end.Advanced_Filter f = new Front_end.Advanced_Filter(this);
+            f.ShowDialog();
+            
+        }
     }
 }

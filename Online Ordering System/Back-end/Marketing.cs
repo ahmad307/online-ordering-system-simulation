@@ -86,4 +86,50 @@ static class functions
         }
         return send;
     }
+    public static List<ItemDisc> Advanced_filter(List<ItemDisc> C_items, string search, bool word, bool match_case, float min = 0, float max = 1000000000)
+    {
+        
+        List<ItemDisc> Send = new List<ItemDisc>();
+ 
+        if (!word)
+        {
+            string sub_word;
+            if (!match_case)
+                sub_word = search.ToLower();
+            else
+                sub_word = search;
+            foreach (ItemDisc c in C_items)
+            {
+                string z;
+                if (!match_case)
+                    z = c.name.ToLower();
+                else
+                    z = c.name;
+                if (z.Contains(sub_word) && c.price >= min && c.price <= max)
+                    Send.Add(c);
+            }
+        }
+        else
+        {
+            string sub_word = " ";
+            if (!match_case)
+                sub_word += search.ToLower();
+            else
+                sub_word += search;
+            sub_word += " ";
+            foreach (ItemDisc c in C_items)
+            {
+                string z = " ";
+                if (!match_case)
+                    z += c.name.ToLower();
+                else
+                    z += c.name;
+                z += " ";
+                if (z.Contains(sub_word) && c.price >= min && c.price <= max)
+                    Send.Add(c);
+            }
+        }
+        return Send;
+
+    }
 }
