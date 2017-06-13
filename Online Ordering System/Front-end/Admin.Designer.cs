@@ -263,7 +263,7 @@
             // EditItem_Panel
             // 
             this.EditItem_Panel.AutoScroll = true;
-            this.EditItem_Panel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.EditItem_Panel.BackColor = System.Drawing.Color.LightGray;
             this.EditItem_Panel.Controls.Add(this.panel2);
             this.EditItem_Panel.Controls.Add(this.label5);
             this.EditItem_Panel.Controls.Add(this.label9);
@@ -331,7 +331,7 @@
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(106, 39);
+            this.NameLabel.Location = new System.Drawing.Point(101, 39);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(39, 13);
             this.NameLabel.TabIndex = 1;
@@ -396,7 +396,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(171, 18);
+            this.label11.Location = new System.Drawing.Point(160, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 13);
             this.label11.TabIndex = 6;
@@ -437,10 +437,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(582, 437);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.EditItem_Panel);
-            this.Controls.Add(this.AddItem_Panel);
             this.Controls.Add(this.OrderPanel);
             this.Controls.Add(this.Admin_Home);
+            this.Controls.Add(this.EditItem_Panel);
+            this.Controls.Add(this.AddItem_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Admin";
             this.Text = "Admin";
