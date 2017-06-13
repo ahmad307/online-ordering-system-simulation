@@ -61,6 +61,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.HDButton = new System.Windows.Forms.Button();
             this.AddItem_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Admin_Home.SuspendLayout();
@@ -337,6 +338,7 @@
             // OrderPanel
             // 
             this.OrderPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.OrderPanel.Controls.Add(this.HDButton);
             this.OrderPanel.Controls.Add(this.button7);
             this.OrderPanel.Controls.Add(this.panel1);
             this.OrderPanel.Location = new System.Drawing.Point(0, 0);
@@ -347,7 +349,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(237, 80);
+            this.button7.Location = new System.Drawing.Point(170, 80);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 16;
@@ -405,6 +407,16 @@
             this.label13.Size = new System.Drawing.Size(37, 13);
             this.label13.TabIndex = 8;
             this.label13.Text = "State";
+            // 
+            // HDButton
+            // 
+            this.HDButton.Location = new System.Drawing.Point(282, 80);
+            this.HDButton.Name = "HDButton";
+            this.HDButton.Size = new System.Drawing.Size(102, 23);
+            this.HDButton.TabIndex = 18;
+            this.HDButton.Text = "Hide Delieverd";
+            this.HDButton.UseVisualStyleBackColor = true;
+            this.HDButton.Click += new System.EventHandler(this.HDButton_Click);
             // 
             // Admin
             // 
@@ -468,5 +480,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button HDButton;
     }
 }

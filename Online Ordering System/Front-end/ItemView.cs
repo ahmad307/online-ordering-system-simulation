@@ -9,6 +9,7 @@ public class ItemView
     public static int y_offset = 0;
     public static int itemNum = 0;
     public static bool IsOrder = false;
+    private bool IsCancelButton;
     Button buybutton = new Button();
     PictureBox pic = new PictureBox();
     Label name = new Label();
@@ -20,10 +21,11 @@ public class ItemView
     Panel productsPanel;
     public ItemView(ItemDisc i, Panel p, Panel p2, Form2 f)
     {
+        IsCancelButton = IsOrder;
         form = f;
         if (i.Quantity > 0)
         {
-            if (itemNum % 4 == 0 && itemNum != 0)
+            if ((itemNum % 4 == 0 && itemNum != 0))
             {
                 x_offset = 0;  // item will be first in the new row 
                 y_offset += 180; //vertical distance between each row
@@ -42,27 +44,47 @@ public class ItemView
             }
             if (IsOrder)
             {
-                State.Location = new Point(38 + x_offset, 120 + y_offset);
+                State.Location = new Point(450, 58 + y_offset);
                 State.Font = new Font("Britannic Bold", 12);
                 if (Item.state == DeliveryState.Pending) { State.Text = "Pending"; State.ForeColor = Color.Red; }
                 if (Item.state == DeliveryState.InProgress) { State.Text = "InProgress"; State.ForeColor = Color.Orange; }
-                if (Item.state == DeliveryState.Delieverd) {State.Text = "Delieverd"; State.ForeColor = Color.Green;}
-        }
+                if (Item.state == DeliveryState.Delieverd) { State.Text = "Delieverd"; State.ForeColor = Color.Green; }
+            }
 
             //product name label proprties
-            name.Location = new Point(38 + x_offset, 158 + y_offset);
+            if (IsOrder)
+                name.Location = new Point(38, 58 + y_offset);
+            else
+                name.Location = new Point(38 + x_offset, 158 + y_offset);
             name.Text = i.name;
             name.Font = new Font("Britannic Bold", 12);
             name.ForeColor = Color.RoyalBlue;
             name.BackColor = Color.Transparent;
             //product price label proprties
-            price.Location = new Point(38 + x_offset, 180 + y_offset);
-            price.Text = i.price.ToString() + "$";
+            if (IsOrder)
+            {
+                price.Location = new Point(150, 58 + y_offset);
+                price.Text = i.Quantity.ToString() + " Items each cost " + i.price.ToString() + "$";
+                price.Size = new Size(200, 20);
+            }
+            else
+            {
+                price.Location = new Point(38 + x_offset, 180 + y_offset);
+                price.Text = i.price.ToString() + "$";
+            }
             price.ForeColor = Color.Green;
 
             //product buy button proprties
-            buybutton.Location = new Point(38 + x_offset, 200 + y_offset);
-            buybutton.Text = "Buy";
+            if (IsOrder)
+            {
+                buybutton.Location = new Point(350, 58 + y_offset);
+                buybutton.Text = "Cancel";
+            }
+            else
+            {
+                buybutton.Location = new Point(38 + x_offset, 200 + y_offset);
+                buybutton.Text = "Buy";
+            }
             buybutton.MouseEnter += button_MouseEnter;
             buybutton.MouseLeave += button_MouseLeave;
             buybutton.Click += BuyClick;
@@ -71,13 +93,18 @@ public class ItemView
 
             //adding products to home panel
             if (IsOrder) p.Controls.Add(State);
-            if (!IsOrder)
-                p.Controls.Add(buybutton);
+            p.Controls.Add(buybutton);
             p.Controls.Add(name);
             p.Controls.Add(price);
             if (!IsOrder)
+            {
                 p.Controls.Add(pic);
-            itemNum++;
+                itemNum++;
+            }
+            else
+            {
+                y_offset += 27;
+            }
         }
     }
     public void Clear()
@@ -90,15 +117,19 @@ public class ItemView
     }
     void BuyClick(object sender, EventArgs e)
     {
-        if(!User.IsLoggedIn)
+        if (!User.IsLoggedIn)
         {
             MessageBox.Show("Please Login First", "Error!",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
+        if (IsCancelButton)
+        {
+            SQLCommunications.CommBase.ExecuteNoReturn("DELETE FROM Orders WHERE id = " + Item.ID.ToString());
+            form.ShowOrders();
+            return;
+        }
         form.show_Product(Item);
-
-
     }
     private void button_MouseEnter(object sender, EventArgs e) //making orange effect when hovering over button
     {

@@ -11,9 +11,9 @@ namespace Online_Ordering_System.Front_end
     {
         List<AdminView> ViewList = new List<AdminView>();
         List<OrderView> OrderList = new List<OrderView>();
-        bool ShowFinishingLabel = false;
         Timer time = new Timer();
         Timer OrderTime = new Timer();
+        private bool ShowDelieverd = true;
         public Admin()
         {
             InitializeComponent();
@@ -21,17 +21,20 @@ namespace Online_Ordering_System.Front_end
             time.Interval = 3000;
             OrderTime.Tick += OrderTime_Tick;
             OrderTime.Start();
-            OrderTime.Interval = 1000;
+            OrderTime.Interval = 50;
         }
 
         private void OrderTime_Tick(object sender, EventArgs e)
         {
             if (OrderPanel.Visible == true)
             {
-                SuspendLayout();
-                CleanUpOrders();
-                ListOrder();
-                ResumeLayout();
+                if (GetOrdersCount(ShowDelieverd) != OrderList.Count)
+                {
+                    SuspendLayout();
+                    CleanUpOrders();
+                    ListOrder(ShowDelieverd);
+                    ResumeLayout();
+                }
             }
         }
 
@@ -54,7 +57,6 @@ namespace Online_Ordering_System.Front_end
             Price_txt.Text = null;
             Quantity_txt.Text = null;
             Category_txt.Text = null;
-            ShowFinishingLabel = true;
             time.Start();
             EndingLabel.Visible = true;
             label4.Text = "No Path";
@@ -76,14 +78,35 @@ namespace Online_Ordering_System.Front_end
                 ViewList.Add(x);
             }
         }
-        public void ListOrder()
+        public void ListOrder(bool CountDelieverd)
         {
-            object[] arr = CommBase.ReadFromTable("SELECT * FROM Orders", CommBase.TableType.Orders) as object[];
+            object[] arr;
+            if (CountDelieverd)
+            {
+                arr = CommBase.ReadFromTable("SELECT * FROM Orders", CommBase.TableType.Orders) as object[];
+            }
+            else
+            {
+                arr = CommBase.ReadFromTable("SELECT * FROM Orders WHERE delievered <> 2", CommBase.TableType.Orders) as object[];
+            }
             foreach (object o in arr)
             {
                 OrderView x = new OrderView((ItemDisc)o, panel1);
                 OrderList.Add(x);
             }
+        }
+        private int GetOrdersCount(bool CountDelieverd)
+        {
+            object[] arr;
+            if(CountDelieverd)
+            {
+                arr = CommBase.ReadFromTable("SELECT * FROM Orders", CommBase.TableType.Orders) as object[];
+            }
+            else
+            {
+                arr = CommBase.ReadFromTable("SELECT * FROM Orders WHERE delievered <> 2", CommBase.TableType.Orders) as object[];
+            }
+            return arr.Length;
         }
         public void CleanUpOrders()
         {
@@ -151,6 +174,20 @@ namespace Online_Ordering_System.Front_end
         {
             OrderPanel.Visible = true;
             Admin_Home.Visible = false;
+        }
+
+        private void HDButton_Click(object sender, EventArgs e)
+        {
+            if(ShowDelieverd)
+            {
+                HDButton.Text = "Show Delieverd";
+                ShowDelieverd = false;
+            }
+            else
+            {
+                HDButton.Text = "Hide Delieverd";
+                ShowDelieverd = true;
+            }
         }
     }
 }
