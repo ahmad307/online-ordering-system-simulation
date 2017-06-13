@@ -298,17 +298,20 @@ namespace Online_Ordering_System
             }
             else
             {
-                show_home();
-                ItemDisc[] Orders = Receiver.GetOrdersOf(User.ActiveUser);
-                ItemView.IsOrder = true;
-                SuspendLayout();
-                CleanUp();
-                ListItems(Orders);
-                ResumeLayout();
-                ItemView.IsOrder = false;
+                ShowOrders();
             }
         }
-
+        public void ShowOrders()
+        {
+            show_home();
+            ItemDisc[] Orders = Receiver.GetOrdersOf(User.ActiveUser);
+            ItemView.IsOrder = true;
+            SuspendLayout();
+            CleanUp();
+            ListItems(Orders);
+            ResumeLayout();
+            ItemView.IsOrder = false;
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
             SuspendLayout();
@@ -366,7 +369,9 @@ namespace Online_Ordering_System
 
         private void button3_Click(object sender, EventArgs e)
         {
+            ActiveItem.Quantity = int.Parse(Product_Quantity.Text);
             Transmitter.PlaceOrders(User.ActiveUser,ActiveItem);
+            show_home();
         }
     }
 }
