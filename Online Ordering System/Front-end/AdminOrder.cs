@@ -17,11 +17,11 @@ public class OrderView
         item = i;
         ParentPanel = p;
         OrderID.Text = i.ID.ToString();
-        OrderID.Location = new Point(58, 35 + offset);
+        OrderID.Location = new Point(58, 45 + offset);
         Name.Text = i.name;
-        Name.Location = new Point(165, 35 + offset);
+        Name.Location = new Point(165, 45 + offset);
         Quantity.Text = i.Quantity.ToString();
-        Quantity.Location = new Point(258, 35 + offset);
+        Quantity.Location = new Point(258, 45 + offset);
         if (i.state == DeliveryState.Pending)
         {
             OrderState.Text = "Pending";
@@ -34,9 +34,9 @@ public class OrderView
         {
             OrderState.Text = "Delieverd";
         }
-        OrderState.Location = new Point(364, 35 + offset);
+        OrderState.Location = new Point(364, 45 + offset);
         Promote.Text = "Promote";
-        Promote.Location = new Point(437, 35 + offset);
+        Promote.Location = new Point(437, 40 + offset);
         Promote.Click += Promote_Click;
         ParentPanel.Controls.Add(Promote);
         ParentPanel.Controls.Add(OrderState);

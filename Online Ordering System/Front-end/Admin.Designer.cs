@@ -46,6 +46,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Admin_Home = new System.Windows.Forms.Panel();
+            this.OrderButton = new System.Windows.Forms.Button();
             this.EditItem_Panel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,15 +54,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.OrderButton = new System.Windows.Forms.Button();
             this.OrderPanel = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.AddItem_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Admin_Home.SuspendLayout();
             this.EditItem_Panel.SuspendLayout();
             this.OrderPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddItem_Panel
@@ -243,6 +248,16 @@
             this.Admin_Home.Size = new System.Drawing.Size(544, 446);
             this.Admin_Home.TabIndex = 2;
             // 
+            // OrderButton
+            // 
+            this.OrderButton.Location = new System.Drawing.Point(187, 259);
+            this.OrderButton.Name = "OrderButton";
+            this.OrderButton.Size = new System.Drawing.Size(181, 35);
+            this.OrderButton.TabIndex = 3;
+            this.OrderButton.Text = "Orders";
+            this.OrderButton.UseVisualStyleBackColor = true;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
+            // 
             // EditItem_Panel
             // 
             this.EditItem_Panel.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -319,16 +334,6 @@
             this.NameLabel.Text = "Name";
             this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
-            // OrderButton
-            // 
-            this.OrderButton.Location = new System.Drawing.Point(187, 259);
-            this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(181, 35);
-            this.OrderButton.TabIndex = 3;
-            this.OrderButton.Text = "Orders";
-            this.OrderButton.UseVisualStyleBackColor = true;
-            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
-            // 
             // OrderPanel
             // 
             this.OrderPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -352,10 +357,54 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(3, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(535, 331);
             this.panel1.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(43, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "OrderID";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(171, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Name";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(241, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Quantity";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(364, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "State";
             // 
             // Admin
             // 
@@ -377,6 +426,8 @@
             this.EditItem_Panel.ResumeLayout(false);
             this.EditItem_Panel.PerformLayout();
             this.OrderPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +464,9 @@
         private System.Windows.Forms.Panel OrderPanel;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
