@@ -74,7 +74,7 @@ namespace Online_Ordering_System.Front_end
             ItemDisc[] items = Receiver.GetAllProducts();
             foreach (ItemDisc i in items)
             {
-                AdminView x = new AdminView(i, EditItem_Panel, this);
+                AdminView x = new AdminView(i, panel2, this);
                 ViewList.Add(x);
             }
         }

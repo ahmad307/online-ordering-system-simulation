@@ -74,16 +74,50 @@ static class functions
         }
         return Send;
     }
-    public static List<ItemDisc> Filter(List<string> Companies, List<ItemDisc> C_items, int low = 0, int high = int.MaxValue)
+    public static List<ItemDisc> Advanced_filter(List<ItemDisc> C_items, string search, bool word, bool match_case, float min = 0, float max = 1000000000)
     {
-        List<ItemDisc> send = new List<ItemDisc>();
-        foreach(ItemDisc c in C_items)
+        
+        List<ItemDisc> Send = new List<ItemDisc>();
+ 
+        if (!word)
         {
-            if (Companies.Contains(c.manfacture) && c.price >= low && c.price <= high)
-            { 
-                send.Add(c);
-           }
+            string sub_word;
+            if (!match_case)
+                sub_word = search.ToLower();
+            else
+                sub_word = search;
+            foreach (ItemDisc c in C_items)
+            {
+                string z;
+                if (!match_case)
+                    z = c.name.ToLower();
+                else
+                    z = c.name;
+                if (z.Contains(sub_word) && c.price >= min && c.price <= max)
+                    Send.Add(c);
+            }
         }
-        return send;
+        else
+        {
+            string sub_word = " ";
+            if (!match_case)
+                sub_word += search.ToLower();
+            else
+                sub_word += search;
+            sub_word += " ";
+            foreach (ItemDisc c in C_items)
+            {
+                string z = " ";
+                if (!match_case)
+                    z += c.name.ToLower();
+                else
+                    z += c.name;
+                z += " ";
+                if (z.Contains(sub_word) && c.price >= min && c.price <= max)
+                    Send.Add(c);
+            }
+        }
+        return Send;
+
     }
 }

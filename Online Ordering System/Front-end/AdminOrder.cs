@@ -52,11 +52,13 @@ public class OrderView
         {
             Transmitter.UpdateOrders(item.ID, DeliveryState.InProgress);
             OrderState.Text = "In-Progress";
+            item.state = DeliveryState.InProgress;
         }
         else if (item.state == DeliveryState.InProgress)
         {
             Transmitter.UpdateOrders(item.ID, DeliveryState.Delieverd);
             OrderState.Text = "Delieverd";
+            item.state = DeliveryState.Delieverd;
         }
     }
 

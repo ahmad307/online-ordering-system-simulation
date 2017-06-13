@@ -14,8 +14,8 @@ namespace Online_Ordering_System
         private bool pass1check = false;
         private bool FirstOrderPress = true;
         private bool pass2check = false;
-        private enum Mode { Explore, Order };
-        private Mode CurrentMode = Mode.Explore;
+        public enum Mode { Explore, Order };
+        public Mode CurrentMode = Mode.Explore;
         private Timer timer = new Timer();
         ItemDisc[] items;
         List<ItemView> ViewedItems;
@@ -55,7 +55,8 @@ namespace Online_Ordering_System
             items = Items;
             ViewedItems = new List<ItemView>();
             ItemsViewed = new List<ItemDisc>();
-
+            if (CurrentMode == Mode.Explore) Advanced_label.Visible = true;
+            else Advanced_label.Visible = false;
             foreach (ItemDisc i in items)
             {
                 if (i.Quantity > 0)
@@ -153,19 +154,21 @@ namespace Online_Ordering_System
             Product_Price.Text = item.price.ToString();
             Product_Image.Image = item.GetImage();
             ActiveItem = item;
-            ActiveItem.Quantity = int.Parse(Product_Quantity.Text);
-
 
         }
 
         private void label3_Click_1(object sender, EventArgs e)
         {
+            if (User.IsLoggedIn)
+                return;
             show_login();
 
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
+            if (User.IsLoggedIn)
+                return;
             show_signup();
         }
 
@@ -187,6 +190,7 @@ namespace Online_Ordering_System
 
         private void button1_Click(object sender, EventArgs e) //shwoing home panel
         {
+            Advanced_label.Show();
             CurrentMode = Mode.Explore;
             CleanUp();
             ListItems(Receiver.GetAllProducts());
@@ -289,6 +293,16 @@ namespace Online_Ordering_System
                 user.address = SignUp_Adress_txt.Text;
 
                 Transmitter.RegisterUser(user); //sign up function 
+                User.ActiveUser = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + user.Username + "';")[0];
+                User.IsLoggedIn = true;
+
+                label3.Text = "Welcome , ";
+                label4.Text = User.ActiveUser.Username;
+                label5.Hide();
+                label3.Cursor = Cursors.Arrow;
+                label4.Cursor = Cursors.Arrow;
+                show_home();
+
             }
             else
             {
@@ -309,6 +323,7 @@ namespace Online_Ordering_System
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Advanced_label.Visible = false;
             if (!User.IsLoggedIn)
             {
                 MessageBox.Show("Please Login First", "Error!",
@@ -316,8 +331,8 @@ namespace Online_Ordering_System
             }
             else
             {
-                ShowOrders();
                 CurrentMode = Mode.Order;
+                ShowOrders();
             }
         }
         public void ShowOrders()
@@ -411,9 +426,33 @@ namespace Online_Ordering_System
                 MessageBox.Show("Please Enter a number that is bigger than zero ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ActiveItem.Quantity = x;
+            if (x > ActiveItem.Quantity)
+            {
+                MessageBox.Show("Quantity bigger than stock", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CommBase.ExecuteNoReturn("UPDATE Product SET quantity = quantity - " + x.ToString() + " WHERE name = '" + ActiveItem.name + "';");
+            ActiveItem.Quantity = ActiveItem.Quantity - x;
             Transmitter.PlaceOrders(User.ActiveUser, ActiveItem);
+            SuspendLayout();
+            CleanUp();
+            ListItems(Receiver.ReadFromProduct("SELECT * FROM Product;"));
+            ResumeLayout();
             show_home();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            Front_end.Advanced_Filter f = new Front_end.Advanced_Filter(this);
+            f.ShowDialog();
+
+        }
+
+
+
+        private void Home_Panel_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

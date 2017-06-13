@@ -5,8 +5,6 @@ D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_S
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.csproj.GenerateResource.Cache
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.exe
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online Ordering System.pdb
-D:\ramy\online ordering\Online Ordering System\bin\Release\OOSDB.mdf
-D:\ramy\online ordering\Online Ordering System\bin\Release\OOSDB_log.ldf
 D:\ramy\online ordering\Online Ordering System\bin\Release\Online Ordering System.exe.config
 D:\ramy\online ordering\Online Ordering System\bin\Release\Online Ordering System.exe
 D:\ramy\online ordering\Online Ordering System\bin\Release\Online Ordering System.pdb
@@ -31,3 +29,6 @@ F:\online ordering\Online Ordering System\bin\Release\Online Ordering System.exe
 F:\online ordering\Online Ordering System\bin\Release\Online Ordering System.pdb
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Front_end.Admin.resources
 D:\Projects\Online Ordering\Online Ordering System\obj\Release\Online_Ordering_System.Front_end.ItemPopUp.resources
+D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Front_end.Admin.resources
+D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Front_end.Advanced_Filter.resources
+D:\ramy\online ordering\Online Ordering System\obj\Release\Online_Ordering_System.Front_end.ItemPopUp.resources

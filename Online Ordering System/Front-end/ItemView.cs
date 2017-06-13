@@ -42,14 +42,6 @@ public class ItemView
                 pic.Size = new Size(100, 100);
 
             }
-            if (IsOrder)
-            {
-                State.Location = new Point(450, 58 + y_offset);
-                State.Font = new Font("Britannic Bold", 12);
-                if (Item.state == DeliveryState.Pending) { State.Text = "Pending"; State.ForeColor = Color.Red; }
-                if (Item.state == DeliveryState.InProgress) { State.Text = "InProgress"; State.ForeColor = Color.Orange; }
-                if (Item.state == DeliveryState.Delieverd) { State.Text = "Delieverd"; State.ForeColor = Color.Green; }
-            }
 
             //product name label proprties
             if (IsOrder)
@@ -88,6 +80,14 @@ public class ItemView
             buybutton.MouseEnter += button_MouseEnter;
             buybutton.MouseLeave += button_MouseLeave;
             buybutton.Click += BuyClick;
+            if (IsOrder)
+            {
+                State.Location = new Point(450, 58 + y_offset);
+                State.Font = new Font("Britannic Bold", 12);
+                if (Item.state == DeliveryState.Pending) { State.Text = "Pending"; State.ForeColor = Color.Red; }
+                if (Item.state == DeliveryState.InProgress) { State.Text = "InProgress"; State.ForeColor = Color.Orange; }
+                if (Item.state == DeliveryState.Delieverd) { State.Text = "Delieverd"; State.ForeColor = Color.Green; buybutton.Text = "Delete"; }
+            }
 
             x_offset += 200;//horizontal distance between products
 

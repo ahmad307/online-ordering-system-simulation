@@ -63,7 +63,6 @@ namespace SQLCommunications
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
                     i.image = (byte[])reader["image"];
-                    i.manfacture = " ";
                     i.state = DeliveryState.Pending;
                     list.Add(i);
                 }
@@ -87,7 +86,6 @@ namespace SQLCommunications
                     i.Type = (string)reader["type"];
                     i.state = (DeliveryState)((int)reader["delievered"]);
                     i.image = null;
-                    i.manfacture = " ";
                     list.Add(i);
                 }
             }
@@ -124,6 +122,7 @@ namespace SQLCommunications
                     command.CommandText = "INSERT INTO Product (name , price , quantity , type , image) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , @Image );";
                     command.Parameters.AddWithValue("@Image", i.image);
                     command.ExecuteNonQuery();
+                    command.Parameters.Clear();
                 }
             }
         }
