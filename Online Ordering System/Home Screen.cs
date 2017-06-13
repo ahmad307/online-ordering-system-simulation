@@ -105,6 +105,7 @@ namespace Online_Ordering_System
             Login.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Login;
+            
         }
         public void show_signup()  // shwoing signup panel
         {
@@ -169,6 +170,8 @@ namespace Online_Ordering_System
 
         private void button1_Click(object sender, EventArgs e) //shwoing home panel
         {
+            CleanUp();
+            ListItems(Receiver.GetAllProducts());
             show_home();
         }
 
@@ -187,6 +190,12 @@ namespace Online_Ordering_System
                 Login_Label.Text = "Welcome";
                 User.ActiveUser = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + Login_user_txt.Text + "';")[0];
                 User.IsLoggedIn = true;
+                label3.Text = "Welcome , ";
+                label4.Text = User.ActiveUser.Username;
+                label5.Hide();
+                label3.Cursor = Cursors.Arrow;
+                label4.Cursor = Cursors.Arrow;
+                show_home();
             }
             else
             {
@@ -282,14 +291,21 @@ namespace Online_Ordering_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!isLogedin)
+            if (!User.IsLoggedIn)
             {
                 MessageBox.Show("Please Login First", "Error!",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //show user orders 
+                show_home();
+                ItemDisc[] Orders = Receiver.GetOrdersOf(User.ActiveUser);
+                ItemView.IsOrder = true;
+                SuspendLayout();
+                CleanUp();
+                ListItems(Orders);
+                ResumeLayout();
+                ItemView.IsOrder = false;
             }
         }
 

@@ -8,15 +8,17 @@ public class ItemView
     public static int x_offset = 0;
     public static int y_offset = 0;
     public static int itemNum = 0;
+    public static bool IsOrder = false;
     Button buybutton = new Button();
     PictureBox pic = new PictureBox();
     Label name = new Label();
     Label price = new Label();
+    Label State = new Label();
     public Panel ParentPanel;
     public ItemDisc Item;
     Form2 form;
     Panel productsPanel;
-    public ItemView(ItemDisc i , Panel p , Panel p2, Form2 f)
+    public ItemView(ItemDisc i, Panel p, Panel p2, Form2 f)
     {
         form = f;
         if (i.Quantity > 0)
@@ -31,9 +33,21 @@ public class ItemView
             productsPanel = p2;
 
             //Product picture proprties
-            pic.BackgroundImage = i.GetImage();
-            pic.Location = new Point(38 + x_offset, 70 + y_offset);
-            pic.Size = new Size(100, 100);
+            if (!IsOrder)
+            {
+                pic.BackgroundImage = i.GetImage();
+                pic.Location = new Point(38 + x_offset, 70 + y_offset);
+                pic.Size = new Size(100, 100);
+
+            }
+            if (IsOrder)
+            {
+                State.Location = new Point(38 + x_offset, 120 + y_offset);
+                State.Font = new Font("Britannic Bold", 12);
+                if (Item.state == DeliveryState.Pending) { State.Text = "Pending"; State.ForeColor = Color.Red; }
+                if (Item.state == DeliveryState.InProgress) { State.Text = "InProgress"; State.ForeColor = Color.Orange; }
+                if (Item.state == DeliveryState.Delieverd) {State.Text = "Delieverd"; State.ForeColor = Color.Green;}
+        }
 
             //product name label proprties
             name.Location = new Point(38 + x_offset, 158 + y_offset);
@@ -56,11 +70,13 @@ public class ItemView
             x_offset += 200;//horizontal distance between products
 
             //adding products to home panel
-            p.Controls.Add(buybutton);
+            if (IsOrder) p.Controls.Add(State);
+            if (!IsOrder)
+                p.Controls.Add(buybutton);
             p.Controls.Add(name);
             p.Controls.Add(price);
-            p.Controls.Add(pic);
-
+            if (!IsOrder)
+                p.Controls.Add(pic);
             itemNum++;
         }
     }
@@ -70,12 +86,19 @@ public class ItemView
         ParentPanel.Controls.Remove(name);
         ParentPanel.Controls.Remove(price);
         ParentPanel.Controls.Remove(pic);
+        ParentPanel.Controls.Remove(State);
     }
-    void BuyClick (object sender , EventArgs e)
+    void BuyClick(object sender, EventArgs e)
     {
+        if(!User.IsLoggedIn)
+        {
+            MessageBox.Show("Please Login First", "Error!",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
         form.show_Product(Item);
-        
-                
+
+
     }
     private void button_MouseEnter(object sender, EventArgs e) //making orange effect when hovering over button
     {
