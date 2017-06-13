@@ -63,6 +63,7 @@ public class CategoriesView
     void CatClick(object sender, EventArgs e)
     {
         //see what you wanna do when someone *clicks*
+        f.CurrentMode = Form2.Mode.Explore;
         Button btn = (Button)sender;
         List<ItemDisc> catItems = new List<ItemDisc>();
         catItems = FetchData.Category(btn.Text);
@@ -72,6 +73,7 @@ public class CategoriesView
 
     void AllClick(object sender, EventArgs e)
     {
+        f.CurrentMode = Form2.Mode.Explore;
         f.CleanUp();
         f.ListItems(Receiver.GetAllProducts());
 

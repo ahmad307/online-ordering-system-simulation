@@ -122,6 +122,7 @@ namespace SQLCommunications
                     command.CommandText = "INSERT INTO Product (name , price , quantity , type , image) Values('" + i.name + "', " + i.price + ", " + i.Quantity + ", '" + i.Type + "' , @Image );";
                     command.Parameters.AddWithValue("@Image", i.image);
                     command.ExecuteNonQuery();
+                    command.Parameters.Clear();
                 }
             }
         }
