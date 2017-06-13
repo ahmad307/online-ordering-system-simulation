@@ -160,12 +160,16 @@ namespace Online_Ordering_System
 
         private void label3_Click_1(object sender, EventArgs e)
         {
+            if (User.IsLoggedIn)
+                return;
             show_login();
 
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
+            if (User.IsLoggedIn)
+                return;
             show_signup();
         }
 
@@ -289,6 +293,16 @@ namespace Online_Ordering_System
                 user.address = SignUp_Adress_txt.Text;
 
                 Transmitter.RegisterUser(user); //sign up function 
+                User.ActiveUser = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + user.Username)[0];
+                User.IsLoggedIn = true;
+
+                label3.Text = "Welcome , ";
+                label4.Text = User.ActiveUser.Username;
+                label5.Hide();
+                label3.Cursor = Cursors.Arrow;
+                label4.Cursor = Cursors.Arrow;
+                show_home();
+
             }
             else
             {
@@ -411,8 +425,15 @@ namespace Online_Ordering_System
                 MessageBox.Show("Please Enter a number that is bigger than zero ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if(x > ActiveItem.Quantity)
+            {
+                MessageBox.Show("Quantity bigger than stock", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CommBase.ExecuteNoReturn("UPDATE Product SET quantity = quantity - " + ActiveItem.Quantity.ToString() + " WHERE name = " + ActiveItem.name);
             ActiveItem.Quantity = x;
             Transmitter.PlaceOrders(User.ActiveUser, ActiveItem);
+
             show_home();
         }
 
@@ -421,6 +442,13 @@ namespace Online_Ordering_System
             Front_end.Advanced_Filter f = new Front_end.Advanced_Filter(this);
             f.ShowDialog();
             
+        }
+
+        
+
+        private void Home_Panel_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

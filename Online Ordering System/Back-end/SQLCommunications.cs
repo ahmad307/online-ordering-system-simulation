@@ -63,7 +63,6 @@ namespace SQLCommunications
                     i.Quantity = (int)reader["quantity"];
                     i.Type = (string)reader["type"];
                     i.image = (byte[])reader["image"];
-                    i.manfacture = " ";
                     i.state = DeliveryState.Pending;
                     list.Add(i);
                 }
@@ -87,7 +86,6 @@ namespace SQLCommunications
                     i.Type = (string)reader["type"];
                     i.state = (DeliveryState)((int)reader["delievered"]);
                     i.image = null;
-                    i.manfacture = " ";
                     list.Add(i);
                 }
             }

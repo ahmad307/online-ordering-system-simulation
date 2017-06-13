@@ -74,18 +74,6 @@ static class functions
         }
         return Send;
     }
-    public static List<ItemDisc> Filter(List<string> Companies, List<ItemDisc> C_items, int low = 0, int high = int.MaxValue)
-    {
-        List<ItemDisc> send = new List<ItemDisc>();
-        foreach(ItemDisc c in C_items)
-        {
-            if (Companies.Contains(c.manfacture) && c.price >= low && c.price <= high)
-            { 
-                send.Add(c);
-           }
-        }
-        return send;
-    }
     public static List<ItemDisc> Advanced_filter(List<ItemDisc> C_items, string search, bool word, bool match_case, float min = 0, float max = 1000000000)
     {
         

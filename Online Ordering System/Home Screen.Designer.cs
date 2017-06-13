@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Home_Panel = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SortOrder = new System.Windows.Forms.ComboBox();
             this.SortType = new System.Windows.Forms.ComboBox();
@@ -155,6 +156,7 @@
             // 
             this.Home_Panel.AutoScroll = true;
             this.Home_Panel.BackColor = System.Drawing.Color.LightGray;
+            this.Home_Panel.Controls.Add(this.label14);
             this.Home_Panel.Controls.Add(this.button1);
             this.Home_Panel.Controls.Add(this.SortOrder);
             this.Home_Panel.Controls.Add(this.SortType);
@@ -163,6 +165,18 @@
             this.Home_Panel.Name = "Home_Panel";
             this.Home_Panel.Size = new System.Drawing.Size(788, 464);
             this.Home_Panel.TabIndex = 7;
+            this.Home_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Panel_Paint_1);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Location = new System.Drawing.Point(684, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 13);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Advanced Filter";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // button1
             // 
@@ -206,7 +220,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(382, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sort By:";
             // 
@@ -257,7 +271,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(861, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.Size = new System.Drawing.Size(22, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "OR";
             // 
@@ -288,7 +302,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(173, 296);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 13);
+            this.label11.Size = new System.Drawing.Size(94, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Enter Your Adress";
             // 
@@ -337,7 +351,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(169, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Enter Password";
             // 
@@ -346,7 +360,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(169, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 13);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Re-Enter Password";
             // 
@@ -355,7 +369,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(169, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Enter Username";
             // 
@@ -529,7 +543,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(318, 90);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.Size = new System.Drawing.Size(49, 13);
             this.label13.TabIndex = 5;
             this.label13.Text = "Quantity";
             // 
@@ -592,7 +606,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Online_Ordering_System.Properties.Resources.pattern1;
             this.ClientSize = new System.Drawing.Size(999, 535);
-            this.Controls.Add(this.Product_Panel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.label5);
@@ -602,6 +615,7 @@
             this.Controls.Add(this.Categories);
             this.Controls.Add(this.Orders_Button);
             this.Controls.Add(this.Home_Button);
+            this.Controls.Add(this.Product_Panel);
             this.Controls.Add(this.Sign_Up);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.Home_Panel);
@@ -679,6 +693,7 @@
         private System.Windows.Forms.TextBox Product_Quantity;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel User_Orders_Panel;
+        private System.Windows.Forms.Label label14;
     }
 }
 
