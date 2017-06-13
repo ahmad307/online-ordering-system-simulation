@@ -105,6 +105,7 @@ namespace Online_Ordering_System
             Login.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Login;
+            
         }
         public void show_signup()  // shwoing signup panel
         {
@@ -189,6 +190,12 @@ namespace Online_Ordering_System
                 Login_Label.Text = "Welcome";
                 User.ActiveUser = Receiver.ReadFromAccounts("SELECT * FROM Accounts WHERE username = '" + Login_user_txt.Text + "';")[0];
                 User.IsLoggedIn = true;
+                label3.Text = "Welcome , ";
+                label4.Text = User.ActiveUser.Username;
+                label5.Hide();
+                label3.Cursor = Cursors.Arrow;
+                label4.Cursor = Cursors.Arrow;
+                show_home();
             }
             else
             {
