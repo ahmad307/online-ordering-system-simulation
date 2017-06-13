@@ -12,7 +12,11 @@ namespace Online_Ordering_System
         public static bool isLogedin = false;
         private bool usercheck = false;
         private bool pass1check = false;
+        private bool FirstOrderPress = true;
         private bool pass2check = false;
+        private enum Mode { Explore, Order };
+        private Mode CurrentMode = Mode.Explore;
+        private Timer timer = new Timer();
         ItemDisc[] items;
         List<ItemView> ViewedItems;
         List<ItemDisc> ItemsViewed;
@@ -27,6 +31,9 @@ namespace Online_Ordering_System
             ListItems(Receiver.ReadFromProduct("SELECT * FROM Product;"));
             List<string> CL = FetchData.AllCategories();
             ViewedCategories = new List<CategoriesView>();
+            timer.Interval = 50;
+            timer.Tick += Timer_Tick;
+            timer.Start();
             foreach (string s in CL)
             {
                 CategoriesView C = new CategoriesView(s, Categories, this);
@@ -34,6 +41,15 @@ namespace Online_Ordering_System
             }
             ResumeLayout();
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (CurrentMode == Mode.Order)
+            {
+                ShowOrders();
+            }
+        }
+
         public void ListItems(ItemDisc[] Items)
         {
             items = Items;
@@ -44,11 +60,12 @@ namespace Online_Ordering_System
             {
                 if (i.Quantity > 0)
                 {
-                    ItemView x = new ItemView(i, Home_Panel,Product_Panel,this);
+                    ItemView x = new ItemView(i, Home_Panel, Product_Panel, this);
                     ViewedItems.Add(x);
                     ItemsViewed.Add(i);
                 }
             }
+            ItemView.IsOrder = false;
         }
 
         public void CleanUp()
@@ -105,7 +122,7 @@ namespace Online_Ordering_System
             Login.Visible = true;
             LastPanel.Visible = false;
             LastPanel = Login;
-            
+
         }
         public void show_signup()  // shwoing signup panel
         {
@@ -126,7 +143,7 @@ namespace Online_Ordering_System
         }
         public void show_Product(ItemDisc item) //showing product panel
         {
-            if (LastPanel ==Product_Panel)
+            if (LastPanel == Product_Panel)
                 return;
             Product_Panel.Visible = true;
             LastPanel.Visible = false;
@@ -136,7 +153,7 @@ namespace Online_Ordering_System
             Product_Price.Text = item.price.ToString();
             Product_Image.Image = item.GetImage();
             ActiveItem = item;
-            ActiveItem.Quantity = int.Parse( Product_Quantity.Text);
+            ActiveItem.Quantity = int.Parse(Product_Quantity.Text);
 
 
         }
@@ -170,6 +187,7 @@ namespace Online_Ordering_System
 
         private void button1_Click(object sender, EventArgs e) //shwoing home panel
         {
+            CurrentMode = Mode.Explore;
             CleanUp();
             ListItems(Receiver.GetAllProducts());
             show_home();
@@ -299,18 +317,37 @@ namespace Online_Ordering_System
             else
             {
                 ShowOrders();
+                CurrentMode = Mode.Order;
             }
         }
         public void ShowOrders()
         {
             show_home();
             ItemDisc[] Orders = Receiver.GetOrdersOf(User.ActiveUser);
-            ItemView.IsOrder = true;
-            SuspendLayout();
-            CleanUp();
-            ListItems(Orders);
-            ResumeLayout();
-            ItemView.IsOrder = false;
+            if (Orders.Length != ItemsViewed.Count || FirstOrderPress)
+            {
+                ItemView.IsOrder = true;
+                SuspendLayout();
+                CleanUp();
+                ListItems(Orders);
+                ResumeLayout();
+                ItemView.IsOrder = false;
+                FirstOrderPress = false;
+                return;
+            }
+            for (int i = 0; i < Orders.Length; i++)
+            {
+                if (Orders[i].state != ItemsViewed[i].state)
+                {
+                    ItemView.IsOrder = true;
+                    SuspendLayout();
+                    CleanUp();
+                    ListItems(Orders);
+                    ResumeLayout();
+                    ItemView.IsOrder = false;
+                    return;
+                }
+            }
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -369,8 +406,13 @@ namespace Online_Ordering_System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ActiveItem.Quantity = int.Parse(Product_Quantity.Text);
-            Transmitter.PlaceOrders(User.ActiveUser,ActiveItem);
+            if (!int.TryParse(Product_Quantity.Text, out int x) || x == 0)
+            {
+                MessageBox.Show("Please Enter a number that is bigger than zero ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ActiveItem.Quantity = x;
+            Transmitter.PlaceOrders(User.ActiveUser, ActiveItem);
             show_home();
         }
 
